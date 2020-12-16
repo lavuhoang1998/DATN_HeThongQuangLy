@@ -1,0 +1,36 @@
+/*  Footer Styles
+/* =================================== */
+
+.footer-container {
+    width: 100%;
+    padding: 35px 100px;
+    background: #002347;
+}
+.footer-container div {
+    display: inline-block;
+}
+.logo-bottom {
+    display: inline-block;
+    margin-bottom: 30px;
+}
+.copyright {
+    font-size: 12px;
+}
+.widget p {
+    margin-bottom: 5px;
+}
+.widget h4 {
+    color: white;
+    text-transform: uppercase;
+}
+.widget ul {
+    padding-inline-start: unset;
+}
+.widget ul > li {
+    padding: 7px 0;
+    list-style: none;
+    font-size: 15px;
+}
+.widget ul > li > a {
+    color: #fdf7f7;
+}
