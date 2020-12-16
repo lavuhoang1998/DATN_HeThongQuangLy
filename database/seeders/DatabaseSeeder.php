@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ParentOfStudent;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,9 +15,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            UserTableSeeder::class,
             RoleTableSeeder::class,
-            Role_UserTableSeeder::class,
+            UserTableSeeder::class,
+            StudentTableSeeder::class,
+            AdminTableSeeder::class,
+            ParentTableSeeder::class,
         ]);
     }
 }

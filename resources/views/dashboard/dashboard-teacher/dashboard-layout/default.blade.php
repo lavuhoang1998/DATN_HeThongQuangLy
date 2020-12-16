@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-@include('dashboard.dashboard-layout.head')
+@include('dashboard.dashboard-teacher.dashboard-layout.head')
 <body>
 <div id="main-wrapper">
     <!-- ============================================================== -->

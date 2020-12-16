@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
-class LoginMiddleWare
+class TeacherLoginMiddleWare
 {
     /**
      * Handle an incoming request.
@@ -21,7 +21,7 @@ class LoginMiddleWare
         if(Auth::check())
         {
             $user_login = Auth::user();
-            if($user_login->id == 1)
+            if($user_login->role_id == 2)
                 return $next($request);
             else
                 return redirect('login');

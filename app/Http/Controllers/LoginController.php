@@ -20,7 +20,20 @@ class LoginController extends Controller
 
         if (Auth::attempt(['email'=>$email, 'password'=>$password]))
         {
-            return redirect('sms');
+            $role = Auth::user()->role_id;
+            if ($role == 1){
+                return redirect('sms_admin');
+            }
+            else if ($role == 2){
+                return redirect('sms_teacher');
+            }
+            else if ($role == 3){
+                return redirect('sms_student');
+            }
+            else
+            {
+                return redirect('login');
+            }
         }
         else
         {
