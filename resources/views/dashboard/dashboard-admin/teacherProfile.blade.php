@@ -34,9 +34,9 @@
                         <small class="text-muted">Email </small>
                         <h6>{{$teacher_info->email}}</h6>
                         <small class="text-muted p-t-30 db">Số điện thoại</small>
-                        <h6>{{$teacher_info->sdt}}</h6>
+                        <h6>{{$teacher_info1->sdt}}</h6>
                         <small class="text-muted p-t-30 db">Địa chỉ</small>
-                        <h6>{{$teacher_info->dia_chi}}</h6>
+                        <h6>{{$teacher_info1->dia_chi}}</h6>
                     </div>
                 </div>
             </div>
@@ -54,11 +54,11 @@
                             </div>
                             <div class="col-md-3 col-xs-6 b-r"><strong>Giới tính</strong>
                                 <br>
-                                <h4>{{$teacher_info->sex}}</h4>
+                                <h4>{{$teacher_info1->sex}}</h4>
                             </div>
                             <div class="col-md-3 col-xs-6 b-r"><strong>Ngày sinh</strong>
                                 <br>
-                                <h4>{{$teacher_info->date_of_birth}}</h4>
+                                <h4>{{$teacher_info1->date_of_birth}}</h4>
                             </div>
                             <div class="col-md-3 col-xs-6"><strong>Quên quán</strong>
                                 <br>

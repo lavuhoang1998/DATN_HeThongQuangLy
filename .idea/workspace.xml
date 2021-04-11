@@ -2,38 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbdf9e61-9aea-485f-8292-3064890fabb9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboard-student/home.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboard-teacher/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminDashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminDashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentDashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentDashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TeacherDashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TeacherDashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_15_023542_create_roles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_100000_create_roles_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_16_093708_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_100003_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_16_094708_create_students_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_100005_create_students_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_16_095442_create_parents_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_100010_create_parents_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_16_095745_create_admins_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_100004_create_admins_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_16_103753_add_foreignkey_to_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_200000_add_foreignkey_to_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_16_104327_add_foreignkey_to_students_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_200002_add_foreignkey_to_students_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_16_104353_add_foreignkey_to_parents_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_200010_add_foreignkey_to_parents_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_16_104402_add_foreignkey_to_admins_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_15_200001_add_foreignkey_to_admins_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/AdminTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/AdminTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/StudentTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/StudentTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/UserTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/UserTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/layout-dashboard/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/layout-dashboard/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/user/profile.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard-admin/dashboard-admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboard-admin/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard-admin/dashboard-layout/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboard-admin/dashboard-layout/default.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard-admin/dashboard-layout/head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboard-admin/dashboard-layout/head.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard-student/dashboard-layout/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboard-student/dashboard-layout/default.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard-student/dashboard-student.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard-teacher/dashboard-layout/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboard-teacher/dashboard-layout/default.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard-teacher/dashboard-teacher.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard-admin/studentEdit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboard-admin/studentEdit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard-admin/teacherEdit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboard-admin/teacherEdit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard-admin/teacherProfile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboard-admin/teacherProfile.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +178,7 @@
       <workItem from="1618062398810" duration="282000" />
       <workItem from="1618062792054" duration="157000" />
       <workItem from="1618063014427" duration="2328000" />
-      <workItem from="1618164443713" duration="10797000" />
+      <workItem from="1618164443713" duration="12141000" />
     </task>
     <servers />
   </component>

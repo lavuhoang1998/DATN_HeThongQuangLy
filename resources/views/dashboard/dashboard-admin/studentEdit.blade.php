@@ -45,7 +45,7 @@
                     <div class="form-group">
                         <label class="col-md-12">Ngày sinh</label>
                         <div class="col-md-12">
-                            <input class="form-control" type="date" name="DoB">
+                            <input class="form-control" type="date" value="{{$student_info1->date_of_birth}}" name="DoB">
                         </div>
                     </div>
                     <div class="form-group">
