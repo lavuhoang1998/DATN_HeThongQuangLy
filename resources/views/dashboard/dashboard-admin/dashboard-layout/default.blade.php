@@ -15,12 +15,12 @@
                 <a class="navbar-brand" href="{{url('/')}}">
                     <!-- Logo icon -->
                     <b>
-                        <img src="img/logo/logo-sms.jpg" alt="logo" class="dark-logo" />
+                        <img src="{{ asset('img/logo/logo-sms.jpg') }}" alt="logo" class="dark-logo"/>
                     </b>
                     <!--End Logo icon -->
                     <!-- Logo text -->
                     <span>
-                         <img src="img/logo/logo-text-sms.png" alt="logo text" class="dark-logo" />
+                         <img src="{{ asset('img/logo/logo-text-sms.png') }}" alt="logo text" class="dark-logo"/>
                     </span>
                 </a>
             </div>
@@ -33,15 +33,20 @@
                 <!-- ============================================================== -->
                 <ul class="navbar-nav mr-auto mt-md-0">
                     <!-- This is  -->
-                    <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
-                    <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                    <li class="nav-item"><a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark"
+                                            href="javascript:void(0)"><i class="mdi mdi-menu"></i></a></li>
+                    <li class="nav-item"><a
+                            class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark"
+                            href="javascript:void(0)"><i class="ti-menu"></i></a></li>
                     <!-- ============================================================== -->
                     <!-- Search -->
                     <!-- ============================================================== -->
                     <li class="nav-item hidden-sm-down search-box">
-                        <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                        <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i
+                                class="ti-search"></i></a>
                         <form class="app-search">
-                            <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
+                            <input type="text" class="form-control" placeholder="Tìm kiếm"> <a class="srh-btn"><i
+                                    class="ti-close"></i></a></form>
                     </li>
                     <!-- ============================================================== -->
                     <!-- Messages -->
@@ -58,47 +63,11 @@
                     <!-- Messages -->
                     <!-- ============================================================== -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-email"></i>
-                            <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#" id="2"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i
+                                class="mdi mdi-email"></i>
+                            <div class="notify"><span class="heartbit"></span> <span class="point"></span></div>
                         </a>
-                        <div class="dropdown-menu mailbox dropdown-menu-right scale-up" aria-labelledby="2">
-                            <ul>
-                                <li>
-                                    <div class="drop-title">You have 4 new messages</div>
-                                </li>
-                                <li>
-                                    <div class="message-center">
-                                        <!-- Message -->
-                                        <a href="#">
-                                            <div class="user-img"> <img src="assets/images/users/1.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
-                                            <div class="mail-contnet">
-                                                <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span> </div>
-                                        </a>
-                                        <!-- Message -->
-                                        <a href="#">
-                                            <div class="user-img"> <img src="assets/images/users/2.jpg" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
-                                            <div class="mail-contnet">
-                                                <h5>Sonu Nigam</h5> <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span> </div>
-                                        </a>
-                                        <!-- Message -->
-                                        <a href="#">
-                                            <div class="user-img"> <img src="assets/images/users/3.jpg" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
-                                            <div class="mail-contnet">
-                                                <h5>Arijit Sinh</h5> <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span> </div>
-                                        </a>
-                                        <!-- Message -->
-                                        <a href="#">
-                                            <div class="user-img"> <img src="assets/images/users/4.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
-                                            <div class="mail-contnet">
-                                                <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span> </div>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a class="nav-link text-center" href="javascript:void(0);"> <strong>See all e-Mails</strong> <i class="fa fa-angle-right"></i> </a>
-                                </li>
-                            </ul>
-                        </div>
                     </li>
                     <!-- ============================================================== -->
                     <!-- End Messages -->
@@ -107,25 +76,24 @@
                     <!-- Profile -->
                     <!-- ============================================================== -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/user/profile.jpg" alt="user" class="profile-pic" /></a>
+                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
+                                src="{{ asset($admin_info->avt)}}" alt="user" class="profile-pic"/></a>
                         <div class="dropdown-menu dropdown-menu-right scale-up">
                             <ul class="dropdown-user">
                                 <li>
                                     <div class="dw-user-box">
-                                        <div class="u-img"><img src="img/user/profile.jpg" alt="user"></div>
+                                        <div class="u-img"><img src="{{ asset($admin_info->avt)}}" alt="user"></div>
                                         <div class="u-text">
                                             <h4>{{$user->name}}</h4>
-                                            <p class="text-muted"><a href="https://www.wrappixel.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="32445340475c72555f535b5e1c515d5f">[email&#160;protected]</a></p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
+                                            <p>{{$user->email}}</p>
+                                        </div>
                                     </div>
                                 </li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
-                                <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
-                                <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
+                                <li><a href="{{url('/sms_admin')}}"><i class="ti-user"></i> Hồ sơ </a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="logout"><i class="fa fa-power-off"></i> Logout</a></li>
+                                <li><a href="{{url('/logout')}}"><i class="fa fa-power-off"></i> Đăng xuất</a></li>
                             </ul>
                         </div>
                     </li>
@@ -146,124 +114,37 @@
         <!-- Sidebar scroll-->
         <div class="scroll-sidebar">
             <!-- User profile -->
-            <div class="user-profile" style="background: url(img/logo/logo-background.jpg) no-repeat;">
+            <div class="user-profile" style="background: url('{{asset('img/logo/logo-background.jpg')}}')  no-repeat;">
                 <!-- User profile image -->
-                <div class="profile-img"> <img src="img/user/profile.jpg" alt="user" /> </div>
+                <div class="profile-img"><img src="{{ asset($admin_info->avt)}}" alt="user"/></div>
                 <!-- User profile text-->
-                <div class="profile-text"> <a class="user-name">LVH</a></div>
+                <div class="profile-text"><a class="user-name">{{$admin_info->name}}</a></div>
             </div>
             <!-- End User profile text-->
             <!-- Sidebar navigation-->
             <nav class="sidebar-nav">
                 <ul id="sidebarnav">
-                    <li class="nav-small-cap">Thông tin cá nhân</li>
-                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Thông tin học sinh </span></a>
+                    <li class="nav-small-cap">Quản lý hồ sơ</li>
+                    <li><a href="{{url('/sms_admin')}}" aria-expanded="false"><i class="mdi mdi-account"></i><span
+                                class="hide-menu">Thông tin cá nhân </span></a></li>
+                    <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
+                                class="mdi mdi-account-edit"></i><span class="hide-menu">Cập nhật thông tin</span></a>
                         <ul aria-expanded="false" class="collapse">
-                            <li><a href="index.html">Thông tin học sinh </a></li>
-                            <li><a href="index2.html">Đổi mật khẩu</a></li>
-                        </ul>
-                    </li>
-                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-email"></i><span class="hide-menu">Hòm thư</span></a>
-                        <ul aria-expanded="false" class="collapse">
-                            <li><a href="app-email.html">Mailbox</a></li>
-                            <li><a href="app-email-detail.html">Mailbox Detail</a></li>
-                            <li><a href="app-compose.html">Compose Mail</a></li>
+                            <li><a href="{{url('sms_admin/editProfile')}}">Thông tin cá nhân </a></li>
+                            <li><a href="{{url('sms_admin/editPassword')}}">Đổi mật khẩu </a></li>
                         </ul>
                     </li>
                     <li class="nav-devider"></li>
-                    <li class="nav-small-cap">Đào tạo</li>
-                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">Tra cứu điểm</span></a>
+                    <li class="nav-small-cap">Quản lý tài khoản</li>
+                    <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
+                                class="mdi mdi-account-edit"></i><span class="hide-menu">Quản lý người dùng</span></a>
                         <ul aria-expanded="false" class="collapse">
-                            <li><a href="form-basic.html">Basic Forms</a></li>
-                            <li><a href="form-tinymce.html">Tinymce Editor</a></li>
-                        </ul>
-                    </li>
-                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">Tra cứu lịch học</span></a>
-                        <ul aria-expanded="false" class="collapse">
-                            <li><a href="table-basic.html">Basic Tables</a></li>
-                            <li><a href="table-editable-table.html">Editable Table</a></li>
+                            <li><a href="{{url('sms_admin/studentManager')}}">Tài khoản học sinh </a></li>
+                            <li><a href="{{url('sms_admin/teacherManager')}}">Tài khoản giáo viên </a></li>
                         </ul>
                     </li>
                     <li class="nav-devider"></li>
-                    <li class="nav-small-cap">Tài chính</li>
-                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-book-open-variant"></i><span class="hide-menu">Tra cứu học phí</span></a>
-                        <ul aria-expanded="false" class="collapse">
-                            <li><a href="starter-kit.html">Starter Kit</a></li>
-                            <li><a href="#" class="has-arrow">Authentication <span class="label label-rounded label-success">6</span></a>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li><a href="pages-login.html">Login 1</a></li>
-                                    <li><a href="pages-login-2.html">Login 2</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="pages-profile.html">Profile page</a></li>
-                            <li><a href="#" class="has-arrow">Error Pages</a>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li><a href="pages-error-400.html">400</a></li>
-                                    <li><a href="pages-error-403.html">403</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file-chart"></i><span class="hide-menu">Nộp học phí Online</span></a>
-                        <ul aria-expanded="false" class="collapse">
-                            <li><a href="chart-morris.html">Morris Chart</a></li>
-                            <li><a href="chart-chartist.html">Chartis Chart</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-devider"></li>
-                    <li class="nav-small-cap">Tài chính</li>
-                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-book-open-variant"></i><span class="hide-menu">Tra cứu học phí</span></a>
-                        <ul aria-expanded="false" class="collapse">
-                            <li><a href="starter-kit.html">Starter Kit</a></li>
-                            <li><a href="#" class="has-arrow">Authentication <span class="label label-rounded label-success">6</span></a>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li><a href="pages-login.html">Login 1</a></li>
-                                    <li><a href="pages-login-2.html">Login 2</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="pages-profile.html">Profile page</a></li>
-                            <li><a href="#" class="has-arrow">Error Pages</a>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li><a href="pages-error-400.html">400</a></li>
-                                    <li><a href="pages-error-403.html">403</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file-chart"></i><span class="hide-menu">Nộp học phí Online</span></a>
-                        <ul aria-expanded="false" class="collapse">
-                            <li><a href="chart-morris.html">Morris Chart</a></li>
-                            <li><a href="chart-chartist.html">Chartis Chart</a></li>
-                        </ul>
-                    </li><li class="nav-devider"></li>
-                    <li class="nav-small-cap">Tài chính</li>
-                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-book-open-variant"></i><span class="hide-menu">Tra cứu học phí</span></a>
-                        <ul aria-expanded="false" class="collapse">
-                            <li><a href="starter-kit.html">Starter Kit</a></li>
-                            <li><a href="#" class="has-arrow">Authentication <span class="label label-rounded label-success">6</span></a>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li><a href="pages-login.html">Login 1</a></li>
-                                    <li><a href="pages-login-2.html">Login 2</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="pages-profile.html">Profile page</a></li>
-                            <li><a href="#" class="has-arrow">Error Pages</a>
-                                <ul aria-expanded="false" class="collapse">
-                                    <li><a href="pages-error-400.html">400</a></li>
-                                    <li><a href="pages-error-403.html">403</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file-chart"></i><span class="hide-menu">Nộp học phí Online</span></a>
-                        <ul aria-expanded="false" class="collapse">
-                            <li><a href="chart-morris.html">Morris Chart</a></li>
-                            <li><a href="chart-chartist.html">Chartis Chart</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-devider"></li>
-                    <li> <a><i class="mdi mdi-file-chart"></i><span class="hide-menu">Log out</span></a>
+                    <li><a href="{{url('/logout')}}"><i class="mdi mdi-logout"></i><span class="hide-menu">Đăng xuất</span></a>
                     <li class="nav-devider"></li>
                 </ul>
             </nav>
@@ -287,7 +168,8 @@
     <!-- footer -->
         <!-- ============================================================== -->
         <footer class="footer">
-            Bản quyền thuộc về Lã Vũ Hoàng - Đại học bách khoa Hà Nội © 2020 All right reserved </footer>
+            Bản quyền thuộc về Lã Vũ Hoàng - Đại học bách khoa Hà Nội © 2020 All right reserved
+        </footer>
         <!-- ============================================================== -->
         <!-- End footer -->
         <!-- ============================================================== -->

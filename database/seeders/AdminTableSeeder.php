@@ -19,9 +19,12 @@ class AdminTableSeeder extends Seeder
             'MSAdmin' => 'QL0001',
             'sex' => 'Nam',
             'date_of_birth' => '1971-07-12',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
             'que_quan' => 'Nam Định',
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
+            'avt' => 'img/avt/admin/QL0001.jpg',
             'user_id' => '1'
         ]);
 
@@ -29,9 +32,12 @@ class AdminTableSeeder extends Seeder
             'MSAdmin' => 'QL0002',
             'sex' => 'Nữ',
             'date_of_birth' => '1974-11-23',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
             'que_quan' => 'Thái Bình',
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
+            'avt' => 'img/avt/admin/QL0002.jpg',
             'user_id' => '2'
         ]);
     }

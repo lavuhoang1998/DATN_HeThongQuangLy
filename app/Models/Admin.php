@@ -15,9 +15,12 @@ class Admin extends Model
         'MSAdmin',
         'sex',
         'date_of_birth',
+        'dia_chi',
+        'sdt',
         'que_quan',
         'dan_toc',
         'ton_giao',
+        'avt',
         'user_id',
     ];
 

@@ -1,22 +1,5 @@
-/*
-Template Name: Monster Admin
-Author: Themedesigner
-Email: niravjoshi87@gmail.com
-File: scss
-*/
-/*
-Template Name: Monster Admin
-Author: Themedesigner
-Email: niravjoshi87@gmail.com
-File: scss
-*/
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
-/*Theme Colors*/
-/*bootstrap Color*/
-/*Light colors*/
-/*Normal Color*/
-/*Extra Variable*/
-/*Preloader*/
+
 @import url(icons/font-awesome/css/fontawesome-all.css);
 @import url(icons/simple-line-icons/css/simple-line-icons.css);
 @import url(icons/weather-icons/css/weather-icons.min.css);
@@ -27,6 +10,7 @@ File: scss
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
 @import url(spinners.css);
 @import url(animate.css);
+
 .preloader {
   width: 100%;
   height: 100%;
@@ -39,12 +23,7 @@ File: scss
     top: calc(50% - 3.5px);
     left: calc(50% - 3.5px); }
 
-/*
-Template Name: Material Pro Admin
-Author: Themedesigner
-Email: niravjoshi87@gmail.com
-File: scss
-*/
+
 /**
  * Table Of Content
  *

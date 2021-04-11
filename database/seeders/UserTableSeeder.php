@@ -19,6 +19,7 @@ class UserTableSeeder extends Seeder
             'name' => 'Nguyen Van A',
             'email' => 'nva@sms.cyb.edu.com',
             'password' => Hash::make('123456789'),
+            'trang_thai' => '1',
             'role_id' => '1',
         ]);
 
@@ -26,6 +27,7 @@ class UserTableSeeder extends Seeder
             'name' => 'Nguyen Van B',
             'email' => 'nvb@sms.cyb.edu.com',
             'password' => Hash::make('123456789'),
+            'trang_thai' => '1',
             'role_id' => '1',
         ]);
 
@@ -33,6 +35,7 @@ class UserTableSeeder extends Seeder
             'name' => 'Nguyen Van C',
             'email' => 'nvc@sms.cyb.edu.com',
             'password' => Hash::make('123456789'),
+            'trang_thai' => '1',
             'role_id' => '2',
         ]);
 
@@ -40,6 +43,7 @@ class UserTableSeeder extends Seeder
             'name' => 'Nguyen Van D',
             'email' => 'nvd@sms.cyb.edu.com',
             'password' => Hash::make('123456789'),
+            'trang_thai' => '1',
             'role_id' => '2',
         ]);
 
@@ -47,6 +51,7 @@ class UserTableSeeder extends Seeder
             'name' => 'Lã Vũ Hoàng',
             'email' => 'lvh@sms.cyb.edu.com',
             'password' => Hash::make('123456789'),
+            'trang_thai' => '1',
             'role_id' => '3',
         ]);
 
@@ -54,6 +59,7 @@ class UserTableSeeder extends Seeder
             'name' => 'Nguyen Van F',
             'email' => 'nvf@sms.cyb.edu.com',
             'password' => Hash::make('123456789'),
+            'trang_thai' => '1',
             'role_id' => '3',
         ]);
     }

@@ -6,15 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-
-class Student extends Model
+class Teacher extends Model
 {
     use  SoftDeletes,HasFactory;
 
-    protected $table = 'students';
+    protected $table = 'teachers';
 
     protected $fillable = [
-        'MSHS',
+        'MSGV',
         'sex',
         'date_of_birth',
         'dia_chi',
@@ -24,25 +23,20 @@ class Student extends Model
         'ton_giao',
         'avt',
         'user_id',
-        'class_id'
+        'subject_id'
     ];
 
     public function usesTimestamps() : bool{
         return true;
     }
 
-    public function users()
+    public function subject()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Subject::class);
     }
 
     public function classes()
     {
-        return $this->belongsTo(CLasss::class);
-    }
-
-    public function parents()
-    {
-        return $this->hasOne(ParentOfStudent::class);
+        return $this->hasMany(CLasss::class);
     }
 }
