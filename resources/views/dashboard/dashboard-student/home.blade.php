@@ -81,12 +81,16 @@
                             </div>
                         </div>
                         <br>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
                         <h3 class="font-medium m-t-30">Thông tin học tập</h3>
                         <hr>
                         <div class="row">
                             <div class="col-md-3 col-xs-6 b-r"> <strong>Lớp</strong>
                                 <br>
-                                <h4>Tạm thời chưa có</h4>
+                                <h4>{{$class_info->class_name}}</h4>
                             </div>
                             <div class="col-md-3 col-xs-6 b-r"> <strong>Khoá</strong>
                                 <br>
@@ -94,14 +98,22 @@
                             </div>
                             <div class="col-md-3 col-xs-6 b-r"> <strong>Giáo viên chủ nhiệm</strong>
                                 <br>
-                                <h4>Tạm thời chưa có</h4>
+                                <h4>{{$teacher_info1 ->name}}</h4>
                             </div>
                             <div class="col-md-3 col-xs-6 b-r"> <strong>Trạng thái</strong>
                                 <br>
-                                <h4>Tạm thời chưa có</h4>
+                                @if ($user->trang_thai === 1)
+                                    <h4>Học</h4>
+                                @else
+                                    <h4>Nghỉ học</h4>
+                                @endif
                             </div>
                         </div>
                         <br>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
                         <h3 class="font-medium m-t-30">Thông tin phụ huynh học sinh</h3>
                         <hr>
                         <div class="row">

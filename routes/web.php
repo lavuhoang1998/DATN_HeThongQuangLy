@@ -70,6 +70,8 @@ Route::middleware([StudentLoginMiddleWare::class])->group(function () {
     Route::get('sms_student/editPassword', [StudentDashboardController::class, 'showEditPassword']);
     Route::post('sms_student/editPassword', [StudentDashboardController::class, 'postEditPassword']);
 
+    Route::get('sms_student/classInfo', [StudentDashboardController::class, 'showClassInfo']);
+
 });
 
 

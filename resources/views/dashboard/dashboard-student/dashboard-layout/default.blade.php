@@ -155,7 +155,7 @@
                         <li><a href="{{url('sms_student/editPassword')}}">Đổi mật khẩu </a></li>
                     </ul>
                 </li>
-                <li><a href="{{url('sms_student/editProfile')}}" aria-expanded="false"><i
+                <li><a href="{{url('sms_student/classInfo')}}" aria-expanded="false"><i
                             class="mdi mdi-account-multiple"></i><span
                             class="hide-menu">Thông tin lớp</span></a></li>
                 <li class="nav-devider"></li>

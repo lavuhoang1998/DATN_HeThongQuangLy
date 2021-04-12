@@ -86,7 +86,11 @@
                                 <td>{{$teacher ->name}}</td>
                                 <td>{{$teacher ->email}}</td>
                                 <td>{{$teacher ->password}}</td>
-                                <td>None</td>
+                                @if ($teacher->trang_thai === 1)
+                                    <td>Dạy</td>
+                                @else
+                                    <h4>Nghỉ việc</h4>
+                                @endif
                                 <td>
                                     <a href="{{ route('teacherProfile',['user_id'=>$teacher->id]) }}" type="button" class="btn btn-info">Xem</a>
                                     <a href="{{ route('teacherEdit',['user_id'=>$teacher->id]) }}" type="button" class="btn btn-primary">Sửa</a>

@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Teacher;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Student;
+use App\Models\CLasss;
 use App\Models\ParentOfStudent;
 use Illuminate\Support\Facades\Hash;
 
@@ -16,8 +19,13 @@ class StudentDashboardController extends Controller
         $user_login_id = $user_login->id;
         $student_info = Student::where('user_id', $user_login_id)->first();
         $parent_info = ParentOfStudent::where('student_id', $student_info->id)->first();
-        //dd($parent_info);
-        return view('dashboard.dashboard-student.home', ['user' => $user_login, 'student_info' => $student_info, 'parent_info' => $parent_info]);
+
+        $class_id = $student_info->class_id;
+        $class_info = CLasss::where('id' , $class_id)->first();
+        $teacher_info = Teacher::where('id' , $class_info->teacher_id)->first();
+        $teacher_info1 = User::where('id', $teacher_info->user_id)->first();
+
+        return view('dashboard.dashboard-student.home', ['user' => $user_login, 'student_info' => $student_info, 'parent_info' => $parent_info, 'class_info' => $class_info , 'teacher_info1' => $teacher_info1]);
     }
 
     public function showEditProfile()
@@ -83,6 +91,24 @@ class StudentDashboardController extends Controller
         $user_login->password = Hash::make($request->input('new_password'));
         $user_login ->save();
         return redirect('sms_student/editPassword');
+    }
+
+    public function showClassInfo(){
+        $user_login = Auth::user();
+        $user_login_id = $user_login->id;
+        $student_info = Student::where('user_id', $user_login_id)->first();
+        $class_id = $student_info->class_id;
+
+        $student_list = User::join('students', 'users.id', '=' , 'students.user_id')
+            ->where('students.class_id' , $class_id)
+            ->get(['users.name','users.email','students.*']);
+
+        $class_info = CLasss::where('id' , $class_id)->first();
+        $teacher_info = Teacher::where('id' , $class_info->teacher_id)->first();
+        $teacher_info1 = User::where('id', $teacher_info->user_id)->first();
+
+
+        return view('dashboard.dashboard-student.classInfo', ['user' => $user_login, 'student_info' => $student_info, 'students' => $student_list, 'class_info' => $class_info, 'teacher_info' => $teacher_info, 'teacher_info1' => $teacher_info1 ]);
     }
 }
 

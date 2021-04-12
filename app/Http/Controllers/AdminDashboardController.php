@@ -119,7 +119,12 @@ class AdminDashboardController extends Controller
         $student_info = User::where('id', $user_id)->first();
         $student_info1 = Student::where('user_id', $user_id)->first();
         $student_info2 = ParentOfStudent::where('student_id', $student_info1->id)->first();
-        return view('dashboard.dashboard-admin.studentProfile', ['user' => $user_login, 'admin_info' => $admin_info, 'student_info' => $student_info, 'student_info1' => $student_info1, 'student_info2' => $student_info2]);
+
+        $class_id = $student_info1->class_id;
+        $class_info = CLasss::where('id' , $class_id)->first();
+        $teacher_info = Teacher::where('id' , $class_info->teacher_id)->first();
+        $teacher_info1 = User::where('id', $teacher_info->user_id)->first();
+        return view('dashboard.dashboard-admin.studentProfile', ['user' => $user_login, 'admin_info' => $admin_info, 'student_info' => $student_info, 'student_info1' => $student_info1, 'student_info2' => $student_info2, 'class_info' => $class_info , 'teacher_info1' => $teacher_info1]);
     }
 
     public function showStudentEdit($user_id)
@@ -158,6 +163,8 @@ class AdminDashboardController extends Controller
     public function deleteStudent($user_id)
     {
         $user = User::where('id', $user_id)->first();
+        $user->trang_thai = 0;
+        $user->save();
         $user->delete();
         return redirect()->route('studentManager');
     }
@@ -246,6 +253,8 @@ class AdminDashboardController extends Controller
     public function deleteTeacher($user_id)
     {
         $user = User::where('id', $user_id)->first();
+        $user->trang_thai = 0;
+        $user->save();
         $user->delete();
         return redirect()->route('teacherManager');
     }

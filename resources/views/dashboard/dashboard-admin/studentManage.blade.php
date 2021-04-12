@@ -86,7 +86,11 @@
                                 <td>{{$student ->name}}</td>
                                 <td>{{$student ->email}}</td>
                                 <td>{{$student ->password}}</td>
-                                <td>None</td>
+                                @if ($student->trang_thai === 1)
+                                    <td>Học</td>
+                                @else
+                                    <h4>Nghỉ học</h4>
+                                @endif
                                 <td>
                                     <a href="{{ route('studentProfile',['user_id'=>$student->id]) }}" type="button" class="btn btn-info">Xem</a>
                                     <a href="{{ route('studentEdit',['user_id'=>$student->id]) }}" type="button" class="btn btn-primary">Sửa</a>
