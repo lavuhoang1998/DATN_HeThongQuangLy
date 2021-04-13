@@ -4,12 +4,7 @@
     <list default="true" id="bbdf9e61-9aea-485f-8292-3064890fabb9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminDashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminDashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentDashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentDashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard-admin/studentManage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboard-admin/studentManage.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard-admin/studentProfile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboard-admin/studentProfile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard-admin/teacherManage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboard-admin/teacherManage.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard-student/dashboard-layout/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboard-student/dashboard-layout/default.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard-student/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboard-student/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/dashboard-admin/dashboard-layout/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/dashboard-admin/dashboard-layout/default.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -185,7 +180,7 @@
       <workItem from="1618063014427" duration="2328000" />
       <workItem from="1618164443713" duration="12312000" />
       <workItem from="1618198276443" duration="4816000" />
-      <workItem from="1618241373671" duration="7632000" />
+      <workItem from="1618241373671" duration="12674000" />
     </task>
     <servers />
   </component>

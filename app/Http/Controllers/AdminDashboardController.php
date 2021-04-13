@@ -258,4 +258,12 @@ class AdminDashboardController extends Controller
         $user->delete();
         return redirect()->route('teacherManager');
     }
+
+    public function showTimeTable(){
+        $user_login = Auth::user();
+        $user_login_id = $user_login->id;
+        $admin_info = Admin::where('user_id', $user_login_id)->first();
+
+        return view('dashboard.dashboard-admin.showTimeTable', ['user' => $user_login, 'admin_info' => $admin_info]);
+    }
 }

@@ -51,6 +51,9 @@ Route::middleware([AdminLoginMiddleWare::class])->group(function () {
     Route::get('sms_admin/teacherEdit/{user_id}', [AdminDashboardController::class, 'showTeacherEdit'])->name('teacherEdit');
     Route::post('sms_admin/teacherEdit/{user_id}', [AdminDashboardController::class, 'postTeacherEdit'])->name('postTeacherEdit');
     Route::get('sms_admin/teacherDelete/{user_id}', [AdminDashboardController::class, 'deleteTeacher'])->name('deleteTeacher');
+
+    Route::get('sms_admin/showTimeTable', [AdminDashboardController::class, 'showTimeTable'])->name('timeTable');
+
 });
 
 Route::middleware([TeacherLoginMiddleWare::class])->group(function () {

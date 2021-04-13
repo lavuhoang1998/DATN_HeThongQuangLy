@@ -144,6 +144,15 @@
                         </ul>
                     </li>
                     <li class="nav-devider"></li>
+                    <li class="nav-small-cap">Quản lý đào tạo</li>
+                    <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
+                                class="mdi mdi-account-edit"></i><span class="hide-menu">Thời khoá biểu</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="{{url('sms_admin/showTimeTable')}}">Xem TKB </a></li>
+                            <li><a href="{{url('sms_admin/editTimeTable')}}">Xếp TKB </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-devider"></li>
                     <li><a href="{{url('/logout')}}"><i class="mdi mdi-logout"></i><span class="hide-menu">Đăng xuất</span></a>
                     <li class="nav-devider"></li>
                 </ul>
