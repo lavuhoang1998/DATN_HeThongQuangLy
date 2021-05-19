@@ -136,22 +136,13 @@
                     </li>
                     <li class="nav-devider"></li>
                     <li class="nav-small-cap">Đào tạo</li>
-                    <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
-                                class="mdi mdi-account-edit"></i><span class="hide-menu">Đào tạo</span></a>
-                        <ul aria-expanded="false" class="collapse">
-                            <li><a href="{{url('sms_teacher/studentManager')}}">Tra cứu TKB </a></li>
-                            <li><a href="{{url('sms_teacher/studentManager')}}">Nhập điểm </a></li>
-                            <li><a href="{{url('sms_teacher/teacherManager')}}">Lịch sử giờ học </a></li>
-                        </ul>
-                    </li>
+                    <li><a href="{{url('sms_teacher/timeTable')}}" aria-expanded="false"><i class="mdi mdi-calendar-range"></i><span
+                                class="hide-menu">Tra cứu TKB</span></a></li>
+                    <li><a href="{{url('sms_teacher/history')}}" aria-expanded="false"><i class="mdi mdi-history"></i><span
+                                class="hide-menu">Lịch sử giờ học </span></a></li>
+                    <li><a href="{{url('sms_teacher/pointInput')}}" aria-expanded="false"><i class="mdi mdi-grease-pencil"></i><span
+                                class="hide-menu">Nhập điểm </span></a></li>
                     <li class="nav-devider"></li>
-                    <li class="nav-small-cap">Tài chính</li>
-                    <li><a href="{{url('/sms_teacher')}}" aria-expanded="false"><i class="mdi mdi-account"></i><span
-                                class="hide-menu">Chấm công </span></a></li>
-                    <li><a href="{{url('/sms_teacher')}}" aria-expanded="false"><i class="mdi mdi-account"></i><span
-                                class="hide-menu">Lịch sử </span></a></li>
-                    <li class="nav-devider"></li>
-
                     <li><a href="{{url('/logout')}}"><i class="mdi mdi-logout"></i><span class="hide-menu">Đăng xuất</span></a>
                     <li class="nav-devider"></li>
                 </ul>

@@ -21,6 +21,9 @@ class LoginController extends Controller
         if (Auth::attempt(['email'=>$email, 'password'=>$password]))
         {
             $role = Auth::user()->role_id;
+            $trang_thai = Auth::user()->trang_thai;
+            if ($trang_thai ==0)
+                return redirect('login')->with('alert', 'Tài khoản của bạn đã bị khoá!');
             if ($role == 1){
                 return redirect('sms_admin');
             }
@@ -32,12 +35,12 @@ class LoginController extends Controller
             }
             else
             {
-                return redirect('login');
+                return redirect('login')->with('alert', 'Bạn đã nhập sai tài khoản hoặc mật khẩu. Vui lòng nhập lại!');
             }
         }
         else
         {
-            return redirect('login');
+            return redirect('login')->with('alert', 'Bạn đã nhập sai tài khoản hoặc mật khẩu. Vui lòng nhập lại!');
         }
     }
 

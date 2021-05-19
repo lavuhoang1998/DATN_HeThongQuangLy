@@ -14,20 +14,14 @@ class ParentTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('parents')->insert([
-            'father_name' => 'Lã Anh Tuấn',
-            'father_phone_number' => '0982415395',
-            'mother_name' => 'Vũ Minh Chúc',
-            'mother_phone_number' => '0977631495',
-            'student_id' => '1',
-        ]);
-
-        DB::table('parents')->insert([
-            'father_name' => 'Nguỹen Van F1',
-            'father_phone_number' => '098765432',
-            'mother_name' => 'Nguỹen Thi F1',
-            'mother_phone_number' => '098765423',
-            'student_id' => '2',
-        ]);
+        for ($i = 1; $i <= 525; $i++) {
+            DB::table('parents')->insert([
+                'father_name' => 'Nguyễn Văn A',
+                'father_phone_number' => '0982415395',
+                'mother_name' => 'Nguyễn Thị B',
+                'mother_phone_number' => '0977631495',
+                'student_id' => $i,
+            ]);
+        }
     }
 }

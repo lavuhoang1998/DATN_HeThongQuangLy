@@ -24,7 +24,7 @@
         <!-- ============================================================== -->
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Danh sách tài khoản giáo viên</h4>
+                <h2 class="card-title">Danh sách tài khoản giáo viên</h2>
                 <h6 class="card-subtitle"></h6>
                 <button type="button" class="btn btn-info btn-rounded m-t-10 float-right" data-toggle="modal"
                         data-target="#add-teacher">Thêm tài khoản giáo viên
@@ -44,13 +44,13 @@
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <div class="col-md-12 m-b-20">
-                                            <input type="text" class="form-control" placeholder="Họ và tên"
+                                            <input type="text" class="form-control" required="" placeholder="Họ và tên"
                                                    name="new_name"></div>
                                         <div class="col-md-12 m-b-20">
-                                            <input type="text" class="form-control" placeholder="Email"
+                                            <input type="text" class="form-control" required="" placeholder="Email"
                                                    name="new_email"></div>
                                         <div class="col-md-12 m-b-20">
-                                            <input type="text" class="form-control" placeholder="Mật khẩu"
+                                            <input type="text" class="form-control" required="" placeholder="Mật khẩu"
                                                    name="new_password"></div>
                                     </div>
                                 </div>
@@ -88,18 +88,31 @@
                                 <td>{{$teacher ->password}}</td>
                                 @if ($teacher->trang_thai === 1)
                                     <td>Dạy</td>
+                                    <td>
+                                        <a href="{{ route('teacherProfile',['user_id'=>$teacher->id]) }}" type="button"
+                                           class="btn btn-info mdi mdi-account-box"></a>
+                                        <a href="{{ route('teacherEdit',['user_id'=>$teacher->id]) }}" type="button"
+                                           class="btn btn-primary mdi mdi-lead-pencil"></a>
+                                        <a href="{{ route('deleteTeacher',['user_id'=>$teacher->id]) }}" type="button"
+                                           class="btn btn-danger mdi mdi-delete-forever"></a>
+                                    </td>
                                 @else
-                                    <h4>Nghỉ việc</h4>
+                                    <td>Nghỉ việc</td>
+                                    <td>
+                                        <a href="{{ route('teacherProfile',['user_id'=>$teacher->id]) }}" type="button"
+                                           class="btn btn-info mdi mdi-account-box"></a>
+                                        <a href="{{ route('teacherEdit',['user_id'=>$teacher->id]) }}" type="button"
+                                           class="btn btn-primary mdi mdi-lead-pencil"></a>
+                                    </td>
                                 @endif
-                                <td>
-                                    <a href="{{ route('teacherProfile',['user_id'=>$teacher->id]) }}" type="button" class="btn btn-info">Xem</a>
-                                    <a href="{{ route('teacherEdit',['user_id'=>$teacher->id]) }}" type="button" class="btn btn-primary">Sửa</a>
-                                    <a href="{{ route('deleteTeacher',['user_id'=>$teacher->id]) }}" type="button" class="btn btn-danger">Xoá</a>
-                                </td>
+
                             </tr>
                         </tbody>
                         @endforeach
                     </table>
+                    <div class="d-flex justify-content-center">
+                        {!! $teachers->links() !!}
+                    </div>
                 </div>
             </div>
         </div>
@@ -108,4 +121,11 @@
         <!-- ============================================================== -->
         <!-- ============================================================== -->
     </div>
+    <script>
+        var msg = '{{Session::get('alert')}}';
+        var exist = '{{Session::has('alert')}}';
+        if (exist) {
+            alert(msg);
+        }
+    </script>
 @endsection

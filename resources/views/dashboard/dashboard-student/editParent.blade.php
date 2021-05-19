@@ -30,28 +30,28 @@
                         <label class="col-md-12">Họ và tên bố</label>
                         <div class="col-md-12">
                             <input type="text" placeholder="{{$parent_info->father_name}}"
-                                   class="form-control form-control-line" name="father_name">
+                                   class="form-control form-control-line" required="" name="father_name">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-12">Số điện thoại bố</label>
                         <div class="col-md-12">
                             <input type="text" placeholder="{{$parent_info->father_phone_number}}"
-                                   class="form-control form-control-line" name="father_phone_number">
+                                   class="form-control form-control-line" required="" name="father_phone_number">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-12">Họ và tên mẹ</label>
                         <div class="col-md-12">
                             <input type="text" placeholder="{{$parent_info->mother_name}}"
-                                   class="form-control form-control-line" name="mother_name">
+                                   class="form-control form-control-line" required="" name="mother_name">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-12">Số điện thoại mẹ</label>
                         <div class="col-md-12">
                             <input type="text" placeholder="{{$parent_info->mother_phone_number}}"
-                                   class="form-control form-control-line" name="mother_phone_number">
+                                   class="form-control form-control-line" required="" name="mother_phone_number">
                         </div>
                     </div>
                     <div class="form-group">
@@ -67,4 +67,11 @@
         <!-- ============================================================== -->
         <!-- ============================================================== -->
     </div>
+    <script>
+        var msg = '{{Session::get('alert')}}';
+        var exist = '{{Session::has('alert')}}';
+        if (exist) {
+            alert(msg);
+        }
+    </script>
 @endsection

@@ -27,12 +27,6 @@ class SubjectSeeder extends Seeder
             'name' => 'Giáo dục thể chất',
         ]);
         DB::table('subjects')->insert([
-            'name' => 'Giáo dục quốc phòng và an ninh',
-        ]);
-        DB::table('subjects')->insert([
-            'name' => 'Giáo dục kinh tế và pháp luật',
-        ]);
-        DB::table('subjects')->insert([
             'name' => 'Lịch sử',
         ]);
         DB::table('subjects')->insert([
@@ -54,13 +48,13 @@ class SubjectSeeder extends Seeder
             'name' => 'Tin học',
         ]);
         DB::table('subjects')->insert([
-            'name' => 'Nghệ thuật',
-        ]);
-        DB::table('subjects')->insert([
             'name' => 'Sinh hoạt lớp',
         ]);
         DB::table('subjects')->insert([
             'name' => 'Chào cờ',
+        ]);
+        DB::table('subjects')->insert([
+            'name' => 'Trống',
         ]);
     }
 }

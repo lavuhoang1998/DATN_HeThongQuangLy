@@ -29,13 +29,13 @@
                     <div class="form-group">
                         <label class="col-md-12">Nhập mật khẩu mới</label>
                         <div class="col-md-12">
-                            <input type="password" value="password" class="form-control form-control-line" name="new_password">
+                            <input type="password" value="password" required="" class="form-control form-control-line" name="new_password">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-12">Nhập lại mật khẩu</label>
                         <div class="col-md-12">
-                            <input type="password" value="password" class="form-control form-control-line">
+                            <input type="password" value="password" required="" class="form-control form-control-line" name="new_password1">
                         </div>
                     </div>
                     <div class="form-group">
@@ -51,4 +51,11 @@
         <!-- ============================================================== -->
         <!-- ============================================================== -->
     </div>
+    <script>
+            var msg = '{{Session::get('alert')}}';
+            var exist = '{{Session::has('alert')}}';
+            if(exist){
+                alert(msg);
+            }
+        </script>
 @endsection

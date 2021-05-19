@@ -52,7 +52,12 @@ Route::middleware([AdminLoginMiddleWare::class])->group(function () {
     Route::post('sms_admin/teacherEdit/{user_id}', [AdminDashboardController::class, 'postTeacherEdit'])->name('postTeacherEdit');
     Route::get('sms_admin/teacherDelete/{user_id}', [AdminDashboardController::class, 'deleteTeacher'])->name('deleteTeacher');
 
-    Route::get('sms_admin/showTimeTable', [AdminDashboardController::class, 'showTimeTable'])->name('timeTable');
+    Route::get('sms_admin/showTimeTable', [AdminDashboardController::class, 'showTimeTable']);
+    Route::get('sms_admin/showTimeTable/{class_id}', [AdminDashboardController::class, 'showTimeTableForClass'])->name('showTimeTableForClass');
+    Route::get('sms_admin/editTimeTable', [AdminDashboardController::class, 'showEditTimeTable']);
+    Route::get('sms_admin/editTimeTable/{class_id}', [AdminDashboardController::class, 'editTimeTableForClass'])->name('editTimeTable');
+    Route::post('sms_admin/editTimeTable/{class_id}', [AdminDashboardController::class, 'postTimeTableEdit'])->name('postTimeTableEdit');
+    Route::get('sms_admin/deleteTimeTable/{class_id}', [AdminDashboardController::class, 'deleteTimeTableForClass'])->name('deleteTimeTableForClass');
 
 });
 
@@ -62,6 +67,21 @@ Route::middleware([TeacherLoginMiddleWare::class])->group(function () {
     Route::post('sms_teacher/editProfile', [TeacherDashboardController::class, 'postEditProfile']);
     Route::get('sms_teacher/editPassword', [TeacherDashboardController::class, 'showEditPassword']);
     Route::post('sms_teacher/editPassword', [TeacherDashboardController::class, 'postEditPassword']);
+
+    Route::get('sms_teacher/timeTable', [TeacherDashboardController::class, 'showTimeTable'])->name('showTimeTable');
+
+    Route::get('sms_teacher/history', [TeacherDashboardController::class, 'showHistory'])->name('showHistory');
+    Route::get('sms_teacher/history1', [TeacherDashboardController::class, 'getHistoryByDay'])->name('getHistoryByDay');
+    Route::get('sms_teacher/history/{date}/{shift}', [TeacherDashboardController::class, 'showHistoryByDate'])->name('showHistoryByDate');
+
+    Route::post('sms_teacher/history1', [TeacherDashboardController::class, 'postEditHistory'])->name('postEditHistory');
+    Route::get('sms_teacher/allHistory', [TeacherDashboardController::class, 'showAllHistory'])->name('showAllHistory');
+    Route::get('sms_teacher/allHistory/{id}', [TeacherDashboardController::class, 'deleteHistory'])->name('deleteHistory');
+
+    Route::get('sms_teacher/pointInput', [TeacherDashboardController::class, 'showPointInput'])->name('showPointInput');
+    Route::get('sms_teacher/pointInput/{class_id}', [TeacherDashboardController::class, 'showPointInputByClass'])->name('showPointInputByClass');
+    Route::post('sms_teacher/pointInput/{class_id}', [TeacherDashboardController::class, 'postPoint'])->name('postPoint');
+
 });
 
 Route::middleware([StudentLoginMiddleWare::class])->group(function () {
@@ -74,6 +94,13 @@ Route::middleware([StudentLoginMiddleWare::class])->group(function () {
     Route::post('sms_student/editPassword', [StudentDashboardController::class, 'postEditPassword']);
 
     Route::get('sms_student/classInfo', [StudentDashboardController::class, 'showClassInfo']);
+    Route::get('sms_student/timeTable', [StudentDashboardController::class, 'showTimeTable'])->name('showTimeTable');
+
+    Route::get('sms_student/point', [StudentDashboardController::class, 'showPoint']);
+
+
+
+
 
 });
 

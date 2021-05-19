@@ -28,11 +28,11 @@
                 <br>
                 <div class="row">
                     <div class="col-md-3 col-xs-6 b-r"></div>
-                    <div class="col-md-3 col-xs-6 b-r"> <strong>Lớp</strong>
+                    <div class="col-md-3 col-xs-6 b-r"><strong>Lớp</strong>
                         <br>
                         <h4>{{$class_info->class_name}}</h4>
                     </div>
-                    <div class="col-md-3 col-xs-6 b-r"> <strong>Sĩ số</strong>
+                    <div class="col-md-3 col-xs-6 b-r"><strong>Sĩ số</strong>
                         <br>
                         <h4>{{count($students)}}</h4>
                     </div>
@@ -84,22 +84,27 @@
                         </thead>
                         <tbody>
                         @foreach($students as $student)
-                        <tr>
-                            <td>{{$student->MSHS}}</td>
-                            <td>{{$student->name}}</td>
-                            <td>{{$student->email}}</td>
-                            <td>{{$student->date_of_birth}}</td>
-                            <td>{{$student->dia_chi}}</td>
-                            <td>{{$student->sdt}}</td>
-                        </tr>
+                            <tr>
+                                <td>{{$student->MSHS}}</td>
+                                <td>{{$student->name}}</td>
+                                <td>{{$student->email}}</td>
+                                <td>{{$student->date_of_birth}}</td>
+                                <td>{{$student->dia_chi}}</td>
+                                <td>{{$student->sdt}}</td>
+                            </tr>
                         @endforeach
                         </tbody>
                     </table>
+                    {{--                     Pagination--}}
+                    <div class="d-flex justify-content-center">
+                        {!! $students->links() !!}
+                    </div>
                 </div>
             </div>
-        <!-- ============================================================== -->
-        <!-- End PAge Content -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-    </div>
+
+            <!-- ============================================================== -->
+            <!-- End PAge Content -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+        </div>
 @endsection

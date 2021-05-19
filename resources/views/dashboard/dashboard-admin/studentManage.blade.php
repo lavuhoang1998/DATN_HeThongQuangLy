@@ -24,7 +24,7 @@
         <!-- ============================================================== -->
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Danh sách tài khoản học sinh</h4>
+                <h2 class="card-title">Danh sách tài khoản học sinh</h2>
                 <h6 class="card-subtitle"></h6>
                 <button type="button" class="btn btn-info btn-rounded m-t-10 float-right" data-toggle="modal"
                         data-target="#add-student">Thêm tài khoản học sinh
@@ -44,13 +44,13 @@
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <div class="col-md-12 m-b-20">
-                                            <input type="text" class="form-control" placeholder="Họ và tên"
+                                            <input type="text" class="form-control" required="" placeholder="Họ và tên"
                                                    name="new_name"></div>
                                         <div class="col-md-12 m-b-20">
-                                            <input type="text" class="form-control" placeholder="Email"
+                                            <input type="text" class="form-control" required="" placeholder="Email"
                                                    name="new_email"></div>
                                         <div class="col-md-12 m-b-20">
-                                            <input type="text" class="form-control" placeholder="Mật khẩu"
+                                            <input type="text" class="form-control" required="" placeholder="Mật khẩu"
                                                    name="new_password"></div>
                                     </div>
                                 </div>
@@ -88,18 +88,38 @@
                                 <td>{{$student ->password}}</td>
                                 @if ($student->trang_thai === 1)
                                     <td>Học</td>
+                                    <td>
+                                        <a href="{{ route('studentProfile',['user_id'=>$student->id]) }}" type="button"
+                                           class="btn btn-info mdi mdi-account-box"></a>
+                                        <a href="{{ route('studentEdit',['user_id'=>$student->id]) }}" type="button"
+                                           class="btn btn-primary mdi mdi-lead-pencil"></a>
+                                        <a href="{{ route('deleteStudent',['user_id'=>$student->id]) }}" type="button"
+                                           class="btn btn-danger mdi mdi-delete-forever"></a>
+                                    </td>
                                 @else
-                                    <h4>Nghỉ học</h4>
+                                    <td>Nghỉ học</td>
+                                    <td>
+                                        <a href="{{ route('studentProfile',['user_id'=>$student->id]) }}" type="button"
+                                           class="btn btn-info mdi mdi-account-box"></a>
+                                        <a href="{{ route('studentEdit',['user_id'=>$student->id]) }}" type="button"
+                                           class="btn btn-primary mdi mdi-lead-pencil"></a>
+                                    </td>
                                 @endif
-                                <td>
-                                    <a href="{{ route('studentProfile',['user_id'=>$student->id]) }}" type="button" class="btn btn-info">Xem</a>
-                                    <a href="{{ route('studentEdit',['user_id'=>$student->id]) }}" type="button" class="btn btn-primary">Sửa</a>
-                                    <a href="{{ route('deleteStudent',['user_id'=>$student->id]) }}" type="button" class="btn btn-danger">Xoá</a>
-                                </td>
+                                {{--                                <td>--}}
+                                {{--                                    <a href="{{ route('studentProfile',['user_id'=>$student->id]) }}" type="button"--}}
+                                {{--                                       class="btn btn-info mdi mdi-account-box"></a>--}}
+                                {{--                                    <a href="{{ route('studentEdit',['user_id'=>$student->id]) }}" type="button"--}}
+                                {{--                                       class="btn btn-primary mdi mdi-lead-pencil"></a>--}}
+                                {{--                                    <a href="{{ route('deleteStudent',['user_id'=>$student->id]) }}" type="button"--}}
+                                {{--                                       class="btn btn-danger mdi mdi-delete-forever"></a>--}}
+                                {{--                                </td>--}}
                             </tr>
                         </tbody>
                         @endforeach
                     </table>
+                    <div class="d-flex justify-content-center">
+                        {!! $students->links() !!}
+                    </div>
                 </div>
             </div>
         </div>
@@ -108,4 +128,11 @@
         <!-- ============================================================== -->
         <!-- ============================================================== -->
     </div>
+    <script>
+        var msg = '{{Session::get('alert')}}';
+        var exist = '{{Session::has('alert')}}';
+        if (exist) {
+            alert(msg);
+        }
+    </script>
 @endsection

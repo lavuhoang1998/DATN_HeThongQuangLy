@@ -135,86 +135,72 @@
         <div class="scroll-sidebar">
             <!-- User profile -->
             <div class="user-profile" style="background: url('{{asset('img/logo/logo-background.jpg')}}')  no-repeat;">
-            <!-- User profile image -->
-            <div class="profile-img"><img src="{{ asset($student_info->avt)}}" alt="user"/></div>
-            <!-- User profile text-->
-            <div class="profile-text"><a class="user-name">{{$user->name}}</a></div>
+                <!-- User profile image -->
+                <div class="profile-img"><img src="{{ asset($student_info->avt)}}" alt="user"/></div>
+                <!-- User profile text-->
+                <div class="profile-text"><a class="user-name">{{$user->name}}</a></div>
+            </div>
+            <!-- End User profile text-->
+            <!-- Sidebar navigation-->
+            <nav class="sidebar-nav">
+                <ul id="sidebarnav">
+                    <li class="nav-small-cap">Quản lý hồ sơ</li>
+                    <li><a href="{{url('/sms_student')}}" aria-expanded="false"><i class="mdi mdi-account"></i><span
+                                class="hide-menu">Thông tin cá nhân </span></a></li>
+                    <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
+                                class="mdi mdi-account-edit"></i><span class="hide-menu">Cập nhật thông tin</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="{{url('sms_student/editProfile')}}">Thông tin học sinh </a></li>
+                            <li><a href="{{url('sms_student/editParent')}}">Thông tin phụ huynh </a></li>
+                            <li><a href="{{url('sms_student/editPassword')}}">Đổi mật khẩu </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{url('sms_student/classInfo')}}" aria-expanded="false"><i
+                                class="mdi mdi-account-multiple"></i><span
+                                class="hide-menu">Thông tin lớp</span></a></li>
+                    <li class="nav-devider"></li>
+                    <li class="nav-small-cap">Đào tạo</li>
+                    <li><a href="{{url('sms_student/point')}}" aria-expanded="false"><i class="mdi mdi-file"></i><span
+                                class="hide-menu">Tra cứu điểm</span></a>
+                    </li>
+                    <li><a href="{{url('sms_student/timeTable')}}" aria-expanded="false"><i
+                                class="mdi mdi-table"></i><span class="hide-menu">Tra cứu lịch học</span></a>
+                    </li>
+                    <li class="nav-devider"></li>
+                    <li><a href="{{url('/logout')}}"><i class="mdi mdi-logout"></i><span
+                                class="hide-menu">Đăng xuất</span></a>
+                    <li class="nav-devider"></li>
+                </ul>
+            </nav>
+            <!-- End Sidebar navigation -->
         </div>
-        <!-- End User profile text-->
-        <!-- Sidebar navigation-->
-        <nav class="sidebar-nav">
-            <ul id="sidebarnav">
-                <li class="nav-small-cap">Quản lý hồ sơ</li>
-                <li><a href="{{url('/sms_student')}}" aria-expanded="false"><i class="mdi mdi-account"></i><span
-                            class="hide-menu">Thông tin cá nhân </span></a></li>
-                <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
-                            class="mdi mdi-account-edit"></i><span class="hide-menu">Cập nhật thông tin</span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li><a href="{{url('sms_student/editProfile')}}">Thông tin học sinh </a></li>
-                        <li><a href="{{url('sms_student/editParent')}}">Thông tin phụ huynh </a></li>
-                        <li><a href="{{url('sms_student/editPassword')}}">Đổi mật khẩu </a></li>
-                    </ul>
-                </li>
-                <li><a href="{{url('sms_student/classInfo')}}" aria-expanded="false"><i
-                            class="mdi mdi-account-multiple"></i><span
-                            class="hide-menu">Thông tin lớp</span></a></li>
-                <li class="nav-devider"></li>
-                <li class="nav-small-cap">Đào tạo</li>
-                <li><a href="#" aria-expanded="false"><i class="mdi mdi-file"></i><span
-                            class="hide-menu">Tra cứu điểm</span></a>
-                </li>
-                <li><a href="#" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">Tra cứu lịch học</span></a>
-                </li>
-                <li class="nav-devider"></li>
-                <li class="nav-small-cap">Tài chính</li>
-                <li><a href="#" aria-expanded="false"><i class="mdi mdi-credit-card"></i><span class="hide-menu">Tra cứu học phí</span></a>
-                </li>
-                <li><a href="#" aria-expanded="false"><i class="mdi mdi-history"></i><span
-                            class="hide-menu">Lịch sử</span></a></li>
-                <li class="nav-devider"></li>
-                <li class="nav-small-cap">Đánh giá</li>
-                <li><a href="#" aria-expanded="false"><i class="mdi mdi-comment"></i><span
-                            class="hide-menu">Giáo viên</span></a>
-                </li>
-                <li><a href="#" aria-expanded="false"><i class="mdi mdi-comment"></i><span
-                            class="hide-menu">Nhà trường</span></a>
-                </li>
-                <li><a href="#" aria-expanded="false"><i class="mdi mdi-comment"></i><span class="hide-menu">Hệ thống SMS</span></a>
-                </li>
-                <li class="nav-devider"></li>
-                <li><a href="{{url('/logout')}}"><i class="mdi mdi-logout"></i><span class="hide-menu">Đăng xuất</span></a>
-                <li class="nav-devider"></li>
-            </ul>
-        </nav>
-        <!-- End Sidebar navigation -->
-</div>
-<!-- End Sidebar scroll-->
-</aside>
-<!-- ============================================================== -->
-<!-- End Left Sidebar - style you can find in sidebar.scss  -->
-<!-- ============================================================== -->
-<!-- ============================================================== -->
-<!-- Page wrapper  -->
-<!-- ============================================================== -->
+        <!-- End Sidebar scroll-->
+    </aside>
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
 
-<div class="page-wrapper">
-    <!-- ============================================================== -->
-    <!-- Container fluid  -->
-    <!-- ============================================================== -->
-@yield('content')
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+    @yield('content')
 
-<!-- footer -->
+    <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer">
+            Bản quyền thuộc về Lã Vũ Hoàng - Đại học bách khoa Hà Nội © 2020 All right reserved
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
     <!-- ============================================================== -->
-    <footer class="footer">
-        Bản quyền thuộc về Lã Vũ Hoàng - Đại học bách khoa Hà Nội © 2020 All right reserved
-    </footer>
+    <!-- End Page wrapper  -->
     <!-- ============================================================== -->
-    <!-- End footer -->
-    <!-- ============================================================== -->
-</div>
-<!-- ============================================================== -->
-<!-- End Page wrapper  -->
-<!-- ============================================================== -->
 </div>
 
 <!--    /*=================== Pop-up JS ====================*/    -->

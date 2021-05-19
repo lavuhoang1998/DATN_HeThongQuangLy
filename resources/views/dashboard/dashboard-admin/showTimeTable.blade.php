@@ -27,16 +27,138 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Chọn lớp</h4>
+                        <hr>
+                        <h5 class="card-title">Khối 10</h5><br>
                         <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div id="calendar-events" class="m-t-20">
-                                    <div class="calendar-events" data-class="bg-info"><i class="fa fa-circle text-info"></i> 10 Toán</div>
-                                    <div class="calendar-events" data-class="bg-success"><i class="fa fa-circle text-success"></i> 10 Văn</div>
-                                    <div class="calendar-events" data-class="bg-danger"><i class="fa fa-circle text-danger"></i> 10 Anh</div>
-                                    <div class="calendar-events" data-class="bg-warning"><i class="fa fa-circle text-warning"></i> 10K</div>
-                                </div>
+                            <div class="col-md-3">
+                                <a class="btn btn-secondary"
+                                   href="{{url('sms_admin/showTimeTable',$class_id = '1')}}" role="button">10
+                                    Toán</a>
+                            </div>
+                            <div class="col-md-3">
+                                <a class="btn btn-secondary"
+                                   href="{{url('sms_admin/showTimeTable',$class_id = '2')}}" role="button">10
+                                    Lý</a>
+                            </div>
+                            <div class="col-md-3">
+                                <a class="btn btn-secondary"
+                                   href="{{url('sms_admin/showTimeTable',$class_id = '3')}}" role="button">10
+                                    Hoá</a>
+                            </div>
+                            <div class="col-md-3">
+                                <a class="btn btn-secondary"
+                                   href="{{url('sms_admin/showTimeTable',$class_id = '4')}}" role="button">10
+                                    Văn</a>
                             </div>
                         </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a class="btn btn-secondary"
+                                   href="{{url('sms_admin/showTimeTable',$class_id = '5')}}" role="button">10
+                                    Anh</a>
+                            </div>
+                            <div class="col-md-3">
+                                <a class="btn btn-secondary"
+                                   href="{{url('sms_admin/showTimeTable',$class_id = '6')}}" role="button">10
+                                    Tin</a>
+                            </div>
+                            <div class="col-md-3">
+                                <a class="btn btn-secondary"
+                                   href="{{url('sms_admin/showTimeTable',$class_id = '7')}}" role="button">10
+                                    K</a>
+                            </div>
+                        </div>
+                        <hr>
+                        <h5 class="card-title">Khối 11</h5><br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a class="btn btn-secondary"
+                                   href="{{url('sms_admin/showTimeTable',$class_id = '8')}}" role="button">11
+                                    Toán</a>
+                            </div>
+                            <div class="col-md-3">
+                                <a class="btn btn-secondary"
+                                   href="{{url('sms_admin/showTimeTable',$class_id = '9')}}" role="button">11
+                                    Lý</a>
+                            </div>
+                            <div class="col-md-3">
+                                <a class="btn btn-secondary"
+                                   href="{{url('sms_admin/showTimeTable',$class_id = '10')}}" role="button">11
+                                    Hoá</a>
+                            </div>
+                            <div class="col-md-3">
+                                <a class="btn btn-secondary"
+                                   href="{{url('sms_admin/showTimeTable',$class_id = '11')}}" role="button">11
+                                    Văn</a>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a class="btn btn-secondary"
+                                   href="{{url('sms_admin/showTimeTable',$class_id = '12')}}" role="button">11
+                                    Anh</a>
+                            </div>
+                            <div class="col-md-3">
+                                <a class="btn btn-secondary"
+                                   href="{{url('sms_admin/showTimeTable',$class_id = '13')}}" role="button">11
+                                    Tin</a>
+                            </div>
+                            <div class="col-md-3">
+                                <a class="btn btn-secondary"
+                                   href="{{url('sms_admin/showTimeTable',$class_id = '14')}}" role="button">11
+                                    K</a>
+                            </div>
+                        </div>
+                        <hr>
+                        <h5 class="card-title">Khối 12</h5><br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a class="btn btn-secondary"
+                                   href="{{url('sms_admin/showTimeTable',$class_id = '15')}}" role="button">12
+                                    Toán</a>
+                            </div>
+                            <div class="col-md-3">
+                                <a class="btn btn-secondary"
+                                   href="{{url('sms_admin/showTimeTable',$class_id = '16')}}"
+                                   role="button">12
+                                    Lý</a>
+                            </div>
+                            <div class="col-md-3">
+                                <a class="btn btn-secondary"
+                                   href="{{url('sms_admin/showTimeTable',$class_id = '17')}}"
+                                   role="button">12
+                                    Hoá</a>
+                            </div>
+                            <div class="col-md-3">
+                                <a class="btn btn-secondary"
+                                   href="{{url('sms_admin/showTimeTable',$class_id = '18')}}"
+                                   role="button">12
+                                    Văn</a>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a class="btn btn-secondary"
+                                   href="{{url('sms_admin/showTimeTable',$class_id = '19')}}"
+                                   role="button">12
+                                    Anh</a>
+                            </div>
+                            <div class="col-md-3">
+                                <a class="btn btn-secondary"
+                                   href="{{url('sms_admin/showTimeTable',$class_id = '20')}}"
+                                   role="button">12
+                                    Tin</a>
+                            </div>
+                            <div class="col-md-3">
+                                <a class="btn btn-secondary"
+                                   href="{{url('sms_admin/showTimeTable',$class_id = '21')}}"
+                                   role="button">12 K</a>
+                            </div>
+                        </div>
+                        <hr>
                     </div>
                 </div>
             </div>
@@ -58,55 +180,51 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>
-                                            <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#add-new-event">
-                                                Chào cờ<br>NGuyễn Văn A
-                                            </button>
-                                        </td>
-                                        <td><button type="button" class="btn btn-outline-dark">Toán<br>NGuyễn Văn A</button></td>
-                                        <td><button type="button" class="btn btn-outline-dark">Văn<br>NGuyễn Văn A</button></td>
-                                        <td><button type="button" class="btn btn-outline-dark">Giáo dục thể chất<br>NGuyễn Văn A</button></td>
-                                        <td><button type="button" class="btn btn-outline-dark">Toán<br>NGuyễn Văn A</button></td>
-                                        <td><button type="button" class="btn btn-outline-dark">Toán<br>NGuyễn Văn A</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td><button type="button" class="btn btn-outline-dark">Chào cờ<br>NGuyễn Văn A</button></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td><button type="button" class="btn btn-outline-dark">Chào cờ<br>NGuyễn Văn A</button></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td><button type="button" class="btn btn-outline-dark">Chào cờ<br>NGuyễn Văn A</button></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td><button type="button" class="btn btn-outline-dark">Chào cờ<br>NGuyễn Văn A</button></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -114,60 +232,6 @@
                 </div>
             </div>
         </div>
-        <!-- BEGIN MODAL -->
-        <div class="modal none-border" id="my-event">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title"><strong>Add Event</strong></h4>
-                    </div>
-                    <div class="modal-body"></div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-white waves-effect" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-success save-event waves-effect waves-light">Create event</button>
-                        <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Delete</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal Add Category -->
-        <div class="modal fade none-border" id="add-new-event">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title"><strong>Chỉnh sửa TKB</strong></h4>
-                    </div>
-                    <div class="modal-body">
-                        <form role="form">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label class="control-label">Chọn môn học</label>
-                                    <select class="form-control form-white" data-placeholder="Choose a color..." name="category-color">
-                                        <option value="success">Toán</option>
-                                        <option value="danger">Ngữ văn</option>
-                                        <option value="inverse">Ngoại ngữ</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="control-label">Chọn giáo viên</label>
-                                    <select class="form-control form-white" data-placeholder="Choose a color..." name="category-color">
-                                        <option value="success">Nguyễn Văn A</option>
-                                        <option value="danger">Nguyễn Văn B</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Save</button>
-                        <button type="button" class="btn btn-white waves-effect" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- END MODAL -->
         <!-- ============================================================== -->
         <!-- End PAge Content -->
         <!-- ============================================================== -->

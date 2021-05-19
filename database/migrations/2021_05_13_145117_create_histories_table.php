@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTeachsTable extends Migration
+class CreateHistoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateTeachsTable extends Migration
      */
     public function up()
     {
-        Schema::create('teachs', function (Blueprint $table) {
+        Schema::create('histories', function (Blueprint $table) {
             $table->id();
+            $table->date('date')->comment('YYYY-MM-DD');
+            $table->string('content');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -26,6 +29,6 @@ class CreateTeachsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('teachs');
+        Schema::dropIfExists('histories');
     }
 }

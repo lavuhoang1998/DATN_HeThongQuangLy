@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
             ClassSeeder::class,
             StudentTableSeeder::class,
             ParentTableSeeder::class,
+            TeachSeeder::class,
+            PointSeeder::class,
         ]);
     }
 }
