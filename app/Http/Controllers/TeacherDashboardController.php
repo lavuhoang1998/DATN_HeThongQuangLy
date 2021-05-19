@@ -245,6 +245,7 @@ class TeacherDashboardController extends Controller
             ->where('points.subject_id', $teacher_info->subject_id)
             ->where('students.class_id', $class_id)
             ->where('users.trang_thai', '1')
+            ->orderBy('students.id', 'asc')
             ->get(['users.name', 'students.id as stu_id', 'students.MSHS', 'points.*']);
 
         return view('dashboard.dashboard-teacher.showPointInput1', ['user' => $user_login, 'teacher_info' => $teacher_info,'subject'=>$subject, 'teaches' => $teaches, 'class' => $class, 'students' => $list_student]);
@@ -273,6 +274,7 @@ class TeacherDashboardController extends Controller
             ->where('students.class_id', $class_id)
             ->where('users.trang_thai', '1')
             ->where('users.name', 'like', '%' . $name . '%')
+            ->orderBy('students.id', 'asc')
             ->get(['users.name', 'students.id as stu_id', 'students.MSHS', 'points.*']);
 
         return view('dashboard.dashboard-teacher.showPointInput1', ['user' => $user_login, 'teacher_info' => $teacher_info,'subject'=>$subject, 'teaches' => $teaches, 'class' => $class, 'students' => $list_student]);
