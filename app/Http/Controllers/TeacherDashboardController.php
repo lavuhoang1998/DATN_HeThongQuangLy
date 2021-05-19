@@ -250,6 +250,34 @@ class TeacherDashboardController extends Controller
         return view('dashboard.dashboard-teacher.showPointInput1', ['user' => $user_login, 'teacher_info' => $teacher_info,'subject'=>$subject, 'teaches' => $teaches, 'class' => $class, 'students' => $list_student]);
     }
 
+    public function showPointInputByName($class_id, Request $request)
+    {
+        $user_login = Auth::user();
+        $user_login_id = $user_login->id;
+        $teacher_info = Teacher::where('user_id', $user_login_id)->first();
+        $subject = Subject::where('id',$teacher_info->subject_id)->first();
+        $name = $request->input('search');
+
+        $teaches = Teach::join('teachers', 'teaches.teacher_id', '=', 'teachers.id')
+            ->join('subjects', 'teaches.subject_id', '=', 'subjects.id')
+            ->join('classes', 'classes.id', '=', 'teaches.class_id')->where('teachers.id', $teacher_info->id)
+            ->distinct()
+            ->get(['class_id', 'class_name']);
+
+        $class = CLasss::where('id', $class_id)->first();
+
+        $list_student = Point::join('students', 'points.student_id', '=', 'students.id')
+            ->join('subjects', 'points.subject_id', '=', 'subjects.id')
+            ->join('users', 'students.user_id', '=', 'users.id')
+            ->where('points.subject_id', $teacher_info->subject_id)
+            ->where('students.class_id', $class_id)
+            ->where('users.trang_thai', '1')
+            ->where('users.name', 'like', '%' . $name . '%')
+            ->get(['users.name', 'students.id as stu_id', 'students.MSHS', 'points.*']);
+
+        return view('dashboard.dashboard-teacher.showPointInput1', ['user' => $user_login, 'teacher_info' => $teacher_info,'subject'=>$subject, 'teaches' => $teaches, 'class' => $class, 'students' => $list_student]);
+    }
+
     public function postPoint($class_id, Request $request)
     {
         $user_login = Auth::user();

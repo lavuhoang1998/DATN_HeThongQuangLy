@@ -23,7 +23,7 @@ class AdminDashboardController extends Controller
         $user_login = Auth::user();
         $user_login_id = $user_login->id;
         $admin_info = Admin::where('user_id', $user_login_id)->first();
-        //dd($parent_info);
+        //dd($admin_info);
         return view('dashboard.dashboard-admin.home', ['user' => $user_login, 'admin_info' => $admin_info]);
     }
 
@@ -70,13 +70,27 @@ class AdminDashboardController extends Controller
             return redirect('sms_admin/editPassword')->with('alert', 'Cập nhật mật khẩu thành công!');
         }
     }
-
     public function showStudentManage()
     {
         $user_login = Auth::user();
         $user_login_id = $user_login->id;
         $admin_info = Admin::where('user_id', $user_login_id)->first();
-        $students = User::where('role_id', 3)->orderByDesc('id')->simplePaginate(15);
+        $students = User::where('role_id', 3)->orderBy('id', 'desc')->simplePaginate(15);
+
+        return view('dashboard.dashboard-admin.studentManage', ['user' => $user_login, 'admin_info' => $admin_info, 'students' => $students]);
+    }
+
+
+    public function showStudentManageByName(Request $request)
+    {
+        $user_login = Auth::user();
+        $user_login_id = $user_login->id;
+        $admin_info = Admin::where('user_id', $user_login_id)->first();
+        $name = $request->input('search');
+        $students = User::where('role_id','=', '3')
+            ->where('name', 'like', '%' . $name . '%')
+            ->orderBy('id', 'asc')
+            ->simplePaginate(15);
 
         return view('dashboard.dashboard-admin.studentManage', ['user' => $user_login, 'admin_info' => $admin_info, 'students' => $students]);
     }
@@ -190,12 +204,35 @@ class AdminDashboardController extends Controller
         return redirect()->route('studentManager')->with('alert', 'Xoá tài khoản thành công!');
     }
 
+//    public function showTeacherManage()
+//    {
+//        $user_login = Auth::user();
+//        $user_login_id = $user_login->id;
+//        $admin_info = Admin::where('user_id', $user_login_id)->first();
+//        $teachers = User::where('role_id', 2)->orderBy('id', 'DESC')->simplePaginate(15);;
+//        return view('dashboard.dashboard-admin.teacherManage', ['user' => $user_login, 'admin_info' => $admin_info, 'teachers' => $teachers]);
+//    }
+
     public function showTeacherManage()
     {
         $user_login = Auth::user();
         $user_login_id = $user_login->id;
         $admin_info = Admin::where('user_id', $user_login_id)->first();
-        $teachers = User::where('role_id', 2)->orderByDesc('id')->simplePaginate(15);;
+        $teachers = User::where('role_id', 2)->orderBy('id', 'desc')->simplePaginate(15);;
+        return view('dashboard.dashboard-admin.teacherManage', ['user' => $user_login, 'admin_info' => $admin_info, 'teachers' => $teachers]);
+    }
+
+
+    public function showTeacherManageByName(Request $request)
+    {
+        $user_login = Auth::user();
+        $user_login_id = $user_login->id;
+        $admin_info = Admin::where('user_id', $user_login_id)->first();
+        $name = $request->input('search');
+        $teachers = User::where('role_id', 2)
+            ->where('name', 'like', '%' . $name . '%')
+            ->orderBy('id', 'asc')->simplePaginate(15);
+
         return view('dashboard.dashboard-admin.teacherManage', ['user' => $user_login, 'admin_info' => $admin_info, 'teachers' => $teachers]);
     }
 

@@ -24,7 +24,8 @@
         <!-- ============================================================== -->
         <div class="card">
             <div class="card-body">
-                <h1>LỊCH PHÂN CÔNG GIẢNG DẠY</h1>
+                <h2>LỊCH PHÂN CÔNG GIẢNG DẠY</h2>
+                <br>
                 <div class="table-responsive">
                     <table class="table color-table inverse-table" >
                         <thead>

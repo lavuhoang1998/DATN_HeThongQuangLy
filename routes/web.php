@@ -39,6 +39,7 @@ Route::middleware([AdminLoginMiddleWare::class])->group(function () {
     Route::post('sms_admin/editPassword', [AdminDashboardController::class, 'postEditPassword']);
 
     Route::get('sms_admin/studentManager', [AdminDashboardController::class, 'showStudentManage'])->name('studentManager');
+    Route::get('sms_admin/studentManager1', [AdminDashboardController::class, 'showStudentManageByName'])->name('showStudentManageByName');
     Route::post('sms_admin/studentManager/addStudent', [AdminDashboardController::class, 'postAddStudent']);
     Route::get('sms_admin/studentProfile/{user_id}', [AdminDashboardController::class, 'showStudentProfile'])->name('studentProfile');
     Route::get('sms_admin/studentEdit/{user_id}', [AdminDashboardController::class, 'showStudentEdit'])->name('studentEdit');
@@ -46,6 +47,7 @@ Route::middleware([AdminLoginMiddleWare::class])->group(function () {
     Route::get('sms_admin/studentDelete/{user_id}', [AdminDashboardController::class, 'deleteStudent'])->name('deleteStudent');
 
     Route::get('sms_admin/teacherManager', [AdminDashboardController::class, 'showTeacherManage'])->name('teacherManager');
+    Route::get('sms_admin/teacherManager1', [AdminDashboardController::class, 'showTeacherManageByName'])->name('showTeacherManageByName');
     Route::post('sms_admin/teacherManager/addTeacher', [AdminDashboardController::class, 'postAddTeacher']);
     Route::get('sms_admin/teacherProfile/{user_id}', [AdminDashboardController::class, 'showTeacherProfile'])->name('teacherProfile');
     Route::get('sms_admin/teacherEdit/{user_id}', [AdminDashboardController::class, 'showTeacherEdit'])->name('teacherEdit');
@@ -80,8 +82,8 @@ Route::middleware([TeacherLoginMiddleWare::class])->group(function () {
 
     Route::get('sms_teacher/pointInput', [TeacherDashboardController::class, 'showPointInput'])->name('showPointInput');
     Route::get('sms_teacher/pointInput/{class_id}', [TeacherDashboardController::class, 'showPointInputByClass'])->name('showPointInputByClass');
+    Route::get('sms_teacher/pointInput1/{class_id}', [TeacherDashboardController::class, 'showPointInputByName'])->name('showPointInputByName');
     Route::post('sms_teacher/pointInput/{class_id}', [TeacherDashboardController::class, 'postPoint'])->name('postPoint');
-
 });
 
 Route::middleware([StudentLoginMiddleWare::class])->group(function () {

@@ -25,10 +25,27 @@
         <div class="card">
             <div class="card-body">
                 <h2 class="card-title">Danh sách tài khoản giáo viên</h2>
-                <h6 class="card-subtitle"></h6>
-                <button type="button" class="btn btn-info btn-rounded m-t-10 float-right" data-toggle="modal"
-                        data-target="#add-teacher">Thêm tài khoản giáo viên
-                </button>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <form action="{{ route('showTeacherManageByName') }}" method="GET">
+                            <div class="input-group">
+                                <input type="search" class="form-control rounded" placeholder="Tìm kiếm giáo viên" aria-label="Search"
+                                       aria-describedby="search-addon" name="search"/>
+                                <button type="submit"  class="btn btn-outline-secondary">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-5">
+                    </div>
+                    <div class="col-md-3 text-right">
+                        <button type="button" class="btn btn-info btn-rounded m-t-10 float-right" data-toggle="modal"
+                                data-target="#add-teacher">Thêm tài khoản giáo viên
+                        </button>
+                    </div>
+                </div>
                 <!-- Add Contact Popup Model -->
                 <div id="add-teacher" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                      aria-hidden="true">

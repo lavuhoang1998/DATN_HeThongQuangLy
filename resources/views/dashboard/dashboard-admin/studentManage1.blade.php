@@ -29,13 +29,13 @@
                 <div class="row">
                     <div class="col-md-4">
                         <form action="{{ route('showStudentManageByName') }}" method="GET">
-                        <div class="input-group">
-                            <input type="search" class="form-control rounded" placeholder="Tìm kiếm học sinh" aria-label="Search"
-                                   aria-describedby="search-addon" name="search"/>
-                            <button type="submit"  class="btn btn-outline-secondary">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
+                            <div class="input-group">
+                                <input type="search" class="form-control rounded" placeholder="Tìm kiếm học sinh" aria-label="Search"
+                                       aria-describedby="search-addon" name="search"/>
+                                <button type="submit"  class="btn btn-outline-secondary">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
                         </form>
                     </div>
                     <div class="col-md-5">

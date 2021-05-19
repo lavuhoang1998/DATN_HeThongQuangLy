@@ -31,8 +31,27 @@
                     <div class="col-md-3">
                         <h2 class="font-medium m-t-30">Môn: {{$subject->name}}</h2>
                     </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <form action="{{ route('showPointInputByName', ['class_id'=>$class->id] ) }}"
+                              method="GET">
+                            <div class="input-group">
+                                <input type="search" class="form-control rounded" placeholder="Tìm kiếm học sinh"
+                                       aria-label="Search"
+                                       aria-describedby="search-addon" name="search"/>
+                                <button type="submit" class="btn btn-outline-secondary">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-5">
+                    </div>
                     <div class="col-md-3">
-                        <select class="form-control form-control-line" name="class_name" onchange="location = this.value;">
+                        <select class="form-control form-control-line" name="class_name"
+                                onchange="location = this.value;">
                             <option value="" selected disabled hidden>Chọn lớp</option>
                             @foreach($teaches as $teach)
                                 <option
@@ -42,7 +61,6 @@
                         </select>
                     </div>
                 </div>
-
                 <br>
                 <div class="table-responsive">
                     <br>
@@ -105,7 +123,8 @@
                                 <div>
                                     <div class="row">
                                         <div class="col-md">
-                                            <input style="visibility: hidden" type="text" readonly class="form-control-plaintext" id="id" name="id">
+                                            <input style="visibility: hidden" type="text" readonly
+                                                   class="form-control-plaintext" id="id" name="id">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -116,7 +135,7 @@
                                         </div>
                                         <div class="col-md-6 b-r">
                                             <label class="control-label">MSHS</label>
-                                            <input type="text" readonly class="form-control-plaintext"  id="mshs"
+                                            <input type="text" readonly class="form-control-plaintext" id="mshs"
                                                    name="mshs">
                                         </div>
                                     </div>
@@ -124,21 +143,21 @@
                                     <div class="row">
                                         <div class="col-md">
                                             <label class="control-label">Điểm hệ số I</label>
-                                            <input type="text" class="form-control" id="heso1"  name="heso1">
+                                            <input type="text" class="form-control" id="heso1" name="heso1">
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="row">
                                         <div class="col-md">
                                             <label class="control-label">Điểm hệ số II</label>
-                                            <input type="text" class="form-control" id="heso2"  name="heso2">
+                                            <input type="text" class="form-control" id="heso2" name="heso2">
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="row">
                                         <div class="col-md">
                                             <label class="control-label">Điểm hệ số III</label>
-                                            <input type="text" class="form-control" id="heso3"  name="heso3">
+                                            <input type="text" class="form-control" id="heso3" name="heso3">
                                         </div>
                                     </div>
                                     <hr>
