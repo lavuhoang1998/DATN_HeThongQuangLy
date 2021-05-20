@@ -133,7 +133,7 @@ class TeacherDashboardController extends Controller
             ->where('users.name', $user_login->name)
             ->where('teaches.day', $day_of_week)
             ->orderBy('teaches.shift', 'ASC')
-            ->get(['teaches.id', 'teaches.shift', 'subjects.name as subject_name', 'classes.class_name as class_name']);
+            ->get(['teaches.id', 'teaches.shift', 'subjects.name as subject_name', 'classes.class_name as class_name',]);
 
         return view('dashboard.dashboard-teacher.showHistory1', ['user' => $user_login, 'teacher_info' => $teacher_info, 'day' => $day_of_week, 'date' => $day, 'date1' => $day1, 'today'=>$today,'a'=>$a, 'teaches' => $teaches]);
     }
