@@ -30,6 +30,7 @@ Route::delete('teachers/{id}', [\App\Http\Controllers\API_TeacherController::cla
 //===============STUDENT API============================================================
 Route::get('students', [\App\Http\Controllers\API_StudentController::class, 'index']);
 Route::get('students/{id}', [\App\Http\Controllers\API_StudentController::class, 'show']);
+Route::get('studentsByMSHS/{MSHS}', [\App\Http\Controllers\API_StudentController::class, 'showByMSHS']);
 Route::post('students', [\App\Http\Controllers\API_StudentController::class, 'store']);
 Route::put('students/{id}', [\App\Http\Controllers\API_StudentController::class, 'update']);
 Route::delete('students/{id}', [\App\Http\Controllers\API_StudentController::class, 'delete']);
