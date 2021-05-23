@@ -17,6 +17,12 @@ class API_SubjectController extends Controller
         return Subject::find($id);
     }
 
+    public function showByName($name)
+    {
+        $subject_info = Subject::where('name',$name)->get();
+        return $subject_info;
+    }
+
     public function store(Request $request)
     {
         return Subject::create($request->all());

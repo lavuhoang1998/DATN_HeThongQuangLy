@@ -45,6 +45,8 @@ Route::delete('classes/{id}', [\App\Http\Controllers\API_ClassController::class,
 //===============SUBJECT API============================================================
 Route::get('subjects', [\App\Http\Controllers\API_SubjectController::class, 'index']);
 Route::get('subjects/{id}', [\App\Http\Controllers\API_SubjectController::class, 'show']);
+Route::get('subjectsByName/{name}', [\App\Http\Controllers\API_SubjectController::class, 'showByName']);
+
 Route::post('subjects', [\App\Http\Controllers\API_SubjectController::class, 'store']);
 Route::put('subjects/{id}', [\App\Http\Controllers\API_SubjectController::class, 'update']);
 Route::delete('subjects/{id}', [\App\Http\Controllers\API_SubjectController::class, 'delete']);
