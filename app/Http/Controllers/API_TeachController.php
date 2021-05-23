@@ -20,7 +20,10 @@ class API_TeachController extends Controller
     public function showByClassID($id)
     {
         $teach_info = Teach::join('subjects','teaches.subject_id','=','subjects.id')
-        ->where('class_id',$id)->get();
+            ->where('class_id',$id)
+            ->orderBy('teaches.day', 'ASC')
+            ->orderBy('teaches.shift', 'ASC')
+            ->get();
         return $teach_info;
     }
 
