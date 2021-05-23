@@ -17,6 +17,17 @@ class API_HistoryController extends Controller
         return History::find($id);
     }
 
+    public function historiesByDate($date){
+        $date1 = date_format($date,"Y/m/d");
+        $history = History::join('teaches','teaches.id','histories.teach_id')
+            ->join('subjects','teaches.subject_id','=','subjects.id')
+            ->where('histories.date',$date1)
+            ->orderBy('teaches.day', 'ASC')
+            ->orderBy('teaches.shift', 'ASC')
+            ->get();
+        return $history;
+    }
+
     public function store(Request $request)
     {
         return History::create($request->all());
