@@ -38,6 +38,7 @@ Route::delete('students/{id}', [\App\Http\Controllers\API_StudentController::cla
 //===============CLASS API============================================================
 Route::get('classes', [\App\Http\Controllers\API_ClassController::class, 'index']);
 Route::get('classes/{id}', [\App\Http\Controllers\API_ClassController::class, 'show']);
+Route::get('classesByName/{class_name}', [\App\Http\Controllers\API_ClassController::class, 'showByName']);
 Route::post('classes', [\App\Http\Controllers\API_ClassController::class, 'store']);
 Route::put('classes/{id}', [\App\Http\Controllers\API_ClassController::class, 'update']);
 Route::delete('classes/{id}', [\App\Http\Controllers\API_ClassController::class, 'delete']);

@@ -17,6 +17,12 @@ class API_ClassController extends Controller
         return CLasss::find($id);
     }
 
+    public function showByName($class_name)
+    {
+        $class_info = CLasss::where('class_name',$class_name)->get();
+        return $class_info;
+    }
+
     public function store(Request $request)
     {
         return CLasss::create($request->all());
