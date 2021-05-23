@@ -19,7 +19,8 @@ class API_TeachController extends Controller
 
     public function showByClassID($id)
     {
-        $teach_info = Teach::where('class_id',$id)->get();
+        $teach_info = Teach::join('subjects','teaches.subject_id','=','subjects.id')
+        ->where('class_id',$id)->get();
         return $teach_info;
     }
 
