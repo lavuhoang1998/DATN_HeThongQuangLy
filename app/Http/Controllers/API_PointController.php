@@ -17,6 +17,14 @@ class API_PointController extends Controller
         return Point::find($id);
     }
 
+    public function showBySID($student_id, $subject_id)
+    {
+        $point_info = Point::where('student_id',$student_id)
+            ->where('subject_id',$subject_id)
+            ->get();
+        return $point_info;
+    }
+
     public function store(Request $request)
     {
         return Point::create($request->all());
