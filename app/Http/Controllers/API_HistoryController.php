@@ -19,7 +19,7 @@ class API_HistoryController extends Controller
 
     public function historiesByDate($date){
         $date1 = date("Y-m-d", strtotime($date));
-        
+
         $history = History::join('teaches','teaches.id','histories.teach_id')
             ->join('subjects','teaches.subject_id','=','subjects.id')
             ->where('histories.date',$date1)
