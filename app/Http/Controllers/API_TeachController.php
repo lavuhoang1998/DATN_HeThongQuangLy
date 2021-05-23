@@ -17,6 +17,12 @@ class API_TeachController extends Controller
         return Teach::find($id);
     }
 
+    public function showByClassID($id)
+    {
+        $teach_info = Teach::where('class_id',$id)->get();
+        return $teach_info;
+    }
+
     public function store(Request $request)
     {
         return Teach::create($request->all());

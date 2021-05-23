@@ -47,7 +47,6 @@ Route::delete('classes/{id}', [\App\Http\Controllers\API_ClassController::class,
 Route::get('subjects', [\App\Http\Controllers\API_SubjectController::class, 'index']);
 Route::get('subjects/{id}', [\App\Http\Controllers\API_SubjectController::class, 'show']);
 Route::get('subjectsByName/{name}', [\App\Http\Controllers\API_SubjectController::class, 'showByName']);
-
 Route::post('subjects', [\App\Http\Controllers\API_SubjectController::class, 'store']);
 Route::put('subjects/{id}', [\App\Http\Controllers\API_SubjectController::class, 'update']);
 Route::delete('subjects/{id}', [\App\Http\Controllers\API_SubjectController::class, 'delete']);
@@ -55,6 +54,7 @@ Route::delete('subjects/{id}', [\App\Http\Controllers\API_SubjectController::cla
 //===============TEACH API============================================================
 Route::get('teaches', [\App\Http\Controllers\API_TeachController::class, 'index']);
 Route::get('teaches/{id}', [\App\Http\Controllers\API_TeachController::class, 'show']);
+Route::get('teachesByClassID/{id}', [\App\Http\Controllers\API_TeachController::class, 'showByClassID']);
 Route::post('teaches', [\App\Http\Controllers\API_TeachController::class, 'store']);
 Route::put('teaches/{id}', [\App\Http\Controllers\API_TeachController::class, 'update']);
 Route::delete('teaches/{id}', [\App\Http\Controllers\API_TeachController::class, 'delete']);
