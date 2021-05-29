@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Point;
+use App\Models\Semester;
 use Illuminate\Http\Request;
 
 class API_PointController extends Controller
@@ -19,8 +20,10 @@ class API_PointController extends Controller
 
     public function showBySID($student_id, $subject_id)
     {
+        $cur_semester = Semester::where('cur_semester', '1')->first();
         $point_info = Point::where('student_id',$student_id)
             ->where('subject_id',$subject_id)
+            ->where('semester_id',$cur_semester->id)
             ->get();
         return $point_info;
     }

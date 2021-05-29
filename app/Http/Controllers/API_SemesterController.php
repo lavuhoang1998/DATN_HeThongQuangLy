@@ -17,6 +17,12 @@ class API_SemesterController extends Controller
         return Semester::find($id);
     }
 
+    public function showCurSemester()
+    {
+        return Semester::where('cur_semester','=',1)->first();
+
+    }
+
     public function store(Request $request)
     {
         return Semester::create($request->all());

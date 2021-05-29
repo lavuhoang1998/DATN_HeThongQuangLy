@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\HomeroomTeacher;
+use App\Models\Semester;
+use App\Models\Study;
 use Illuminate\Http\Request;
 
 class API_HomeRoomTeacherController extends Controller
@@ -15,6 +17,13 @@ class API_HomeRoomTeacherController extends Controller
     public function show($id)
     {
         return HomeroomTeacher::find($id);
+    }
+
+    public function showHomeroom_teachersByClass($class_id){
+        $cur_semester = Semester::where('cur_semester', '1')->first();
+        return HomeroomTeacher::where('class_id',$class_id)
+            ->where('semester_id',$cur_semester->id )
+            ->first();
     }
 
     public function store(Request $request)

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Semester;
 use App\Models\Teach;
 use Illuminate\Http\Request;
 
@@ -19,8 +20,10 @@ class API_TeachController extends Controller
 
     public function showByClassID($id)
     {
+        $cur_semester = Semester::where('cur_semester', '1')->first();
         $teach_info = Teach::join('subjects','teaches.subject_id','=','subjects.id')
             ->where('class_id',$id)
+            ->where('semester_id',$cur_semester->id)
             ->orderBy('teaches.day', 'ASC')
             ->orderBy('teaches.shift', 'ASC')
             ->get();

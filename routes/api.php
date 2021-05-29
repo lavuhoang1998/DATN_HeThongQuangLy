@@ -54,6 +54,7 @@ Route::delete('subjects/{id}', [\App\Http\Controllers\API_SubjectController::cla
 //===============SEMESTER API============================================================
 Route::get('semesters', [\App\Http\Controllers\API_SemesterController::class, 'index']);
 Route::get('semesters/{id}', [\App\Http\Controllers\API_SemesterController::class, 'show']);
+Route::get('cur_semester', [\App\Http\Controllers\API_SemesterController::class, 'showCurSemester']);
 Route::post('semesters', [\App\Http\Controllers\API_SemesterController::class, 'store']);
 Route::put('semesters/{id}', [\App\Http\Controllers\API_SemesterController::class, 'update']);
 Route::delete('semesters/{id}', [\App\Http\Controllers\API_SemesterController::class, 'delete']);
@@ -61,6 +62,7 @@ Route::delete('semesters/{id}', [\App\Http\Controllers\API_SemesterController::c
 //===============STUDY API============================================================
 Route::get('studies', [\App\Http\Controllers\API_StudyController::class, 'index']);
 Route::get('studies/{id}', [\App\Http\Controllers\API_StudyController::class, 'show']);
+Route::get('studiesByStudent/{student_id}', [\App\Http\Controllers\API_StudyController::class, 'showStudiesByStudent']);
 Route::post('studies', [\App\Http\Controllers\API_StudyController::class, 'store']);
 Route::put('studies/{id}', [\App\Http\Controllers\API_StudyController::class, 'update']);
 Route::delete('studies/{id}', [\App\Http\Controllers\API_StudyController::class, 'delete']);
@@ -68,6 +70,7 @@ Route::delete('studies/{id}', [\App\Http\Controllers\API_StudyController::class,
 //===============HOMEROOM TEACHER API============================================================
 Route::get('homeroom_teachers', [\App\Http\Controllers\API_HomeRoomTeacherController::class, 'index']);
 Route::get('homeroom_teachers/{id}', [\App\Http\Controllers\API_HomeRoomTeacherController::class, 'show']);
+Route::get('homeroom_teachersByClass/{class_id}', [\App\Http\Controllers\API_HomeRoomTeacherController::class, 'showHomeroom_teachersByClass']);
 Route::post('homeroom_teachers', [\App\Http\Controllers\API_HomeRoomTeacherController::class, 'store']);
 Route::put('homeroom_teachers/{id}', [\App\Http\Controllers\API_HomeRoomTeacherController::class, 'update']);
 Route::delete('homeroom_teachers/{id}', [\App\Http\Controllers\API_HomeRoomTeacherController::class, 'delete']);
