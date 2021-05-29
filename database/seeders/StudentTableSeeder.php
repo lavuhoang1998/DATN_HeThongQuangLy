@@ -25,7 +25,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '38',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -38,7 +38,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '39',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -51,7 +51,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '40',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -64,7 +64,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '41',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -77,7 +77,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '42',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -90,7 +90,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '43',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -103,7 +103,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '44',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -116,7 +116,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '45',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -129,7 +129,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '46',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -142,7 +142,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '47',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -155,7 +155,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '48',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -168,7 +168,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '49',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -181,7 +181,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '50',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -194,7 +194,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '51',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -207,7 +207,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '52',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -220,7 +220,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '53',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -233,7 +233,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '54',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -246,7 +246,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '55',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -259,7 +259,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '56',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -272,7 +272,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '57',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -285,7 +285,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '58',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -298,7 +298,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '59',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -311,7 +311,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '60',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -324,7 +324,7 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '61',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
         DB::table('students')->insert([
@@ -337,10 +337,10 @@ class StudentTableSeeder extends Seeder
             'dan_toc' => 'Kinh',
             'ton_giao' => 'Không',
             'user_id' => '62',
-            'class_id' => '1',
+            'semester_id' => '5',
             'avt' => 'img/avt/student/HS0001.jpg',
         ]);
-        //-------------------10 lý-------------------------------------------------------
+        //-------------------10 lý ,10 Hoa, 10 Van-------------------------------------------------------
         for ($i=1; $i<=3; $i++) {
             for ($j = 1; $j <= 25; $j++) {
                 DB::table('students')->insert([
@@ -353,13 +353,14 @@ class StudentTableSeeder extends Seeder
                     'dan_toc' => 'Kinh',
                     'ton_giao' => 'Không',
                     'user_id' => $j + 37+ 25*$i,
-                    'class_id' => $i+1,
+                    'semester_id' => '5',
                     'avt' => 'img/avt/student/HS0001.jpg',
                 ]);
             }
         }
 
-        for ($i=4; $i<=20; $i++) {
+        //-------------------10 Anh ,10 Tin, 10 K-------------------------------------------------------
+        for ($i=4; $i<=6; $i++) {
             for ($j = 1; $j <= 25; $j++) {
                 DB::table('students')->insert([
                     'MSHS' => 'HS0'.($j+25*$i),
@@ -371,7 +372,44 @@ class StudentTableSeeder extends Seeder
                     'dan_toc' => 'Kinh',
                     'ton_giao' => 'Không',
                     'user_id' => $j + 37+ 25*$i,
-                    'class_id' => $i+1,
+                    'semester_id' => '5',
+                    'avt' => 'img/avt/student/HS0001.jpg',
+                ]);
+            }
+        }
+
+        //-------------------Khoi 11-------------------------------------------------------
+        for ($i=7; $i<=13; $i++) {
+            for ($j = 1; $j <= 25; $j++) {
+                DB::table('students')->insert([
+                    'MSHS' => 'HS0'.($j+25*$i),
+                    'sex' => 'Nam',
+                    'date_of_birth' => '1998-11-06',
+                    'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+                    'sdt' => '03299838383',
+                    'que_quan' => 'Nam Định',
+                    'dan_toc' => 'Kinh',
+                    'ton_giao' => 'Không',
+                    'user_id' => $j + 37+ 25*$i,
+                    'semester_id' => '3',
+                    'avt' => 'img/avt/student/HS0001.jpg',
+                ]);
+            }
+        }
+        //-------------------Khoi 12-------------------------------------------------------
+        for ($i=14; $i<=20; $i++) {
+            for ($j = 1; $j <= 25; $j++) {
+                DB::table('students')->insert([
+                    'MSHS' => 'HS0'.($j+25*$i),
+                    'sex' => 'Nam',
+                    'date_of_birth' => '1998-11-06',
+                    'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+                    'sdt' => '03299838383',
+                    'que_quan' => 'Nam Định',
+                    'dan_toc' => 'Kinh',
+                    'ton_giao' => 'Không',
+                    'user_id' => $j + 37+ 25*$i,
+                    'semester_id' => '1',
                     'avt' => 'img/avt/student/HS0001.jpg',
                 ]);
             }

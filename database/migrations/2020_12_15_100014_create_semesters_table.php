@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddForeignkeyToClassesTable extends Migration
+class CreateSemestersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,12 @@ class AddForeignkeyToClassesTable extends Migration
      */
     public function up()
     {
-        Schema::table('classes', function (Blueprint $table) {
+        Schema::create('semesters', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('semester_name');
+            $table->boolean('cur_semester');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -24,7 +29,6 @@ class AddForeignkeyToClassesTable extends Migration
      */
     public function down()
     {
-        Schema::table('classes', function (Blueprint $table) {
-        });
+        Schema::dropIfExists('semesters');
     }
 }

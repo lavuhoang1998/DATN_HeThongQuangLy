@@ -17,9 +17,11 @@ class AddForeignkeyToTeachesTable extends Migration
             $table->unsignedBigInteger('teacher_id');
             $table->unsignedBigInteger('class_id');
             $table->unsignedBigInteger('subject_id');
+            $table->unsignedBigInteger('semester_id');
             $table->foreign('teacher_id')->references('id')->on('teachers');
             $table->foreign('class_id')->references('id')->on('classes');
             $table->foreign('subject_id')->references('id')->on('subjects');
+            $table->foreign('semester_id')->references('id')->on('semesters');
         });
     }
 
@@ -34,6 +36,7 @@ class AddForeignkeyToTeachesTable extends Migration
             $table->dropForeign('teaches_teacher_id_foreign');
             $table->dropForeign('teaches_class_id_foreign');
             $table->dropForeign('teaches_subject_id_foreign');
+            $table->dropForeign('teaches_semester_id_foreign');
         });
     }
 }

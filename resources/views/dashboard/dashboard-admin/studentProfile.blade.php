@@ -90,7 +90,7 @@
                             </div>
                             <div class="col-md-3 col-xs-6 b-r"><strong>Khoá</strong>
                                 <br>
-                                <h4>Tạm thời chưa có</h4>
+                                <h4>{{$khoa}}</h4>
                             </div>
                             <div class="col-md-3 col-xs-6 b-r"><strong>Giáo viên chủ nhiệm</strong>
                                 <br>
@@ -105,6 +105,14 @@
                                 @endif
                             </div>
                         </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-3 col-xs-6 b-r"><strong>Điểm</strong>
+                                <br>
+                                <h4><a href="{{route('showStudentPoint',['student_id'=>$student_info1->id])}}">Tra cứu bảng điểm</a></h4>
+                            </div>
+                        </div>
+                        <br>
                     </div>
                 </div>
                 <div class="card">

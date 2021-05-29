@@ -16,7 +16,8 @@ class Teach extends Model
         'shift',
         'teacher_id',
         'class_id',
-        'subject_id'
+        'subject_id',
+        'semester_id',
     ];
 
     public function usesTimestamps() : bool{

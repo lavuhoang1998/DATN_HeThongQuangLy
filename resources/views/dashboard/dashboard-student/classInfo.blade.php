@@ -34,7 +34,7 @@
                     </div>
                     <div class="col-md-3 col-xs-6 b-r"><strong>Sĩ số</strong>
                         <br>
-                        <h4>{{count($students)}}</h4>
+                        <h4>{{$si_so}}</h4>
                     </div>
                     <div class="col-md-3 col-xs-6 b-r"></div>
                 </div>

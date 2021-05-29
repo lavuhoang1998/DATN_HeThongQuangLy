@@ -42,6 +42,7 @@ Route::middleware([AdminLoginMiddleWare::class])->group(function () {
     Route::get('sms_admin/studentManager1', [AdminDashboardController::class, 'showStudentManageByName'])->name('showStudentManageByName');
     Route::post('sms_admin/studentManager/addStudent', [AdminDashboardController::class, 'postAddStudent']);
     Route::get('sms_admin/studentProfile/{user_id}', [AdminDashboardController::class, 'showStudentProfile'])->name('studentProfile');
+    Route::get('sms_admin/studentPoint/{student_id}', [AdminDashboardController::class, 'showStudentPoint'])->name('showStudentPoint');
     Route::get('sms_admin/studentEdit/{user_id}', [AdminDashboardController::class, 'showStudentEdit'])->name('studentEdit');
     Route::post('sms_admin/studentEdit/{user_id}', [AdminDashboardController::class, 'postStudentEdit'])->name('postStudentEdit');
     Route::get('sms_admin/studentDelete/{user_id}', [AdminDashboardController::class, 'deleteStudent'])->name('deleteStudent');
@@ -55,11 +56,19 @@ Route::middleware([AdminLoginMiddleWare::class])->group(function () {
     Route::get('sms_admin/teacherDelete/{user_id}', [AdminDashboardController::class, 'deleteTeacher'])->name('deleteTeacher');
 
     Route::get('sms_admin/showTimeTable', [AdminDashboardController::class, 'showTimeTable']);
-    Route::get('sms_admin/showTimeTable/{class_id}', [AdminDashboardController::class, 'showTimeTableForClass'])->name('showTimeTableForClass');
+    Route::get('sms_admin/showTimeTable/{class_id}', [AdminDashboardController::class, 'showTimeTableByClass'])->name('showTimeTableByClass');
+    Route::get('sms_admin/showTimeTable/{class_id}/{semester_id}', [AdminDashboardController::class, 'showTimeTableBySemester'])->name('showTimeTableBySemester');
     Route::get('sms_admin/editTimeTable', [AdminDashboardController::class, 'showEditTimeTable']);
     Route::get('sms_admin/editTimeTable/{class_id}', [AdminDashboardController::class, 'editTimeTableForClass'])->name('editTimeTable');
     Route::post('sms_admin/editTimeTable/{class_id}', [AdminDashboardController::class, 'postTimeTableEdit'])->name('postTimeTableEdit');
     Route::get('sms_admin/deleteTimeTable/{class_id}', [AdminDashboardController::class, 'deleteTimeTableForClass'])->name('deleteTimeTableForClass');
+
+    Route::get('sms_admin/createSemester', [AdminDashboardController::class, 'createSemester'])->name('createSemester');;
+    Route::post('sms_admin/createSemester', [AdminDashboardController::class, 'postNewSemester'])->name('postNewSemester');
+    Route::get('sms_admin/createHomeRoomTeacher', [AdminDashboardController::class, 'createHomeRoomTeacher'])->name('createHomeRoomTeacher');;
+    Route::post('sms_admin/createHomeRoomTeacher', [AdminDashboardController::class, 'postNewHomeRoomTeacher'])->name('postNewHomeRoomTeacher');
+
+
 
 });
 
@@ -84,6 +93,8 @@ Route::middleware([TeacherLoginMiddleWare::class])->group(function () {
     Route::get('sms_teacher/pointInput/{class_id}', [TeacherDashboardController::class, 'showPointInputByClass'])->name('showPointInputByClass');
     Route::get('sms_teacher/pointInput1/{class_id}', [TeacherDashboardController::class, 'showPointInputByName'])->name('showPointInputByName');
     Route::post('sms_teacher/pointInput/{class_id}', [TeacherDashboardController::class, 'postPoint'])->name('postPoint');
+    Route::get('sms_teacher/studentPoint/{student_id}', [TeacherDashboardController::class, 'showPointByStudent'])->name('showPointByStudent');
+
 });
 
 Route::middleware([StudentLoginMiddleWare::class])->group(function () {
@@ -99,6 +110,7 @@ Route::middleware([StudentLoginMiddleWare::class])->group(function () {
     Route::get('sms_student/timeTable', [StudentDashboardController::class, 'showTimeTable'])->name('showTimeTable');
 
     Route::get('sms_student/point', [StudentDashboardController::class, 'showPoint']);
+    Route::get('sms_student/point/{semester_id}', [StudentDashboardController::class, 'showPointBySemester'])->name('showPointBySemester');
 
 
 

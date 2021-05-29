@@ -79,6 +79,28 @@
                         <br>
                     </div>
                 </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="font-medium m-t-30">Thông tin giảng dạy</h3>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-3 col-xs-6 b-r"><strong>Bộ môn</strong>
+                                <br>
+                                <h4>{{$subject->name}}</h4>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-3 col-xs-6 b-r"><strong>Danh sách lớp chủ nhiệm</strong>
+                                <br>
+                                @foreach($gvcns as $gvcn)
+                                <h4>Kì {{$gvcn->semester_name}}: Lớp {{$gvcn->class_name}}</h4>
+                                @endforeach
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Column -->

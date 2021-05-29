@@ -24,7 +24,7 @@
         <!-- ============================================================== -->
         <div class="card">
             <div class="card-body">
-                <h2>LỊCH PHÂN CÔNG GIẢNG DẠY</h2>
+                <h2>LỊCH PHÂN CÔNG GIẢNG DẠY KÌ {{$cur_semester->semester_name}}</h2>
                 <br>
                 <div class="table-responsive">
                     <table class="table color-table inverse-table" >

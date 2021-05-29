@@ -25,10 +25,10 @@
         <div class="card">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-3">
-                        <h2>BẢNG ĐIỂM HỌC SINH</h2>
-                    </div>
                     <div class="col-md-6">
+                        <h2>BẢNG ĐIỂM HỌC SINH - HỌC KÌ {{$semester_chosen->semester_name}}</h2>
+                    </div>
+                    <div class="col-md-3">
                     </div>
                     <div class="col-md-3">
                         <select class="form-control form-control-line" name="class_name" onchange="location = this.value;">
@@ -55,19 +55,21 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($points as $point)
                             <tr>
                                 <td></td>
-                                <td></td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
+                                <td> {{$point->name}}</td>
+                                <td class="text-center">{{$point->heso1}}</td>
+                                <td class="text-center">{{$point->heso2}}</td>
+                                <td class="text-center">{{$point->heso3}}</td>
+                                <td class="text-center">{{$point->trungbinh}}</td>
                             </tr>
+                        @endforeach
                         </tbody>
                     </table>
                     <hr>
                     <hr>
-                    <h3 class="text-right">Điểm tổng kết:</h3>
+                    <h3 class="text-right">Điểm tổng kết:{{$tb}}</h3>
 
                 </div>
             </div>

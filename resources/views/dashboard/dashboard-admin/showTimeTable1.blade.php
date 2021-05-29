@@ -165,9 +165,30 @@
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-body">
-                        <h1>THỜI KHOÁ BIỂU LỚP {{$class->class_name}}</h1>
-                        <a class="btn btn-dark btn-rounded m-t-10 float-right"
-                           href="{{url('sms_admin/editTimeTable',$class_id = $class->id)}}" role="button">Chỉnh sửa</a>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h2>THỜI KHOÁ BIỂU LỚP {{$class->class_name}} - HỌC KÌ {{$semester_chosen->semester_name}} </h2>
+                            </div>
+                            <div class="col-md-3">
+                            </div>
+                            <div class="col-md-3">
+                                <select class="form-control form-control-line" name="class_name" onchange="location = this.value;">
+                                    <option value="" selected disabled hidden>Chọn học kì</option>
+                                    @foreach($semesters as $semester)
+                                        <option
+                                            value="{{route('showTimeTableBySemester', ['class_id'=>$class->id, 'semester_id'=>$semester->id])}}">{{$semester->semester_name}}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        @if ($a ==1)
+                            <a class="btn btn-dark btn-rounded m-t-10 float-right"
+                               href="{{url('sms_admin/editTimeTable',$class_id = $class->id)}}" role="button">Chỉnh sửa</a>
+                        @else
+                            <a class="btn btn-dark btn-rounded m-t-10 float-right" style="visibility: hidden"
+                               href="{{url('sms_admin/editTimeTable',$class_id = $class->id)}}" role="button">Chỉnh sửa</a>
+                        @endif
                         <div class="table-responsive">
                             <table id="demo-foo-addrow" class="table table-bordered m-t-30 table-hover contact-list"
                                    data-paging="true" data-paging-size="7">

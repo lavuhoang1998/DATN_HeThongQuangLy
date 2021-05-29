@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\CLasss;
 use App\Models\History;
 use App\Models\Point;
+use App\Models\Semester;
 use App\Models\Student;
+use App\Models\Study;
 use App\Models\Subject;
 use App\Models\Teacher;
 use App\Models\Teach;
@@ -76,16 +78,18 @@ class TeacherDashboardController extends Controller
         $user_login = Auth::user();
         $user_login_id = $user_login->id;
         $teacher_info = Teacher::where('user_id', $user_login_id)->first();
+        $cur_semester = Semester::where('cur_semester', '1')->first();
 
         $teaches = Teach::join('teachers', 'teaches.teacher_id', '=', 'teachers.id')
             ->join('subjects', 'teaches.subject_id', '=', 'subjects.id')
             ->join('users', 'users.id', '=', 'teachers.user_id')
             ->join('classes', 'classes.id', '=', 'teaches.class_id')->where('users.name', $user_login->name)
+            ->where('teaches.semester_id', $cur_semester->id)
             ->orderBy('teaches.day', 'ASC')
             ->orderBy('teaches.shift', 'ASC')
             ->get(['teaches.day', 'teaches.shift', 'subjects.name as subject_name', 'classes.class_name as class_name']);
 
-        return view('dashboard.dashboard-teacher.showTimeTable', ['user' => $user_login, 'teacher_info' => $teacher_info, 'teaches' => $teaches]);
+        return view('dashboard.dashboard-teacher.showTimeTable', ['user' => $user_login, 'teacher_info' => $teacher_info, 'teaches' => $teaches, 'cur_semester'=>$cur_semester]);
     }
 
     public function showHistory()
@@ -93,10 +97,12 @@ class TeacherDashboardController extends Controller
         $user_login = Auth::user();
         $user_login_id = $user_login->id;
         $teacher_info = Teacher::where('user_id', $user_login_id)->first();
+        $cur_semester = Semester::where('cur_semester', '1')->first();
         $teaches = Teach::join('teachers', 'teaches.teacher_id', '=', 'teachers.id')
             ->join('subjects', 'teaches.subject_id', '=', 'subjects.id')
             ->join('users', 'users.id', '=', 'teachers.user_id')
             ->join('classes', 'classes.id', '=', 'teaches.class_id')->where('users.name', $user_login->name)
+            ->where('teaches.semester_id', $cur_semester->id)
             ->orderBy('teaches.day', 'ASC')
             ->orderBy('teaches.shift', 'ASC')
             ->get(['teaches.day', 'teaches.shift', 'subjects.name as subject_name', 'classes.class_name as class_name']);
@@ -108,6 +114,7 @@ class TeacherDashboardController extends Controller
         $user_login = Auth::user();
         $user_login_id = $user_login->id;
         $teacher_info = Teacher::where('user_id', $user_login_id)->first();
+        $cur_semester = Semester::where('cur_semester', '1')->first();
 
         $day = $request->day;
         $today = date("Y/m/d");
@@ -132,6 +139,7 @@ class TeacherDashboardController extends Controller
             ->join('classes', 'classes.id', '=', 'teaches.class_id')
             ->where('users.name', $user_login->name)
             ->where('teaches.day', $day_of_week)
+            ->where('teaches.semester_id', $cur_semester->id)
             ->orderBy('teaches.shift', 'ASC')
             ->get(['teaches.id', 'teaches.shift', 'subjects.name as subject_name', 'classes.class_name as class_name',]);
 
@@ -143,6 +151,7 @@ class TeacherDashboardController extends Controller
         $user_login = Auth::user();
         $user_login_id = $user_login->id;
         $teacher_info = Teacher::where('user_id', $user_login_id)->first();
+        $cur_semester = Semester::where('cur_semester', '1')->first();
 
         $date1 = date("d-m-Y", strtotime($date));
         //Convert the date string into a unix timestamp.
@@ -158,10 +167,16 @@ class TeacherDashboardController extends Controller
             ->where('users.name', $user_login->name)
             ->where('teaches.day', $day_of_week)
             ->where('teaches.shift', $shift)
+            ->where('teaches.semester_id', $cur_semester->id)
             ->orderBy('teaches.shift', 'ASC')
             ->get(['teaches.id', 'teaches.shift', 'subjects.name as subject_name', 'classes.class_name as class_name']);
 
-        return view('dashboard.dashboard-teacher.showHistory2', ['user' => $user_login, 'teacher_info' => $teacher_info, 'day' => $day_of_week, 'date' => $date, 'date1' => $date1, 'teaches' => $teaches]);
+        $history = History::join('teaches','teaches.id','=','histories.teach_id')
+            ->where('teaches.shift',$shift)
+            ->where('histories.date',$date)
+            ->first();
+
+        return view('dashboard.dashboard-teacher.showHistory2', ['user' => $user_login, 'teacher_info' => $teacher_info, 'day' => $day_of_week, 'date' => $date, 'date1' => $date1, 'teaches' => $teaches, 'history'=>$history]);
     }
 
     public function postEditHistory(Request $request)
@@ -214,10 +229,12 @@ class TeacherDashboardController extends Controller
         $user_login = Auth::user();
         $user_login_id = $user_login->id;
         $teacher_info = Teacher::where('user_id', $user_login_id)->first();
+        $cur_semester = Semester::where('cur_semester', '1')->first();
 
         $teaches = Teach::join('teachers', 'teaches.teacher_id', '=', 'teachers.id')
             ->join('subjects', 'teaches.subject_id', '=', 'subjects.id')
             ->join('classes', 'classes.id', '=', 'teaches.class_id')->where('teachers.id', $teacher_info->id)
+            ->where('teaches.semester_id', $cur_semester->id)
             ->distinct()
             ->get(['class_id', 'class_name']);
 
@@ -229,21 +246,36 @@ class TeacherDashboardController extends Controller
         $user_login = Auth::user();
         $user_login_id = $user_login->id;
         $teacher_info = Teacher::where('user_id', $user_login_id)->first();
+        $cur_semester = Semester::where('cur_semester', '1')->first();
         $subject = Subject::where('id',$teacher_info->subject_id)->first();
 
         $teaches = Teach::join('teachers', 'teaches.teacher_id', '=', 'teachers.id')
             ->join('subjects', 'teaches.subject_id', '=', 'subjects.id')
             ->join('classes', 'classes.id', '=', 'teaches.class_id')->where('teachers.id', $teacher_info->id)
+            ->where('teaches.semester_id', $cur_semester->id)
             ->distinct()
             ->get(['class_id', 'class_name']);
 
         $class = CLasss::where('id', $class_id)->first();
 
-        $list_student = Point::join('students', 'points.student_id', '=', 'students.id')
-            ->join('subjects', 'points.subject_id', '=', 'subjects.id')
+//        $list_student = Point::join('students', 'points.student_id', '=', 'students.id')
+//            ->join('subjects', 'points.subject_id', '=', 'subjects.id')
+//            ->join('users', 'students.user_id', '=', 'users.id')
+//            ->join('studies','studies.student_id','=','students.id')
+//            ->where('points.subject_id', $teacher_info->subject_id)
+//            ->where('points.semester_id', $cur_semester->id)
+//            ->where('studies.class_id', $class_id)
+//            ->where('users.trang_thai', '1')
+//            ->orderBy('students.id', 'asc')
+//            ->get(['users.name', 'students.id as stu_id', 'students.MSHS', 'points.*']);
+
+        $list_student = Study::join('students','studies.student_id','=','students.id')
             ->join('users', 'students.user_id', '=', 'users.id')
+            ->join('points','students.id','=','points.student_id')
             ->where('points.subject_id', $teacher_info->subject_id)
-            ->where('students.class_id', $class_id)
+            ->where('studies.semester_id', $cur_semester->id)
+            ->where('points.semester_id', $cur_semester->id)
+            ->where('studies.class_id', $class_id)
             ->where('users.trang_thai', '1')
             ->orderBy('students.id', 'asc')
             ->get(['users.name', 'students.id as stu_id', 'students.MSHS', 'points.*']);
@@ -320,6 +352,24 @@ class TeacherDashboardController extends Controller
         }
 
         return redirect(route('showPointInputByClass', ['class_id' => $class_id]));
+    }
+
+    public function showPointByStudent($student_id){
+        $user_login = Auth::user();
+        $user_login_id = $user_login->id;
+        $teacher_info = Teacher::where('user_id', $user_login_id)->first();
+        $student_info1 = Student::where('id', $student_id)->first();
+        $student_info = User::where('id', $student_info1->user_id)->first();
+        $subject = Subject::where('id',$teacher_info->subject_id)->first();
+
+
+        $points = Point::join('semesters','semesters.id','=','points.semester_id')
+            ->where('student_id',$student_id)
+            ->where('subject_id', $teacher_info->subject_id)
+            ->get();
+
+
+        return view('dashboard.dashboard-teacher.showPointByStudent', ['user' => $user_login, 'teacher_info' => $teacher_info, 'student_info'=>$student_info, 'student_info1'=>$student_info1, 'points'=>$points, 'subject'=>$subject]);
     }
 
 

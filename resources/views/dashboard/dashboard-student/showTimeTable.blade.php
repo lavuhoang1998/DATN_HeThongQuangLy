@@ -24,7 +24,7 @@
         <!-- ============================================================== -->
         <div class="card">
             <div class="card-body">
-                <h1>THỜI KHOÁ BIỂU LỚP {{$class->class_name}}</h1>
+                <h2>THỜI KHOÁ BIỂU LỚP {{$class->class_name}} - HỌC KÌ {{$cur_semester->semester_name}}</h2>
                 <div class="table-responsive">
                     <table id="demo-foo-addrow" class="table table-bordered m-t-30 table-hover contact-list">
                         <thead>
@@ -42,7 +42,7 @@
                         <tr>
                             <td>1</td>
                             <td class="text-center">
-                                <button type="button" style="padding: 10px 60px;" class="btn btn-outline-dark"
+                                <button type="button" class="btn btn-outline-dark"
                                         data-toggle="modal"
                                         data-target="#modalAddTimeTable"
                                         data-day="2"

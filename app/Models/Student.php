@@ -24,7 +24,7 @@ class Student extends Model
         'ton_giao',
         'avt',
         'user_id',
-        'class_id'
+        'semester_id',
     ];
 
     public function usesTimestamps() : bool{
@@ -36,10 +36,6 @@ class Student extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function classes()
-    {
-        return $this->belongsTo(CLasss::class);
-    }
 
     public function parents()
     {

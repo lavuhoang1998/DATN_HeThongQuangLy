@@ -13,20 +13,9 @@ class CLasss extends Model
 
     protected $fillable = [
         'class_name',
-        'teacher_id'
     ];
 
     public function usesTimestamps() : bool{
         return true;
-    }
-
-    public function students()
-    {
-        return $this->hasMany(Student::class);
-    }
-
-    public function teachers()
-    {
-        return $this->belongsTo(Teacher::class);
     }
 }

@@ -81,7 +81,7 @@
                         @foreach($students as $student)
                             <tr>
                                 <td></td>
-                                <td>{{$student->MSHS}}</td>
+                                <td><a href="{{route('showPointByStudent',['student_id'=>$student->stu_id])}}">{{$student->MSHS}}</a></td>
                                 <td>{{$student->name}}</td>
                                 <td>{{$student->heso1}}</td>
                                 <td>{{$student->heso2}}</td>

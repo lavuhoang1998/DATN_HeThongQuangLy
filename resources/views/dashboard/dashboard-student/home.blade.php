@@ -97,7 +97,7 @@
                             </div>
                             <div class="col-md-3 col-xs-6 b-r"><strong>Khoá</strong>
                                 <br>
-                                <h4>Tạm thời chưa có</h4>
+                                <h4>{{$khoa}}</h4>
                             </div>
                             <div class="col-md-3 col-xs-6 b-r"><strong>Giáo viên chủ nhiệm</strong>
                                 <br>

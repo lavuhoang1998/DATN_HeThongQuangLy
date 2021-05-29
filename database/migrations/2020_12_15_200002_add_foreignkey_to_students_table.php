@@ -15,9 +15,9 @@ class AddForeignkeyToStudentsTable extends Migration
     {
         Schema::table('students', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('class_id');
+            $table->unsignedBigInteger('semester_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('class_id')->references('id')->on('classes');
+            $table->foreign('semester_id')->references('id')->on('semesters');
         });
     }
 
@@ -30,7 +30,7 @@ class AddForeignkeyToStudentsTable extends Migration
     {
         Schema::table('students', function (Blueprint $table) {
             $table->dropForeign('students_user_id_foreign');
-            $table->dropForeign('students_class_id_foreign');
+            $table->dropForeign('students_semester_id_foreign');
         });
     }
 }

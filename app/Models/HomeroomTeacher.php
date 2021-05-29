@@ -6,18 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Point extends Model
+class HomeroomTeacher extends Model
 {
-    use  SoftDeletes,HasFactory;
-    protected $table = 'points';
+    use  SoftDeletes;
+    protected $table = 'homeroom_teachers';
 
     protected $fillable = [
-        'heso1',
-        'heso2',
-        'heso3',
-        'trungbinh',
-        'student_id',
-        'subject_id',
+        'class_id',
+        'teacher_id',
         'semester_id',
     ];
 

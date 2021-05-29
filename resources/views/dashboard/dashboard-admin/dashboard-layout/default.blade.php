@@ -153,6 +153,10 @@
                         </ul>
                     </li>
                     <li class="nav-devider"></li>
+                    <li class="nav-small-cap">Học kì</li>
+                    <li><a href="{{url('sms_admin/createSemester')}}"><i class="mdi mdi-creation"></i><span
+                                class="hide-menu">Tạo học kì</span></a>
+                    <li class="nav-devider"></li>
                     <li><a href="{{url('/logout')}}"><i class="mdi mdi-logout"></i><span
                                 class="hide-menu">Đăng xuất</span></a>
                     <li class="nav-devider"></li>

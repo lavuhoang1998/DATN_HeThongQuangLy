@@ -51,6 +51,27 @@ Route::post('subjects', [\App\Http\Controllers\API_SubjectController::class, 'st
 Route::put('subjects/{id}', [\App\Http\Controllers\API_SubjectController::class, 'update']);
 Route::delete('subjects/{id}', [\App\Http\Controllers\API_SubjectController::class, 'delete']);
 
+//===============SEMESTER API============================================================
+Route::get('semesters', [\App\Http\Controllers\API_SemesterController::class, 'index']);
+Route::get('semesters/{id}', [\App\Http\Controllers\API_SemesterController::class, 'show']);
+Route::post('semesters', [\App\Http\Controllers\API_SemesterController::class, 'store']);
+Route::put('semesters/{id}', [\App\Http\Controllers\API_SemesterController::class, 'update']);
+Route::delete('semesters/{id}', [\App\Http\Controllers\API_SemesterController::class, 'delete']);
+
+//===============STUDY API============================================================
+Route::get('studies', [\App\Http\Controllers\API_StudyController::class, 'index']);
+Route::get('studies/{id}', [\App\Http\Controllers\API_StudyController::class, 'show']);
+Route::post('studies', [\App\Http\Controllers\API_StudyController::class, 'store']);
+Route::put('studies/{id}', [\App\Http\Controllers\API_StudyController::class, 'update']);
+Route::delete('studies/{id}', [\App\Http\Controllers\API_StudyController::class, 'delete']);
+
+//===============HOMEROOM TEACHER API============================================================
+Route::get('homeroom_teachers', [\App\Http\Controllers\API_HomeRoomTeacherController::class, 'index']);
+Route::get('homeroom_teachers/{id}', [\App\Http\Controllers\API_HomeRoomTeacherController::class, 'show']);
+Route::post('homeroom_teachers', [\App\Http\Controllers\API_HomeRoomTeacherController::class, 'store']);
+Route::put('homeroom_teachers/{id}', [\App\Http\Controllers\API_HomeRoomTeacherController::class, 'update']);
+Route::delete('homeroom_teachers/{id}', [\App\Http\Controllers\API_HomeRoomTeacherController::class, 'delete']);
+
 //===============TEACH API============================================================
 Route::get('teaches', [\App\Http\Controllers\API_TeachController::class, 'index']);
 Route::get('teaches/{id}', [\App\Http\Controllers\API_TeachController::class, 'show']);

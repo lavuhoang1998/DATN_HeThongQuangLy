@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddForeignkeyToPointsTable extends Migration
+class AddForeignkeyToStudiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class AddForeignkeyToPointsTable extends Migration
      */
     public function up()
     {
-        Schema::table('points', function (Blueprint $table) {
+        Schema::table('studies', function (Blueprint $table) {
+            $table->unsignedBigInteger('class_id');
+            $table->foreign('class_id')->references('id')->on('classes');
             $table->unsignedBigInteger('student_id');
             $table->foreign('student_id')->references('id')->on('students');
-            $table->unsignedBigInteger('subject_id');
-            $table->foreign('subject_id')->references('id')->on('subjects');
             $table->unsignedBigInteger('semester_id');
             $table->foreign('semester_id')->references('id')->on('semesters');
         });
@@ -30,10 +30,10 @@ class AddForeignkeyToPointsTable extends Migration
      */
     public function down()
     {
-        Schema::table('points', function (Blueprint $table) {
-            $table->dropForeign('points_student_id_foreign');
-            $table->dropForeign('points_subject_id_foreign');
-            $table->dropForeign('points_semester_id_foreign');
+        Schema::table('studies', function (Blueprint $table) {
+            $table->dropForeign('studies_class_id_foreign');
+            $table->dropForeign('studies_student_id_foreign');
+            $table->dropForeign('studies_semester_id_foreign');
         });
     }
 }

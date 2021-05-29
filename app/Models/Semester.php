@@ -6,19 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Point extends Model
+class Semester extends Model
 {
-    use  SoftDeletes,HasFactory;
-    protected $table = 'points';
+    use  SoftDeletes;
+    protected $table = 'semesters';
 
     protected $fillable = [
-        'heso1',
-        'heso2',
-        'heso3',
-        'trungbinh',
-        'student_id',
-        'subject_id',
-        'semester_id',
+        'semester_name',
+        'cur_semester',
     ];
 
     public function usesTimestamps() : bool{

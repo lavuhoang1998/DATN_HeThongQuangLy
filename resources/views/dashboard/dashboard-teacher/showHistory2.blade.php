@@ -139,7 +139,7 @@
                                 <div class="row">
                                     <div class="col-md">
                                         <label class="control-label">Đánh giá của giáo viên</label>
-                                        <textarea class="form-control" id ="review" name = "review" rows="5"></textarea>
+                                        <textarea class="form-control" id ="review" name = "review" rows="5">{{$history->content}}</textarea>
                                     </div>
                                 </div>
                                 <hr>
