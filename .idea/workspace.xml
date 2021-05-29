@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bbdf9e61-9aea-485f-8292-3064890fabb9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API_HomeRoomTeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API_HomeRoomTeacherController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API_PointController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API_PointController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API_SemesterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API_SemesterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API_StudyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API_StudyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API_TeachController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API_TeachController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API_StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API_StudentController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,7 +209,8 @@
       <workItem from="1622125195865" duration="22330000" />
       <workItem from="1622193351026" duration="20576000" />
       <workItem from="1622256249141" duration="23175000" />
-      <workItem from="1622294025492" duration="636000" />
+      <workItem from="1622294025492" duration="1817000" />
+      <workItem from="1622296680872" duration="33000" />
     </task>
     <servers />
   </component>
