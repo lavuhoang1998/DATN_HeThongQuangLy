@@ -103,7 +103,7 @@
                                 <td>{{$teacher ->name}}</td>
                                 <td>{{$teacher ->email}}</td>
                                 <td>{{$teacher ->password}}</td>
-                                @if ($teacher->trang_thai === 1)
+                                @if ($teacher->trang_thai === true)
                                     <td>Dạy</td>
                                     <td>
                                         <a href="{{ route('teacherProfile',['user_id'=>$teacher->id]) }}" type="button"
