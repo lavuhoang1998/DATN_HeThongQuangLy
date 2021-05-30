@@ -975,7 +975,7 @@ class AdminDashboardController extends Controller
         $teacher_list = User::join('teachers', 'users.id', '=', 'teachers.user_id')
             ->get(['users.name']);
         //dd($admin_info);
-        return view('dashboard.dashboard-admin.createHomeRoomTeacher', ['user' => $user_login, 'admin_info' => $admin_info, 'teachers'=>$teacher_list]);
+        return view('dashboard.dashboard-admin.createGVCN', ['user' => $user_login, 'admin_info' => $admin_info, 'teachers'=>$teacher_list]);
     }
 
     public function postNewHomeRoomTeacher(Request $request){
