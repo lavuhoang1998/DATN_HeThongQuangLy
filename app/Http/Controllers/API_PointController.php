@@ -28,6 +28,40 @@ class API_PointController extends Controller
         return $point_info;
     }
 
+    public function showPointTB($student_id)
+    {
+        $cur_semester = Semester::where('cur_semester', '1')->first();
+        $points = Point::join('students', 'points.student_id','=','students.id')
+            ->join('subjects', 'points.subject_id','=','subjects.id')
+            ->where('points.student_id', $student_id)
+            ->where('points.semester_id', $cur_semester->id)
+            ->get();
+
+        $trung_binh_mon=[];
+        foreach ($points as $point){
+            array_push($trung_binh_mon,$point->trungbinh);
+        }
+        $trungbinh =round(array_sum($trung_binh_mon) / count($trung_binh_mon) , 2) ;
+        if ($trungbinh>=8){
+            $result= "Giỏi";
+        }
+        elseif ($trungbinh>=7 && $trungbinh<8){
+            $result= "Khá";
+        }
+        elseif ($trungbinh>=5 && $trungbinh<7){
+            $result= "Trung bình";
+        }
+        else{
+            $result= "Chưa xếp loại";
+        }
+        $data = [];
+        array_push($data, $trungbinh);
+        array_push($data, $result);
+
+        return $data;
+    }
+
+
     public function store(Request $request)
     {
         return Point::create($request->all());

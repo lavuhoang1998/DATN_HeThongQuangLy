@@ -79,6 +79,7 @@ Route::delete('histories/{id}', [\App\Http\Controllers\API_HistoryController::cl
 Route::get('points', [\App\Http\Controllers\API_PointController::class, 'index']);
 Route::get('points/{id}', [\App\Http\Controllers\API_PointController::class, 'show']);
 Route::get('pointsBySID/{student_id}/{subject_id}', [\App\Http\Controllers\API_PointController::class, 'showBySID']);
+Route::get('showPointTB/{student_id}', [\App\Http\Controllers\API_PointController::class, 'showPointTB']);
 Route::post('points', [\App\Http\Controllers\API_PointController::class, 'store']);
 Route::put('points/{id}', [\App\Http\Controllers\API_PointController::class, 'update']);
 Route::delete('points/{id}', [\App\Http\Controllers\API_PointController::class, 'delete']);
