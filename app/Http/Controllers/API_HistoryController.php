@@ -17,12 +17,13 @@ class API_HistoryController extends Controller
         return History::find($id);
     }
 
-    public function historiesByDate($date){
+    public function historiesByDate($class_id,$date){
         $date1 = date("Y-m-d", strtotime($date));
 
         $history = History::join('teaches','teaches.id','histories.teach_id')
             ->join('subjects','teaches.subject_id','=','subjects.id')
             ->where('histories.date',$date1)
+            ->where('teaches.class_id',$class_id)
             ->orderBy('teaches.day', 'ASC')
             ->orderBy('teaches.shift', 'ASC')
             ->get();

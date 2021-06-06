@@ -70,7 +70,7 @@ Route::delete('teaches/{id}', [\App\Http\Controllers\API_TeachController::class,
 //===============HISTORY API============================================================
 Route::get('histories', [\App\Http\Controllers\API_HistoryController::class, 'index']);
 Route::get('histories/{id}', [\App\Http\Controllers\API_HistoryController::class, 'show']);
-Route::get('historiesByDate/{date}', [\App\Http\Controllers\API_HistoryController::class, 'historiesByDate']);
+Route::get('historiesByDate/{class_id}/{date}', [\App\Http\Controllers\API_HistoryController::class, 'historiesByDate']);
 Route::post('histories', [\App\Http\Controllers\API_HistoryController::class, 'store']);
 Route::put('histories/{id}', [\App\Http\Controllers\API_HistoryController::class, 'update']);
 Route::delete('histories/{id}', [\App\Http\Controllers\API_HistoryController::class, 'delete']);
