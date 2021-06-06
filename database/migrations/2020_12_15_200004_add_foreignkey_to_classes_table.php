@@ -14,6 +14,10 @@ class AddForeignkeyToClassesTable extends Migration
     public function up()
     {
         Schema::table('classes', function (Blueprint $table) {
+            $table->unsignedBigInteger('teacher_id')->comment('GVCN');;
+            $table->foreign('teacher_id')->references('id')->on('teachers');
+            $table->unsignedBigInteger('semester_id')->comment('năm vào học');;
+            $table->foreign('semester_id')->references('id')->on('semesters');
         });
     }
 
@@ -25,6 +29,8 @@ class AddForeignkeyToClassesTable extends Migration
     public function down()
     {
         Schema::table('classes', function (Blueprint $table) {
+            $table->dropForeign('classes_teacher_id_foreign');
+            $table->dropForeign('classes_semester_id_foreign');
         });
     }
 }

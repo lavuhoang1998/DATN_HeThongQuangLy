@@ -27,7 +27,7 @@ Hệ thống quản lý đào tạo
         <div class="col-lg-4 col-xlg-3 col-md-5">
             <div class="card">
                 <div class="card-body">
-                    <center class="m-t-30"> <img src="{{ asset($teacher_info->avt)}}" class="img-circle" width="150" />
+                    <center class="m-t-30"> <img src="{{ asset($user->avt)}}" class="img-circle" width="150" />
                         <h4 class="card-title m-t-10">{{$user->name}}</h4>
                         <h6 class="card-subtitle">MS: {{$teacher_info->MSGV}}</h6>
                     </center>
@@ -37,9 +37,9 @@ Hệ thống quản lý đào tạo
                     <small class="text-muted">Email </small>
                     <h6>{{$user->email}}</h6>
                     <small class="text-muted p-t-30 db">Số điện thoại</small>
-                    <h6>{{$teacher_info->sdt}}</h6>
+                    <h6>{{$user->sdt}}</h6>
                     <small class="text-muted p-t-30 db">Địa chỉ</small>
-                    <h6>{{$teacher_info->dia_chi}}</h6>
+                    <h6>{{$user->dia_chi}}</h6>
                 </div>
             </div>
         </div>
@@ -57,26 +57,26 @@ Hệ thống quản lý đào tạo
                         </div>
                         <div class="col-md-3 col-xs-6 b-r"> <strong>Giới tính</strong>
                             <br>
-                            <h4>{{$teacher_info->sex}}</h4>
+                            <h4>{{$user->sex}}</h4>
                         </div>
                         <div class="col-md-3 col-xs-6 b-r"> <strong>Ngày sinh</strong>
                             <br>
-                            <h4>{{$teacher_info->date_of_birth}}</h4>
+                            <h4>{{$user->date_of_birth}}</h4>
                         </div>
                         <div class="col-md-3 col-xs-6"> <strong>Quên quán</strong>
                             <br>
-                            <h4>{{$teacher_info->que_quan}}</h4>
+                            <h4>{{$user->que_quan}}</h4>
                         </div>
                     </div>
                     <hr>
                     <div class="row">
                         <div class="col-md-3 col-xs-6 b-r"> <strong>Dân tộc</strong>
                             <br>
-                            <h4>{{$teacher_info->dan_toc}}</h4>
+                            <h4>{{$user->dan_toc}}</h4>
                         </div>
                         <div class="col-md-3 col-xs-6 b-r"> <strong>Tôn giáo</strong>
                             <br>
-                            <h4>{{$teacher_info->ton_giao}}</h4>
+                            <h4>{{$user->ton_giao}}</h4>
                         </div>
                     </div>
                     <br>

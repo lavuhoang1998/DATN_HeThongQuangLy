@@ -47,7 +47,7 @@
                         <label class="col-md-12">Ngày sinh</label>
                         <div class="col-md-12">
                             <input class="form-control" type="date" required=""
-                                   value="{{$student_info1->date_of_birth}}" name="DoB">
+                                   value="{{$student_info->date_of_birth}}" name="DoB">
                         </div>
                     </div>
                     <div class="form-group">
@@ -68,7 +68,7 @@
                     <div class="form-group">
                         <label class="col-md-12">Ảnh đại diện (img/avt/student/MSHS.jpg)</label>
                         <div class="col-md-12">
-                            <input type="text" required="" value="{{$student_info1->avt}}"
+                            <input type="text" required="" value="{{$student_info->avt}}"
                                    class="form-control form-control-line" name="avt">
                         </div>
                     </div>

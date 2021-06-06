@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\HomeroomTeacher;
 use App\Models\Point;
 use App\Models\Semester;
-use App\Models\Study;
 use App\Models\Teach;
 use App\Models\Teacher;
 use App\Models\User;
@@ -25,23 +23,12 @@ class StudentDashboardController extends Controller
         $student_info = Student::where('user_id', $user_login_id)->first();
         $parent_info = ParentOfStudent::where('student_id', $student_info->id)->first();
 
-        $cur_semester = Semester::where('cur_semester', '1')->first();
-        $study_id = Study::where('semester_id', $cur_semester->id)
-            ->where('student_id', $student_info->id)
-            ->first();
+        $class_info = CLasss::where('id' , $student_info->class_id)->first();
 
-        $class_info = CLasss::where('id' , $study_id->class_id)->first();
-
-        $gvcn = HomeroomTeacher::where('class_id', $class_info->id)
-            ->where('semester_id', $cur_semester->id)
-            ->first();
-
-        $teacher_info = Teacher::where('id' , $gvcn->teacher_id)->first();
+        $teacher_info = Teacher::where('id' , $class_info->teacher_id)->first();
         $teacher_info1 = User::where('id', $teacher_info->user_id)->first();
 
-        $khoa= floor(($student_info->semester_id -1)/2) + 1;
-
-        return view('dashboard.dashboard-student.home', ['user' => $user_login, 'student_info' => $student_info, 'parent_info' => $parent_info, 'class_info' => $class_info , 'teacher_info1' => $teacher_info1, 'khoa'=>$khoa]);
+        return view('dashboard.dashboard-student.home', ['user' => $user_login, 'student_info' => $student_info, 'parent_info' => $parent_info, 'class_info' => $class_info , 'teacher_info1' => $teacher_info1,]);
     }
 
     public function showEditProfile()
@@ -72,16 +59,16 @@ class StudentDashboardController extends Controller
     public function postEditProfile(Request $request)
     {
         $user_login = Auth::user();
-        $user_login_id = $user_login->id;
-        $student_info = Student::where('user_id', $user_login_id)->first();
+//        $user_login_id = $user_login->id;
+//        $student_info = Student::where('user_id', $user_login_id)->first();
 
-        $student_info->sex = $request->input('sex');
-        $student_info->dia_chi = $request->input('address');
-        $student_info->que_quan = $request->input('que_quan');
-        $student_info->dan_toc = $request->input('dan_toc');
-        $student_info->ton_giao = $request->input('ton_giao');
-        $student_info->sdt = $request->input('phone_number');
-        $student_info ->save();
+        $user_login->sex = $request->input('sex');
+        $user_login->dia_chi = $request->input('address');
+        $user_login->que_quan = $request->input('que_quan');
+        $user_login->dan_toc = $request->input('dan_toc');
+        $user_login->ton_giao = $request->input('ton_giao');
+        $user_login->sdt = $request->input('phone_number');
+        $user_login ->save();
         return redirect('sms_student/editProfile')->with('alert', 'Cập nhật thông tin thành công!');
     }
 
@@ -119,29 +106,22 @@ class StudentDashboardController extends Controller
         $user_login_id = $user_login->id;
         $student_info = Student::where('user_id', $user_login_id)->first();
 
-        $cur_semester = Semester::where('cur_semester', '1')->first();
-        $study_id = Study::where('semester_id', $cur_semester->id)
-            ->where('student_id', $student_info->id)
-            ->first();
 
         $student_list = User::join('students', 'users.id', '=' , 'students.user_id')
-            ->join('studies', 'studies.student_id', '=' , 'students.id')
-            ->where('studies.class_id' , $study_id->class_id)
-            ->where('studies.semester_id' , $cur_semester->id)
+            ->where('students.class_id' , $student_info->class_id)
+            ->where('users.trang_thai' , 1)
             ->simplePaginate(15);
             //->get(['users.name','users.email','students.*'])->paginate(15);
 
         $student_list1 = User::join('students', 'users.id', '=' , 'students.user_id')
-            ->join('studies', 'studies.student_id', '=' , 'students.id')
-            ->where('studies.class_id' , $study_id->class_id)
-            ->where('studies.semester_id' , $cur_semester->id)->get();
+            ->where('students.class_id' , $student_info->class_id)
+            ->where('users.trang_thai' , 1)
+            ->get();
         $si_so = count($student_list1);
 
-        $class_info = CLasss::where('id' , $study_id->class_id)->first();
-        $gvcn = HomeroomTeacher::where('class_id', $class_info->id)
-            ->where('semester_id', $cur_semester->id)
-            ->first();
-        $teacher_info = Teacher::where('id' , $gvcn->teacher_id)->first();
+        $class_info = CLasss::where('id' , $student_info->class_id)->first();
+
+        $teacher_info = Teacher::where('id' , $class_info->teacher_id)->first();
         $teacher_info1 = User::where('id', $teacher_info->user_id)->first();
 
         return view('dashboard.dashboard-student.classInfo', ['user' => $user_login, 'student_info' => $student_info, 'students' => $student_list, 'class_info' => $class_info, 'teacher_info' => $teacher_info, 'teacher_info1' => $teacher_info1, 'si_so'=>$si_so ]);
@@ -153,11 +133,8 @@ class StudentDashboardController extends Controller
         $student_info = Student::where('user_id', $user_login_id)->first();
 
         $cur_semester = Semester::where('cur_semester', '1')->first();
-        $study_id = Study::where('semester_id', $cur_semester->id)
-            ->where('student_id', $student_info->id)
-            ->first();
 
-        $class = CLasss::where('id', $study_id->class_id)->first();
+        $class = CLasss::where('id', $student_info->class_id)->first();
         $class_id = $class->id;
 
         $t12 = Teach::join('teachers', 'teaches.teacher_id','=','teachers.id')
@@ -351,9 +328,11 @@ class StudentDashboardController extends Controller
         $user_login = Auth::user();
         $user_login_id = $user_login->id;
         $student_info = Student::where('user_id', $user_login_id)->first();
+        $class_info = CLasss::where('id' , $student_info->class_id)->first();
 
-        $semesters = Study::join('semesters','studies.semester_id','=','semesters.id')
-            ->where('studies.student_id',$student_info->id)->get();
+        $semesters = Semester::where('id','>=',$class_info->semester_id)
+            ->where('id','<=',$class_info->semester_id+5)
+            ->get();
 
         return view('dashboard.dashboard-student.showPoint', ['user' => $user_login, 'student_info' => $student_info, 'semesters'=>$semesters]);
     }
@@ -362,11 +341,12 @@ class StudentDashboardController extends Controller
         $user_login = Auth::user();
         $user_login_id = $user_login->id;
         $student_info = Student::where('user_id', $user_login_id)->first();
-
+        $class_info = CLasss::where('id' , $student_info->class_id)->first();
         $semester_chosen = Semester::where('id', $semester_id)->first();
 
-        $semesters = Study::join('semesters','studies.semester_id','=','semesters.id')
-            ->where('studies.student_id',$student_info->id)->get();
+        $semesters = Semester::where('id','>=',$class_info->semester_id)
+            ->where('id','<=',$class_info->semester_id+5)
+            ->get();
 
 
         $points = Point::join('students', 'points.student_id','=','students.id')
@@ -380,8 +360,19 @@ class StudentDashboardController extends Controller
             array_push($trung_binh_mon,$point->trungbinh);
         }
         $trungbinh =round(array_sum($trung_binh_mon) / count($trung_binh_mon) , 2) ;
-
-        return view('dashboard.dashboard-student.showPoint1', ['user' => $user_login, 'student_info' => $student_info, 'points'=>$points, 'tb'=>$trungbinh, 'semesters'=>$semesters, 'semester_chosen'=>$semester_chosen]);
+        if ($trungbinh>=8){
+            $result= "Giỏi";
+        }
+        elseif ($trungbinh>=7 && $trungbinh<8){
+            $result= "Khá";
+        }
+        elseif ($trungbinh>=5 && $trungbinh<7){
+            $result= "Trung bình";
+        }
+        else{
+            $result= "Chưa xếp loại";
+        }
+        return view('dashboard.dashboard-student.showPoint1', ['user' => $user_login, 'student_info' => $student_info, 'points'=>$points, 'tb'=>$trungbinh,'result'=>$result, 'semesters'=>$semesters, 'semester_chosen'=>$semester_chosen]);
     }
 
 }

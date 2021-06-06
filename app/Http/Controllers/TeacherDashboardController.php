@@ -7,7 +7,6 @@ use App\Models\History;
 use App\Models\Point;
 use App\Models\Semester;
 use App\Models\Student;
-use App\Models\Study;
 use App\Models\Subject;
 use App\Models\Teacher;
 use App\Models\Teach;
@@ -25,7 +24,6 @@ class TeacherDashboardController extends Controller
         $user_login = Auth::user();
         $user_login_id = $user_login->id;
         $teacher_info = Teacher::where('user_id', $user_login_id)->first();
-        //dd($parent_info);
         return view('dashboard.dashboard-teacher.home', ['user' => $user_login, 'teacher_info' => $teacher_info]);
     }
 
@@ -48,16 +46,14 @@ class TeacherDashboardController extends Controller
     public function postEditProfile(Request $request)
     {
         $user_login = Auth::user();
-        $user_login_id = $user_login->id;
-        $teacher_info = Teacher::where('user_id', $user_login_id)->first();
 
-        $teacher_info->sex = $request->input('sex');
-        $teacher_info->dia_chi = $request->input('address');
-        $teacher_info->que_quan = $request->input('que_quan');
-        $teacher_info->dan_toc = $request->input('dan_toc');
-        $teacher_info->ton_giao = $request->input('ton_giao');
-        $teacher_info->sdt = $request->input('phone_number');
-        $teacher_info->save();
+        $user_login->sex = $request->input('sex');
+        $user_login->dia_chi = $request->input('address');
+        $user_login->que_quan = $request->input('que_quan');
+        $user_login->dan_toc = $request->input('dan_toc');
+        $user_login->ton_giao = $request->input('ton_giao');
+        $user_login->sdt = $request->input('phone_number');
+        $user_login->save();
         return redirect('sms_teacher/editProfile')->with('alert', 'Cập nhật thông tin thành công!');
     }
 
@@ -258,24 +254,11 @@ class TeacherDashboardController extends Controller
 
         $class = CLasss::where('id', $class_id)->first();
 
-//        $list_student = Point::join('students', 'points.student_id', '=', 'students.id')
-//            ->join('subjects', 'points.subject_id', '=', 'subjects.id')
-//            ->join('users', 'students.user_id', '=', 'users.id')
-//            ->join('studies','studies.student_id','=','students.id')
-//            ->where('points.subject_id', $teacher_info->subject_id)
-//            ->where('points.semester_id', $cur_semester->id)
-//            ->where('studies.class_id', $class_id)
-//            ->where('users.trang_thai', '1')
-//            ->orderBy('students.id', 'asc')
-//            ->get(['users.name', 'students.id as stu_id', 'students.MSHS', 'points.*']);
-
-        $list_student = Study::join('students','studies.student_id','=','students.id')
-            ->join('users', 'students.user_id', '=', 'users.id')
+        $list_student = Student::join('users', 'students.user_id', '=', 'users.id')
             ->join('points','students.id','=','points.student_id')
             ->where('points.subject_id', $teacher_info->subject_id)
-            ->where('studies.semester_id', $cur_semester->id)
             ->where('points.semester_id', $cur_semester->id)
-            ->where('studies.class_id', $class_id)
+            ->where('students.class_id', $class_id)
             ->where('users.trang_thai', '1')
             ->orderBy('students.id', 'asc')
             ->get(['users.name', 'students.id as stu_id', 'students.MSHS', 'points.*']);
@@ -288,6 +271,7 @@ class TeacherDashboardController extends Controller
         $user_login = Auth::user();
         $user_login_id = $user_login->id;
         $teacher_info = Teacher::where('user_id', $user_login_id)->first();
+        $cur_semester = Semester::where('cur_semester', '1')->first();
         $subject = Subject::where('id',$teacher_info->subject_id)->first();
         $name = $request->input('search');
 
@@ -299,10 +283,10 @@ class TeacherDashboardController extends Controller
 
         $class = CLasss::where('id', $class_id)->first();
 
-        $list_student = Point::join('students', 'points.student_id', '=', 'students.id')
-            ->join('subjects', 'points.subject_id', '=', 'subjects.id')
-            ->join('users', 'students.user_id', '=', 'users.id')
+        $list_student = Student::join('users', 'students.user_id', '=', 'users.id')
+            ->join('points','students.id','=','points.student_id')
             ->where('points.subject_id', $teacher_info->subject_id)
+            ->where('points.semester_id', $cur_semester->id)
             ->where('students.class_id', $class_id)
             ->where('users.trang_thai', '1')
             ->where('users.name', 'like', '%' . $name . '%')
@@ -317,6 +301,7 @@ class TeacherDashboardController extends Controller
         $user_login = Auth::user();
         $user_login_id = $user_login->id;
         $teacher_info = Teacher::where('user_id', $user_login_id)->first();
+        $cur_semester = Semester::where('cur_semester', '1')->first();
 
         //Chuyển chuỗi điểm về dạng chuẩn
         preg_match_all('!\d+(?:\.\d+)?!', $request->input('heso1'), $matches1);
@@ -333,7 +318,9 @@ class TeacherDashboardController extends Controller
         $trungbinh = round($TS / $MS, 2);
 
         $points = Point::where('student_id', $request->input('id'))
-            ->where('subject_id', $teacher_info->subject_id)->first();
+            ->where('subject_id', $teacher_info->subject_id)
+            ->where('points.semester_id', $cur_semester->id)
+            ->first();
         if ($points == null) {
             Point::create([
                 'heso1' => $str_heso1,
@@ -362,15 +349,11 @@ class TeacherDashboardController extends Controller
         $student_info = User::where('id', $student_info1->user_id)->first();
         $subject = Subject::where('id',$teacher_info->subject_id)->first();
 
-
         $points = Point::join('semesters','semesters.id','=','points.semester_id')
             ->where('student_id',$student_id)
             ->where('subject_id', $teacher_info->subject_id)
             ->get();
 
-
         return view('dashboard.dashboard-teacher.showPointByStudent', ['user' => $user_login, 'teacher_info' => $teacher_info, 'student_info'=>$student_info, 'student_info1'=>$student_info1, 'points'=>$points, 'subject'=>$subject]);
     }
-
-
 }

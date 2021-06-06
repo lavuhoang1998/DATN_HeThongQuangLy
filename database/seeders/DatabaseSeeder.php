@@ -17,18 +17,17 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RoleTableSeeder::class,
             SubjectSeeder::class,
-            ClassSeeder::class,
             SemesterSeeder::class,
 
             UserTableSeeder::class,
             AdminTableSeeder::class,
             TeacherSeeder::class,
+            ClassSeeder::class,
             StudentTableSeeder::class,
-
             ParentTableSeeder::class,
 
-            HomeRoomTeacherSeeder::class,
-            StudySeeder::class,
+//            HomeRoomTeacherSeeder::class,
+//            StudySeeder::class,
             TeachSeeder::class,
             HistorySeeder::class,
             PointSeeder::class,

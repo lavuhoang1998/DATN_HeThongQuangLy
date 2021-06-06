@@ -42,7 +42,7 @@
                                     <label class="col-md-12">Lớp 10 Toán</label>
                                     <select class="form-control form-white" name="10toan" required>
                                         <option value="" selected disabled hidden></option>
-                                    @foreach($teachers as $teacher)
+                                        @foreach($teachers as $teacher)
                                             <option>{{$teacher->name}}</option>
                                         @endforeach
                                     </select>
@@ -102,138 +102,7 @@
                                     </select>
                                 </div>
                                 <hr>
-                                <h3>Khối 11</h3>
-                                <div class="col-md-12">
-                                    <label class="col-md-12">Lớp 11 Toán</label>
-                                    <select class="form-control form-white" name="11toan" required>
-                                        <option value="" selected disabled hidden></option>
-                                        @foreach($teachers as $teacher)
-                                            <option>{{$teacher->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-12">
-                                    <label class="col-md-12">Lớp 11 Lý</label>
-                                    <select class="form-control form-white" name="11ly" required>
-                                        <option value="" selected disabled hidden></option>
-                                        @foreach($teachers as $teacher)
-                                            <option>{{$teacher->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-12">
-                                    <label class="col-md-12">Lớp 11 Hoá</label>
-                                    <select class="form-control form-white" name="11hoa" required>
-                                        <option value="" selected disabled hidden></option>
-                                        @foreach($teachers as $teacher)
-                                            <option>{{$teacher->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-12">
-                                    <label class="col-md-12">Lớp 11 Văn</label>
-                                    <select class="form-control form-white" name="11van" required>
-                                        <option value="" selected disabled hidden></option>
-                                        @foreach($teachers as $teacher)
-                                            <option>{{$teacher->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-12">
-                                    <label class="col-md-12">Lớp 11 Anh</label>
-                                    <select class="form-control form-white" name="11anh" required>
-                                        <option value="" selected disabled hidden></option>
-                                        @foreach($teachers as $teacher)
-                                            <option>{{$teacher->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-12">
-                                    <label class="col-md-12">Lớp 11 Tin</label>
-                                    <select class="form-control form-white" name="11tin" required>
-                                        <option value="" selected disabled hidden></option>
-                                        @foreach($teachers as $teacher)
-                                            <option>{{$teacher->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-12">
-                                    <label class="col-md-12">Lớp 11 K</label>
-                                    <select class="form-control form-white" name="11k" required>
-                                        <option value="" selected disabled hidden></option>
-                                        @foreach($teachers as $teacher)
-                                            <option>{{$teacher->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <hr>
-                                <h3>Khối 12</h3>
-                                <div class="col-md-12">
-                                    <label class="col-md-12">Lớp 12 Toán</label>
-                                    <select class="form-control form-white" name="12toan" required>
-                                        <option value="" selected disabled hidden></option>
-                                        @foreach($teachers as $teacher)
-                                            <option>{{$teacher->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-12">
-                                    <label class="col-md-12">Lớp 12 Lý</label>
-                                    <select class="form-control form-white" name="12ly" required>
-                                        <option value="" selected disabled hidden></option>
-                                        @foreach($teachers as $teacher)
-                                            <option>{{$teacher->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-12">
-                                    <label class="col-md-12">Lớp 12 Hoá</label>
-                                    <select class="form-control form-white" name="12hoa" required>
-                                        <option value="" selected disabled hidden></option>
-                                        @foreach($teachers as $teacher)
-                                            <option>{{$teacher->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-12">
-                                    <label class="col-md-12">Lớp 12 Văn</label>
-                                    <select class="form-control form-white" name="12van" required>
-                                        <option value="" selected disabled hidden></option>
-                                        @foreach($teachers as $teacher)
-                                            <option>{{$teacher->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-12">
-                                    <label class="col-md-12">Lớp 12 Anh</label>
-                                    <select class="form-control form-white" name="12anh" required>
-                                        <option value="" selected disabled hidden></option>
-                                        @foreach($teachers as $teacher)
-                                            <option>{{$teacher->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-12">
-                                    <label class="col-md-12">Lớp 12 Tin</label>
-                                    <select class="form-control form-white" name="12tin" required>
-                                        <option value="" selected disabled hidden></option>
-                                        @foreach($teachers as $teacher)
-                                            <option>{{$teacher->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-12">
-                                    <label class="col-md-12">Lớp 12 K</label>
-                                    <select class="form-control form-white" name="12k" required>
-                                        <option value="" selected disabled hidden></option>
-                                        @foreach($teachers as $teacher)
-                                            <option>{{$teacher->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <hr>
                             </div>
-
                             <div class="form-group">
                                 <div class="col-sm-12">
                                     <button class="btn btn-success">Cập nhật</button>

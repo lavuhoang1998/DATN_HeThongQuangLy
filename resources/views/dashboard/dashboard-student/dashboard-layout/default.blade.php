@@ -77,7 +77,7 @@
                                     <div class="message-center">
                                         <!-- Message -->
                                         <a href="#">
-                                            <div class="user-img"><img src="{{ asset($student_info->avt)}}" alt="user"
+                                            <div class="user-img"><img src="{{ asset($user->avt)}}" alt="user"
                                                                        class="img-circle"> <span
                                                     class="profile-status online pull-right"></span></div>
                                             <div class="mail-contnet">
@@ -98,12 +98,12 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
-                                src="{{ asset($student_info->avt)}}" alt="user" class="profile-pic"/></a>
+                                src="{{ asset($user->avt)}}" alt="user" class="profile-pic"/></a>
                         <div class="dropdown-menu dropdown-menu-right scale-up">
                             <ul class="dropdown-user">
                                 <li>
                                     <div class="dw-user-box">
-                                        <div class="u-img"><img src="{{ asset($student_info->avt)}}" alt="user"></div>
+                                        <div class="u-img"><img src="{{ asset($user->avt)}}" alt="user"></div>
                                         <div class="u-text">
                                             <h4>{{$user->name}}</h4>
                                             <p>{{$user->email}}</p>
@@ -136,7 +136,7 @@
             <!-- User profile -->
             <div class="user-profile" style="background: url('{{asset('img/logo/logo-background.jpg')}}')  no-repeat;">
                 <!-- User profile image -->
-                <div class="profile-img"><img src="{{ asset($student_info->avt)}}" alt="user"/></div>
+                <div class="profile-img"><img src="{{ asset($user->avt)}}" alt="user"/></div>
                 <!-- User profile text-->
                 <div class="profile-text"><a class="user-name">{{$user->name}}</a></div>
             </div>

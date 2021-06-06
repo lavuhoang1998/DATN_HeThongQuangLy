@@ -21,7 +21,7 @@
             <div class="col-lg-4 col-xlg-3 col-md-5">
                 <div class="card">
                     <div class="card-body">
-                        <center class="m-t-30"><img src="{{ asset($student_info1->avt)}}" class="img-circle"
+                        <center class="m-t-30"><img src="{{ asset($student_info->avt)}}" class="img-circle"
                                                     width="150"/>
                             <h4 class="card-title m-t-10">{{$student_info->name}}</h4>
                             <h6 class="card-subtitle">MSHS: {{$student_info1->MSHS}}</h6>
@@ -34,9 +34,9 @@
                         <small class="text-muted">Email </small>
                         <h6>{{$student_info->email}}</h6>
                         <small class="text-muted p-t-30 db">Số điện thoại</small>
-                        <h6>{{$student_info1->sdt}}</h6>
+                        <h6>{{$student_info->sdt}}</h6>
                         <small class="text-muted p-t-30 db">Địa chỉ</small>
-                        <h6>{{$student_info1->dia_chi}}</h6>
+                        <h6>{{$student_info->dia_chi}}</h6>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
                                 </thead>
                                 <tbody>
                                 @foreach($points as $point)
-                                    <tr>
+                                    <tr class="text-center">
                                         <td></td>
                                         <td>{{$point->semester_name}}</td>
                                         <td>{{$point->name}}</td>

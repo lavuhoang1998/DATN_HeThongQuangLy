@@ -35,7 +35,7 @@
                             <option value="" selected disabled hidden>Chọn học kì</option>
                             @foreach($semesters as $semester)
                                 <option
-                                    value="{{route('showPointBySemester', ['semester_id'=>$semester->semester_id])}}">{{$semester->semester_name}}
+                                    value="{{route('showPointBySemester', ['semester_id'=>$semester->id])}}">{{$semester->semester_name}}
                                 </option>
                             @endforeach
                         </select>

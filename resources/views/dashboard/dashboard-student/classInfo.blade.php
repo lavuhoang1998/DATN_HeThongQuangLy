@@ -27,8 +27,14 @@
                 <h3 class="font-medium m-t-30">Thông tin lớp học</h3>
                 <br>
                 <div class="row">
-                    <div class="col-md-3 col-xs-6 b-r"></div>
-                    <div class="col-md-3 col-xs-6 b-r"><strong>Lớp</strong>
+                    <div class="col-md-3 col-xs-6 b-r"><strong>Lớp chuyên</strong>
+                        <h4>{{$class_info->name}}</h4>
+                    </div>
+                    <div class="col-md-3 col-xs-6 b-r"><strong>Khoá</strong>
+                        <br>
+                        <h4>{{$class_info->khoa}}</h4>
+                    </div>
+                    <div class="col-md-3 col-xs-6 b-r"><strong>Lớp hiện tại</strong>
                         <br>
                         <h4>{{$class_info->class_name}}</h4>
                     </div>
@@ -57,9 +63,9 @@
                         <tr>
                             <td>{{$teacher_info->MSGV}}</td>
                             <td>{{$teacher_info1 ->name}}</td>
-                            <td>{{$teacher_info->date_of_birth}}</td>
-                            <td>{{$teacher_info->dia_chi}}</td>
-                            <td>{{$teacher_info->sdt}}</td>
+                            <td>{{$teacher_info1->date_of_birth}}</td>
+                            <td>{{$teacher_info1->dia_chi}}</td>
+                            <td>{{$teacher_info1->sdt}}</td>
                         </tr>
                         </tbody>
                     </table>

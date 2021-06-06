@@ -15,16 +15,8 @@ class Student extends Model
 
     protected $fillable = [
         'MSHS',
-        'sex',
-        'date_of_birth',
-        'dia_chi',
-        'sdt',
-        'que_quan',
-        'dan_toc',
-        'ton_giao',
-        'avt',
         'user_id',
-        'semester_id',
+        'class_id',
     ];
 
     public function usesTimestamps() : bool{

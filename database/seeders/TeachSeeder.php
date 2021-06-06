@@ -14,7 +14,7 @@ class TeachSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=1; $i<=21; $i++) {
+        for ($i=1; $i<=7; $i++) {
             for ($j=2; $j<=7; $j++) {
                 for ($k=1; $k<=5; $k++) {
                     DB::table('teaches')->insert([
@@ -29,7 +29,7 @@ class TeachSeeder extends Seeder
             }
         }
 
-        for ($i=1; $i<=21; $i++) {
+        for ($i=1; $i<=7; $i++) {
             for ($j=2; $j<=7; $j++) {
                 for ($k=1; $k<=5; $k++) {
                     DB::table('teaches')->insert([
@@ -45,7 +45,7 @@ class TeachSeeder extends Seeder
 
         }
 
-        for ($i=1; $i<=21; $i++) {
+        for ($i=1; $i<=14; $i++) {
             for ($j=2; $j<=7; $j++) {
                 for ($k=1; $k<=5; $k++) {
                     DB::table('teaches')->insert([
@@ -61,7 +61,7 @@ class TeachSeeder extends Seeder
 
         }
 
-        for ($i=1; $i<=21; $i++) {
+        for ($i=1; $i<=14; $i++) {
             for ($j=2; $j<=7; $j++) {
                 for ($k=1; $k<=5; $k++) {
                     DB::table('teaches')->insert([
@@ -90,7 +90,6 @@ class TeachSeeder extends Seeder
                     ]);
                 }
             }
-
         }
 
 

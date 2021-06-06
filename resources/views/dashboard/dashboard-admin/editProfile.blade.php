@@ -42,42 +42,42 @@
                     <div class="form-group">
                         <label class="col-md-12">Số điện thoại</label>
                         <div class="col-md-12">
-                            <input type="text" placeholder="{{$admin_info->sdt}}"
+                            <input type="text" placeholder="{{$user->sdt}}"
                                    class="form-control form-control-line" required="" name="phone_number">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-12">Địa chỉ</label>
                         <div class="col-md-12">
-                            <input type="text" placeholder="{{$admin_info->dia_chi}}"
+                            <input type="text" placeholder="{{$user->dia_chi}}"
                                    class="form-control form-control-line" required="" name="address">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-12">Quê quán</label>
                         <div class="col-md-12">
-                            <input type="text" placeholder="{{$admin_info->que_quan}}"
+                            <input type="text" placeholder="{{$user->que_quan}}"
                                    class="form-control form-control-line" required="" name="que_quan">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-12">Dân tộc</label>
                         <div class="col-md-12">
-                            <input type="text" placeholder="{{$admin_info->dan_toc}}"
+                            <input type="text" placeholder="{{$user->dan_toc}}"
                                    class="form-control form-control-line" required="" name="dan_toc">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-12">Tôn giáo</label>
                         <div class="col-md-12">
-                            <input type="text" placeholder="{{$admin_info->ton_giao}}"
+                            <input type="text" placeholder="{{$user->ton_giao}}"
                                    class="form-control form-control-line" required="" name="ton_giao">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-12">Giới tinh</label>
                         <div class="col-sm-12">
-                            <select class="form-control form-control-line" required="" name="sex">
+                            <select class="form-control form-control-line" required name="sex">
                                 <option>Nam</option>
                                 <option>Nữ</option>
                                 <option>Khác</option>

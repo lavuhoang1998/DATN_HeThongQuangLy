@@ -103,7 +103,7 @@
                                 <td>{{$student ->name}}</td>
                                 <td>{{$student ->email}}</td>
                                 <td>{{$student ->password}}</td>
-                                @if ($student->trang_thai == true)
+                                @if ($student->trang_thai == 1)
                                     <td>Học</td>
                                     <td>
                                         <a href="{{ route('studentProfile',['user_id'=>$student->id]) }}" type="button"

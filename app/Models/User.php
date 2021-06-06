@@ -24,7 +24,15 @@ class User extends Authenticatable
         'email',
         'password',
         'role_id',
-        'trang_thai'
+        'trang_thai',
+        'sex',
+        'date_of_birth',
+        'dia_chi',
+        'sdt',
+        'que_quan',
+        'dan_toc',
+        'ton_giao',
+        'avt',
     ];
 
     /**

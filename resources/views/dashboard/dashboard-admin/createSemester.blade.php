@@ -50,10 +50,7 @@
                         </form>
                         <i class="mdi mdi-grease-pencil" style="font-size:24px">Tạo học kì mới sẽ tạo mới bảng điểm và thời khoá biểu.</i>
                         <br>
-                        <i class="mdi mdi-grease-pencil" style="font-size:24px">Bạn phải cập nhật danh sách GVCN mới.</i>
-
-
-
+                        <i class="mdi mdi-grease-pencil" style="font-size:24px">Bạn phải cập nhật danh sách GVCN cho khoá mới.</i>
                     </div>
                 </div>
             </div>

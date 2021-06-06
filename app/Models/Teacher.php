@@ -14,14 +14,6 @@ class Teacher extends Model
 
     protected $fillable = [
         'MSGV',
-        'sex',
-        'date_of_birth',
-        'dia_chi',
-        'sdt',
-        'que_quan',
-        'dan_toc',
-        'ton_giao',
-        'avt',
         'user_id',
         'subject_id'
     ];

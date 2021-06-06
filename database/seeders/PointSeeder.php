@@ -15,7 +15,7 @@ class PointSeeder extends Seeder
     public function run()
     {
         //------Diem ki 20181--------------------
-        for ($i=351 ; $i <= 525; $i++){
+        for ($i=1 ; $i <= 175; $i++){
             for ($k=1 ; $k <= 11; $k++){
                 DB::table('points')->insert([
                     'heso1' => '8,8,8',
@@ -29,7 +29,7 @@ class PointSeeder extends Seeder
             }
         }
         //------Diem ki 20182--------------------
-        for ($i=351 ; $i <= 525; $i++){
+        for ($i=1 ; $i <= 175; $i++){
             for ($k=1 ; $k <= 11; $k++){
                 DB::table('points')->insert([
                     'heso1' => '7,7,7',
@@ -43,7 +43,7 @@ class PointSeeder extends Seeder
             }
         }
         //------Diem ki 20191--------------------
-        for ($i=176 ; $i <= 525; $i++){
+        for ($i=1 ; $i <= 350; $i++){
             for ($k=1 ; $k <= 11; $k++){
                 DB::table('points')->insert([
                     'heso1' => '9,9,9',
@@ -57,7 +57,7 @@ class PointSeeder extends Seeder
             }
         }
         //------Diem ki 20192--------------------
-        for ($i=176 ; $i <= 525; $i++){
+        for ($i=1 ; $i <= 350; $i++){
             for ($k=1 ; $k <= 11; $k++){
                 DB::table('points')->insert([
                     'heso1' => '8,8,8',

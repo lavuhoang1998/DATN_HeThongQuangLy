@@ -12,7 +12,11 @@ class CLasss extends Model
     protected $table = 'classes';
 
     protected $fillable = [
+        'name',
+        'khoa',
         'class_name',
+        'teacher_id',
+        'semester_id',
     ];
 
     public function usesTimestamps() : bool{

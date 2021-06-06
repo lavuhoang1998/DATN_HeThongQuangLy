@@ -24,6 +24,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '1',
+            'sex' => 'Nam',
+            'date_of_birth' => '1990-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/admin/QL0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -32,6 +40,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '1',
+            'sex' => 'Nam',
+            'date_of_birth' => '1990-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/admin/QL0002.jpg',
         ]);
 
         //-----------Teacher Account---------------------
@@ -42,6 +58,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => ' ',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => ' ',
+            'sdt' => ' ',
+            'que_quan' => ' ',
+            'dan_toc' => ' ',
+            'ton_giao' => ' ',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
         //-----------Toán---------------------
         DB::table('users')->insert([
@@ -50,6 +74,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -58,6 +90,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -66,6 +106,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -74,6 +122,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -82,6 +138,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
 
         //-----------Ngữ văn---------------------
@@ -91,6 +155,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -99,6 +171,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -107,6 +187,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -115,6 +203,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -123,6 +219,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
 
         //-----------Ngoại ngữ---------------------
@@ -132,6 +236,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -140,6 +252,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -148,6 +268,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -156,6 +284,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
 
         //-----------Giáo dục thể chất---------------------
@@ -165,6 +301,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -173,6 +317,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -181,6 +333,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
         //-----------Lịch sử---------------------
         DB::table('users')->insert([
@@ -189,6 +349,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
         DB::table('users')->insert([
             'name' => 'Đoàn Thanh Mai',
@@ -196,6 +364,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
         //-----------Địa lý---------------------
         DB::table('users')->insert([
@@ -204,6 +380,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
         DB::table('users')->insert([
             'name' => 'Đỗ Thị Thu',
@@ -211,6 +395,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
         //-----------Vật lý----------------------
         DB::table('users')->insert([
@@ -219,6 +411,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -227,6 +427,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -235,6 +443,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
         //-----------Hóa học----------------------
         DB::table('users')->insert([
@@ -243,6 +459,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -251,6 +475,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -259,6 +491,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
         //-----------Sinh học---------------------
         DB::table('users')->insert([
@@ -267,6 +507,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -275,6 +523,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -283,6 +539,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
         //-----------Công nghệ---------------------
         DB::table('users')->insert([
@@ -291,6 +555,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
         DB::table('users')->insert([
             'name' => 'Khuất Thị Nga',
@@ -298,6 +570,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
         //-----------Tin học-----------------------
         DB::table('users')->insert([
@@ -306,6 +586,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
         DB::table('users')->insert([
             'name' => 'Nguyễn Đức Tuệ',
@@ -313,6 +601,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '2',
+            'sex' => 'Nam',
+            'date_of_birth' => '1971-10-07',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/teacher/GV0001.jpg',
         ]);
 
         //---------------------------------------------------------------
@@ -324,6 +620,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -332,6 +636,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -340,6 +652,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -348,6 +668,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -356,6 +684,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -364,6 +700,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -372,6 +716,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -380,6 +732,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -388,6 +748,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -396,6 +764,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -404,6 +780,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -412,6 +796,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -420,6 +812,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -428,6 +828,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -436,6 +844,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -444,6 +860,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -452,6 +876,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -460,6 +892,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -468,6 +908,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -476,6 +924,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -484,6 +940,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -492,6 +956,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -500,6 +972,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -508,6 +988,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         DB::table('users')->insert([
@@ -516,6 +1004,14 @@ class UserTableSeeder extends Seeder
             'password' => Hash::make('123456789'),
             'trang_thai' => '1',
             'role_id' => '3',
+            'sex' => 'Nữ',
+            'date_of_birth' => '1998-11-06',
+            'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+            'sdt' => '03299838383',
+            'que_quan' => 'Nam Định',
+            'dan_toc' => 'Kinh',
+            'ton_giao' => 'Không',
+            'avt' => 'img/avt/student/HS0001.jpg',
         ]);
 
         for ($i=2; $i<=21; $i++) {
@@ -526,6 +1022,14 @@ class UserTableSeeder extends Seeder
                     'password' => Hash::make('123456789'),
                     'trang_thai' => '1',
                     'role_id' => '3',
+                    'sex' => 'Nữ',
+                    'date_of_birth' => '1998-11-06',
+                    'dia_chi' => '168 đường Kim Đồng, thành phố Yên Bái',
+                    'sdt' => '03299838383',
+                    'que_quan' => 'Nam Định',
+                    'dan_toc' => 'Kinh',
+                    'ton_giao' => 'Không',
+                    'avt' => 'img/avt/student/HS0001.jpg',
                 ]);
             }}
 

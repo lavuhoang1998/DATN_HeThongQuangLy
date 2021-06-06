@@ -3,13 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\CLasss;
-use App\Models\HomeroomTeacher;
 use App\Models\ParentOfStudent;
 use App\Models\Admin;
 use App\Models\Point;
 use App\Models\Semester;
 use App\Models\Student;
-use App\Models\Study;
 use App\Models\Subject;
 use App\Models\Teach;
 use App\Models\Teacher;
@@ -27,7 +25,6 @@ class AdminDashboardController extends Controller
         $user_login = Auth::user();
         $user_login_id = $user_login->id;
         $admin_info = Admin::where('user_id', $user_login_id)->first();
-        //dd($admin_info);
         return view('dashboard.dashboard-admin.home', ['user' => $user_login, 'admin_info' => $admin_info]);
     }
 
@@ -50,16 +47,14 @@ class AdminDashboardController extends Controller
     public function postEditProfile(Request $request)
     {
         $user_login = Auth::user();
-        $user_login_id = $user_login->id;
-        $admin_info = Admin::where('user_id', $user_login_id)->first();
 
-        $admin_info->sex = $request->input('sex');
-        $admin_info->dia_chi = $request->input('address');
-        $admin_info->que_quan = $request->input('que_quan');
-        $admin_info->dan_toc = $request->input('dan_toc');
-        $admin_info->ton_giao = $request->input('ton_giao');
-        $admin_info->sdt = $request->input('phone_number');
-        $admin_info->save();
+        $user_login->sex = $request->input('sex');
+        $user_login->dia_chi = $request->input('address');
+        $user_login->que_quan = $request->input('que_quan');
+        $user_login->dan_toc = $request->input('dan_toc');
+        $user_login->ton_giao = $request->input('ton_giao');
+        $user_login->sdt = $request->input('phone_number');
+        $user_login->save();
         return redirect('sms_admin/editProfile')->with('alert', 'Cập nhật thông tin thành công!');
     }
 
@@ -113,11 +108,6 @@ class AdminDashboardController extends Controller
                 'password' => Hash::make($request->input('new_password')),
                 'role_id' => 3,
                 'trang_thai' => 1,
-            ]);
-            $users = User::where('role_id', 3)->get();
-            $last_id = $users->max('id');
-            Student::create([
-                'MSHS' => ' ',
                 'sex' => ' ',
                 'date_of_birth' => '2020-12-12',
                 'dia_chi' => ' ',
@@ -126,21 +116,21 @@ class AdminDashboardController extends Controller
                 'dan_toc' => ' ',
                 'ton_giao' => ' ',
                 'avt' => ' ',
-                'user_id' => $last_id,
-                'semester_id' => $cur_semester->id,
             ]);
-            $students = Student::where('user_id', $last_id)->first();
+            $users = User::where('role_id', 3)->get();
+            $last_id = $users->max('id');
+            Student::create([
+                'MSHS' => ' ',
+                'user_id' => $last_id,
+                'class_id' => '1',
+            ]);
+            $student = Student::where('user_id', $last_id)->first();
             ParentOfStudent::create([
                 'father_name' => ' ',
                 'father_phone_number' => ' ',
                 'mother_name' => ' ',
                 'mother_phone_number' => ' ',
-                'student_id' => $students->id,
-            ]);
-            Study::create([
-                'student_id' => $students->id,
-                'semester_id' => $cur_semester->id,
-                'class_id' => '1',
+                'student_id' => $student->id,
             ]);
             for ($i = 1; $i <= 11; $i++) {
                 Point::create([
@@ -148,7 +138,7 @@ class AdminDashboardController extends Controller
                     'heso2' => ' ',
                     'heso3' => ' ',
                     'trungbinh' => ' ',
-                    'student_id' => $students->id,
+                    'student_id' => $student->id,
                     'subject_id' => $i,
                     'semester_id' => $cur_semester->id,
                 ]);
@@ -167,21 +157,12 @@ class AdminDashboardController extends Controller
         $student_info1 = Student::where('user_id', $user_id)->first();
         $student_info2 = ParentOfStudent::where('student_id', $student_info1->id)->first();
 
-        $cur_semester = Semester::where('cur_semester', '1')->first();
-        $study_id = Study::where('semester_id', $cur_semester->id)
-            ->where('student_id', $student_info1->id)
-            ->first();
-
-        $class_id = $study_id->class_id;
+        $class_id = $student_info1->class_id;
         $class_info = CLasss::where('id', $class_id)->first();
 
-        $gvcn = HomeroomTeacher::where('class_id', $class_info->id)
-            ->where('semester_id', $cur_semester->id)
-            ->first();
-        $khoa= floor(($student_info1->semester_id -1)/2) + 1;
-        $teacher_info = Teacher::where('id', $gvcn->teacher_id)->first();
+        $teacher_info = Teacher::where('id', $class_info->teacher_id)->first();
         $teacher_info1 = User::where('id', $teacher_info->user_id)->first();
-        return view('dashboard.dashboard-admin.studentProfile', ['user' => $user_login, 'admin_info' => $admin_info, 'student_info' => $student_info, 'student_info1' => $student_info1, 'student_info2' => $student_info2, 'class_info' => $class_info, 'teacher_info1' => $teacher_info1, 'khoa' => $khoa]);
+        return view('dashboard.dashboard-admin.studentProfile', ['user' => $user_login, 'admin_info' => $admin_info, 'student_info' => $student_info, 'student_info1' => $student_info1, 'student_info2' => $student_info2, 'class_info' => $class_info, 'teacher_info1' => $teacher_info1,]);
     }
 
     public function showStudentPoint($student_id){
@@ -221,23 +202,16 @@ class AdminDashboardController extends Controller
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->password = Hash::make($request->input('password'));
+        $user->avt = $request->input('avt');
+        $user->date_of_birth = $request->input('DoB');
         $user->save();
 
         $student->MSHS = $request->input('MSHS');
-        $student->avt = $request->input('avt');
-        $student->date_of_birth = $request->input('DoB');
-
         $class_name = $request->input('class_name');
         $class_id = CLasss::where('class_name', $class_name)->first()->id;
 
-        $study = Study::where('class_id', $class_id)
-            ->where('semester_id', $cur_semester->id)
-            ->where('student_id', $student->id)
-            ->first();
-        $study->class_id = $class_id;
-
+        $student->class_id = $class_id;
         $student->save();
-        $study->save();
         return redirect()->route('studentEdit', ['user_id' => $user_id])->with('alert', 'Cập nhật thông tin thành công!');
     }
 
@@ -285,11 +259,6 @@ class AdminDashboardController extends Controller
                 'password' => Hash::make($request->input('new_password')),
                 'role_id' => 2,
                 'trang_thai' => 1,
-            ]);
-            $users = User::where('role_id', 2)->get();
-            $last_id = $users->max('id');
-            Teacher::create([
-                'MSGV' => ' ',
                 'sex' => ' ',
                 'date_of_birth' => '2020-12-12',
                 'dia_chi' => ' ',
@@ -298,6 +267,11 @@ class AdminDashboardController extends Controller
                 'dan_toc' => ' ',
                 'ton_giao' => ' ',
                 'avt' => ' ',
+            ]);
+            $users = User::where('role_id', 2)->get();
+            $last_id = $users->max('id');
+            Teacher::create([
+                'MSGV' => ' ',
                 'user_id' => $last_id,
                 'subject_id' => '14',
             ]);
@@ -314,13 +288,9 @@ class AdminDashboardController extends Controller
         $teacher_info = User::where('id', $user_id)->first();
         $teacher_info1 = Teacher::where('user_id', $user_id)->first();
 
-
         $subject = Subject::where('id', $teacher_info1->subject_id)->first();
-        $gvcns = HomeroomTeacher::join('semesters','semesters.id','=','homeroom_teachers.semester_id')
-            ->join('classes','classes.id','=','homeroom_teachers.class_id')
-            ->where('teacher_id', $teacher_info1->id)->get();
 
-        return view('dashboard.dashboard-admin.teacherProfile', ['user' => $user_login, 'admin_info' => $admin_info, 'teacher_info' => $teacher_info, 'teacher_info1' => $teacher_info1, 'subject'=>$subject, 'gvcns'=>$gvcns]);
+        return view('dashboard.dashboard-admin.teacherProfile', ['user' => $user_login, 'admin_info' => $admin_info, 'teacher_info' => $teacher_info, 'teacher_info1' => $teacher_info1, 'subject'=>$subject]);
     }
 
     public function showTeacherEdit($user_id)
@@ -342,11 +312,11 @@ class AdminDashboardController extends Controller
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->password = Hash::make($request->input('password'));
+        $user->avt = $request->input('avt');
+        $user->date_of_birth = $request->input('DoB');
         $user->save();
 
         $teacher->MSGV = $request->input('MSGV');
-        $teacher->avt = $request->input('avt');
-        $teacher->date_of_birth = $request->input('DoB');
 
         $subject_name = $request->input('subject_name');
         $subject_id = Subject::where('name', $subject_name)->first()->id;
@@ -383,30 +353,38 @@ class AdminDashboardController extends Controller
         return view('dashboard.dashboard-admin.editTimeTable', ['user' => $user_login, 'admin_info' => $admin_info]);
     }
 
-    public function showTimeTableByClass($class_id)
+    public function showTimeTableByClass($class_name)
     {
+        //dd($class_name);
         $user_login = Auth::user();
         $user_login_id = $user_login->id;
         $admin_info = Admin::where('user_id', $user_login_id)->first();
+        $class = CLasss::where('class_name',$class_name)->first();
 
-        $semesters = Semester::get();
-        $class = CLasss::where('id',$class_id)->first();
+        $semesters = Semester::where('id','>=',$class->semester_id)
+            ->where('id','<=',$class->semester_id+5)
+            ->get();
+
 
         return view('dashboard.dashboard-admin.showTimeTable2', ['user' => $user_login, 'admin_info' => $admin_info, 'semesters'=>$semesters, 'class'=>$class]);
     }
 
 
 
-    public function showTimeTableBySemester($class_id, $semester_id)
+    public function showTimeTableBySemester($class_name, $semester_id)
     {
         $user_login = Auth::user();
         $user_login_id = $user_login->id;
         $admin_info = Admin::where('user_id', $user_login_id)->first();
 
-        $class = CLasss::where('id', $class_id)->first();
-        $semesters = Semester::get();
-        $semester_chosen = Semester::where('id',$semester_id)->first();
+        $class = CLasss::where('class_name',$class_name)->first();
+        $class_id = $class->id;
 
+        $semesters = Semester::where('id','>=',$class->semester_id)
+            ->where('id','<=',$class->semester_id+5)
+            ->get();
+
+        $semester_chosen = Semester::where('id',$semester_id)->first();
         if($semester_chosen->cur_semester == 1){
             $a = 1;
         }
@@ -602,7 +580,7 @@ class AdminDashboardController extends Controller
             't52' => $t52, 't53' => $t53, 't54' => $t54, 't55' => $t55, 't56' => $t56, 't57' => $t57,]);
     }
 
-    public function editTimeTableForClass($class_id)
+    public function editTimeTableForClass($class_name)
     {
         $user_login = Auth::user();
         $user_login_id = $user_login->id;
@@ -611,7 +589,9 @@ class AdminDashboardController extends Controller
         $subject_list = Subject::all();
         $teacher_list = User::join('teachers', 'users.id', '=', 'teachers.user_id')
             ->get(['users.name']);
-        $class = CLasss::where('id', $class_id)->first();
+
+        $class = CLasss::where('class_name', $class_name)->first();
+        $class_id = $class->id;
 
         $cur_semester = Semester::where('cur_semester', '1')->first();
 
@@ -803,8 +783,11 @@ class AdminDashboardController extends Controller
             't52' => $t52, 't53' => $t53, 't54' => $t54, 't55' => $t55, 't56' => $t56, 't57' => $t57,]);
     }
 
-    public function postTimeTableEdit($class_id, Request $request)
+    public function postTimeTableEdit($class_name, Request $request)
     {
+        $class = CLasss::where('class_name', $class_name)->first();
+        $class_id = $class->id;
+
         $teacher_id = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
             ->where('users.name', $request->input('teacher'))
             ->first('teachers.id');
@@ -832,7 +815,7 @@ class AdminDashboardController extends Controller
             $teach->semester_id = $cur_semester->id;
             $teach->save();
 
-            return redirect()->route('editTimeTable', ['class_id' => $class_id]);
+            return redirect()->route('editTimeTable', ['class_name' => $class_name]);
         }
         elseif ($test->subject_id == '14'){
             $teach = Teach::where('class_id', $class_id)
@@ -843,15 +826,18 @@ class AdminDashboardController extends Controller
             $teach->subject_id = '14';
             $teach->semester_id = $cur_semester->id;
             $teach->save();
-            return redirect()->route('editTimeTable', ['class_id' => $class_id]);
+            return redirect()->route('editTimeTable', ['class_name' => $class_name]);
         }
         else {
-            return redirect()->route('editTimeTable', ['class_id' => $class_id])->with('alert', 'Giáo viên này đã có lịch dạy lớp khác!');
+            return redirect()->route('editTimeTable', ['class_name' => $class_name])->with('alert', 'Giáo viên này đã có lịch dạy lớp khác!');
         }
     }
 
-    public function deleteTimeTableForClass($class_id)
+    public function deleteTimeTableForClass($class_name)
     {
+        $class = CLasss::where('class_name', $class_name)->first();
+        $class_id = $class->id;
+
         $teaches = Teach::where('class_id', $class_id)->get();
         $cur_semester = Semester::where('cur_semester', '1')->first();
 
@@ -861,7 +847,7 @@ class AdminDashboardController extends Controller
             $teach->semester_id = $cur_semester->id;
             $teach->save();
         }
-        return redirect()->route('editTimeTable', ['class_id' => $class_id])->with('alert', 'Xoá thời khoá biểu thành công!');
+        return redirect()->route('editTimeTable', ['class_name' => $class_name])->with('alert', 'Xoá thời khoá biểu thành công!');
     }
 
     public function createSemester(){
@@ -889,79 +875,110 @@ class AdminDashboardController extends Controller
             $new_semester = Semester::where('cur_semester', '1')->first();
             $a = intval($new_semester->semester_name)%2;
             if ( $a != 0 ){
-                $overs = Study::where('semester_id', $new_semester->id-1)
-                    ->where('class_id','>',14)
-                    ->where('class_id','<',22)
-                    ->get();
-                foreach ($overs as $over)
-                {
-                    Study::create([
-                        'student_id' => $over->student_id,
-                        'class_id' => '22',
-                        'semester_id' => $new_semester->id
-                    ]);
+                $classes = CLasss::where('class_name','!=','Đã tốt nghiệp')->get();
+                foreach ($classes as $class){
+                    $class_name = $class->class_name;
+                    $grade = preg_replace('/\D/', '', $class_name);
+                    if ($grade == '12'){
+                        $class->class_name = 'Đã tốt nghiệp';
+                        $class->save();
+                    }
+                    elseif ($grade == '11'){
+                        $class->class_name = '12 '.$class->name;
+                        $class->save();
+                    }
+                    elseif ($grade == '10'){
+                        $class->class_name = '11 '.$class->name;
+                        $class->save();
+                    }
                 }
 
-                $old_studies = Study::where('semester_id', $new_semester->id-1)
-                    ->where('class_id','<',15)
-                    ->get();
-                foreach ($old_studies as $old_study)
-                {
-                    Study::create([
-                        'student_id' => $old_study->student_id,
-                        'class_id' => $old_study->class_id + 7,
-                        'semester_id' => $new_semester->id
-                    ]);
-                }
+                $last = $classes->max('khoa');
+                CLasss::create([
+                    'name' => 'Toán',
+                    'khoa' => $last+1,
+                    'class_name' => '10 Toán',
+                    'teacher_id' => '1',
+                    'semester_id' => $new_semester->id
+                ]);
+                CLasss::create([
+                    'name' => 'Lý',
+                    'khoa' => $last+1,
+                    'class_name' => '10 Lý',
+                    'teacher_id' => '1',
+                    'semester_id' => $new_semester->id
+                ]);
+                CLasss::create([
+                    'name' => 'Hoá',
+                    'khoa' => $last+1,
+                    'class_name' => '10 Hoá',
+                    'teacher_id' => '1',
+                    'semester_id' => $new_semester->id
+                ]);
+                CLasss::create([
+                    'name' => 'Văn',
+                    'khoa' => $last+1,
+                    'class_name' => '10 Văn',
+                    'teacher_id' => '1',
+                    'semester_id' => $new_semester->id
+                ]);
+                CLasss::create([
+                    'name' => 'Anh',
+                    'khoa' => $last+1,
+                    'class_name' => '10 Anh',
+                    'teacher_id' => '1',
+                    'semester_id' => $new_semester->id
+                ]);
+                CLasss::create([
+                    'name' => 'Tin',
+                    'khoa' => $last+1,
+                    'class_name' => '10 Tin',
+                    'teacher_id' => '1',
+                    'semester_id' => $new_semester->id
+                ]);
+                CLasss::create([
+                    'name' => 'K',
+                    'khoa' => $last+1,
+                    'class_name' => '10 K',
+                    'teacher_id' => '1',
+                    'semester_id' => $new_semester->id
+                ]);
             }
-            else {
-                $old_studies = Study::where('semester_id', $new_semester->id-1)
-                    ->get();
-                foreach ($old_studies as $old_study)
-                {
-                    Study::create([
-                        'student_id' => $old_study->student_id,
-                        'class_id' => $old_study->class_id,
-                        'semester_id' => $new_semester->id
-                    ]);
-                }
-            }
-
-            for ($i=1; $i<=21; $i++) {
+            $classes1 = CLasss::where('class_name','!=','Đã tốt nghiệp')->get();
+            foreach ($classes1 as $class1){
                 for ($j=2; $j<=7; $j++) {
                     for ($k=1; $k<=5; $k++) {
                         Teach::create([
                             'day' => $j,
                             'shift' => $k,
                             'teacher_id' => '1',
-                            'class_id' => $i,
+                            'class_id' => $class1->id,
                             'subject_id' => '14',
                             'semester_id' => $new_semester->id
                         ]);
                     }
                 }
             }
-            $students = Study::where('semester_id', $new_semester->id)
-                ->where('class_id','<',22)
-                ->get();
-            foreach ($students as $student)
+
+            $students = Student::join('classes','classes.id','=','students.class_id')
+                ->where('class_name','!=','Đã tốt nghiệp')->get('students.id');
+            foreach ($students as $student){
                 for ($k=1 ; $k <= 11; $k++){
                     Point::create([
                         'heso1' => '0',
                         'heso2' => '0',
                         'heso3' => '0',
                         'trungbinh' => '0',
-                        'student_id' => $student->student_id,
+                        'student_id' => $student->id,
                         'subject_id' => $k,
                         'semester_id' => $new_semester->id,
                     ]);
                 }
-
+            }
             DB::table('users')
                 ->join('students','users.id','=','students.user_id')
-                ->join('studies','studies.student_id','=','students.id')
-                ->where('studies.semester_id','=',$new_semester->id)
-                ->where('studies.class_id','=',22)
+                ->join('classes','classes.id','=','students.class_id')
+                ->where('classes.class_name','=','Đã tốt nghiệp')
                 ->update(['trang_thai' => 0]);
 
             return redirect(route('createHomeRoomTeacher'))->with('alert', 'Tạo học kì mới thành công! Vui lòng chọn GVCN cho các lớp.');
@@ -974,208 +991,62 @@ class AdminDashboardController extends Controller
         $admin_info = Admin::where('user_id', $user_login_id)->first();
         $teacher_list = User::join('teachers', 'users.id', '=', 'teachers.user_id')
             ->get(['users.name']);
-        //dd($admin_info);
+
         return view('dashboard.dashboard-admin.createGVCN', ['user' => $user_login, 'admin_info' => $admin_info, 'teachers'=>$teacher_list]);
     }
 
     public function postNewHomeRoomTeacher(Request $request){
-        $new_semester = Semester::where('cur_semester', '1')->first();
         $toan10 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
             ->where('users.name', $request->input('10toan'))
             ->first('teachers.id');
-        HomeroomTeacher::create([
-            'class_id' => 1,
-            'teacher_id' => $toan10->id,
-            'semester_id' => $new_semester->id,
-        ]);
+        $t10 = CLasss::where('class_name', '=','10 Toán')->first();
+        $t10->teacher_id = $toan10->id;
+        $t10->save();
 
         $ly10 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
             ->where('users.name', $request->input('10ly'))
             ->first('teachers.id');
-        HomeroomTeacher::create([
-            'class_id' => 2,
-            'teacher_id' => $ly10->id,
-            'semester_id' => $new_semester->id,
-        ]);
+        $l10 = CLasss::where('class_name', '=','10 Lý')->first();
+        $l10->teacher_id = $ly10->id;
+        $l10->save();
 
         $hoa10 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
             ->where('users.name', $request->input('10hoa'))
             ->first('teachers.id');
-        HomeroomTeacher::create([
-            'class_id' => 3,
-            'teacher_id' => $hoa10->id,
-            'semester_id' => $new_semester->id,
-        ]);
+        $h10 = CLasss::where('class_name', '=','10 Hoá')->first();
+        $h10->teacher_id = $hoa10->id;
+        $h10->save();
 
         $van10 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
             ->where('users.name', $request->input('10van'))
             ->first('teachers.id');
-        HomeroomTeacher::create([
-            'class_id' => 4,
-            'teacher_id' => $van10->id,
-            'semester_id' => $new_semester->id,
-        ]);
+        $v10 = CLasss::where('class_name', '=','10 Văn')->first();
+        $v10->teacher_id = $van10->id;
+        $v10->save();
 
         $anh10 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
             ->where('users.name', $request->input('10anh'))
             ->first('teachers.id');
-        HomeroomTeacher::create([
-            'class_id' => 5,
-            'teacher_id' => $anh10->id,
-            'semester_id' => $new_semester->id,
-        ]);
+        $a10 = CLasss::where('class_name', '=','10 Anh')->first();
+        $a10->teacher_id = $anh10->id;
+        $a10->save();
+
 
         $tin10 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
             ->where('users.name', $request->input('10tin'))
             ->first('teachers.id');
-        HomeroomTeacher::create([
-            'class_id' => 6,
-            'teacher_id' => $tin10->id,
-            'semester_id' => $new_semester->id,
-        ]);
+        $ti10 = CLasss::where('class_name', '=','10 Tin')->first();
+        $ti10->teacher_id = $tin10->id;
+        $ti10->save();
 
         $k10 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
             ->where('users.name', $request->input('10k'))
             ->first('teachers.id');
-        HomeroomTeacher::create([
-            'class_id' => 7,
-            'teacher_id' => $k10->id,
-            'semester_id' => $new_semester->id,
-        ]);
+        $ck10 = CLasss::where('class_name', '=','10 K')->first();
+        $ck10->teacher_id = $k10->id;
+        $ck10->save();
 
-        $toan11 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
-            ->where('users.name', $request->input('11toan'))
-            ->first('teachers.id');
-        HomeroomTeacher::create([
-            'class_id' => 8,
-            'teacher_id' => $toan11->id,
-            'semester_id' => $new_semester->id,
-        ]);
-
-        $ly11 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
-            ->where('users.name', $request->input('11ly'))
-            ->first('teachers.id');
-        HomeroomTeacher::create([
-            'class_id' => 9,
-            'teacher_id' => $ly11->id,
-            'semester_id' => $new_semester->id,
-        ]);
-
-        $hoa11 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
-            ->where('users.name', $request->input('11hoa'))
-            ->first('teachers.id');
-        HomeroomTeacher::create([
-            'class_id' => 10,
-            'teacher_id' => $hoa11->id,
-            'semester_id' => $new_semester->id,
-        ]);
-
-        $van11 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
-            ->where('users.name', $request->input('11van'))
-            ->first('teachers.id');
-        HomeroomTeacher::create([
-            'class_id' => 11,
-            'teacher_id' => $van11->id,
-            'semester_id' => $new_semester->id,
-        ]);
-
-        $anh11 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
-            ->where('users.name', $request->input('11anh'))
-            ->first('teachers.id');
-        HomeroomTeacher::create([
-            'class_id' => 12,
-            'teacher_id' => $anh11->id,
-            'semester_id' => $new_semester->id,
-        ]);
-
-        $tin11 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
-            ->where('users.name', $request->input('11tin'))
-            ->first('teachers.id');
-        HomeroomTeacher::create([
-            'class_id' => 13,
-            'teacher_id' => $tin11->id,
-            'semester_id' => $new_semester->id,
-        ]);
-
-        $k11 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
-            ->where('users.name', $request->input('11k'))
-            ->first('teachers.id');
-        HomeroomTeacher::create([
-            'class_id' => 14,
-            'teacher_id' => $k11->id,
-            'semester_id' => $new_semester->id,
-        ]);
-
-        $toan12 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
-            ->where('users.name', $request->input('12toan'))
-            ->first('teachers.id');
-        HomeroomTeacher::create([
-            'class_id' => 15,
-            'teacher_id' => $toan12->id,
-            'semester_id' => $new_semester->id,
-        ]);
-
-        $ly12 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
-            ->where('users.name', $request->input('12ly'))
-            ->first('teachers.id');
-        HomeroomTeacher::create([
-            'class_id' => 16,
-            'teacher_id' => $ly12->id,
-            'semester_id' => $new_semester->id,
-        ]);
-
-        $hoa12 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
-            ->where('users.name', $request->input('12hoa'))
-            ->first('teachers.id');
-        HomeroomTeacher::create([
-            'class_id' => 17,
-            'teacher_id' => $hoa12->id,
-            'semester_id' => $new_semester->id,
-        ]);
-
-        $van12 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
-            ->where('users.name', $request->input('12van'))
-            ->first('teachers.id');
-        HomeroomTeacher::create([
-            'class_id' => 18,
-            'teacher_id' => $van12->id,
-            'semester_id' => $new_semester->id,
-        ]);
-
-        $anh12 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
-            ->where('users.name', $request->input('12anh'))
-            ->first('teachers.id');
-        HomeroomTeacher::create([
-            'class_id' => 19,
-            'teacher_id' => $anh12->id,
-            'semester_id' => $new_semester->id,
-        ]);
-
-        $tin12 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
-            ->where('users.name', $request->input('12tin'))
-            ->first('teachers.id');
-        HomeroomTeacher::create([
-            'class_id' => 20,
-            'teacher_id' => $tin12->id,
-            'semester_id' => $new_semester->id,
-        ]);
-
-        $k12 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
-            ->where('users.name', $request->input('12k'))
-            ->first('teachers.id');
-        HomeroomTeacher::create([
-            'class_id' => 21,
-            'teacher_id' => $k12->id,
-            'semester_id' => $new_semester->id,
-        ]);
-
-        HomeroomTeacher::create([
-            'class_id' => 22,
-            'teacher_id' => 1,
-            'semester_id' => $new_semester->id,
-        ]);
-
-        return redirect(route('createHomeRoomTeacher'))->with('alert', 'Chọn GVCN thành công!');
+        return redirect(route('createSemester'))->with('alert', 'Chọn GVCN thành công!');
     }
 }
 

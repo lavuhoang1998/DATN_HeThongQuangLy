@@ -56,12 +56,12 @@ Route::middleware([AdminLoginMiddleWare::class])->group(function () {
     Route::get('sms_admin/teacherDelete/{user_id}', [AdminDashboardController::class, 'deleteTeacher'])->name('deleteTeacher');
 
     Route::get('sms_admin/showTimeTable', [AdminDashboardController::class, 'showTimeTable']);
-    Route::get('sms_admin/showTimeTable/{class_id}', [AdminDashboardController::class, 'showTimeTableByClass'])->name('showTimeTableByClass');
-    Route::get('sms_admin/showTimeTable/{class_id}/{semester_id}', [AdminDashboardController::class, 'showTimeTableBySemester'])->name('showTimeTableBySemester');
+    Route::get('sms_admin/showTimeTable/{class_name}', [AdminDashboardController::class, 'showTimeTableByClass'])->name('showTimeTableByClass');
+    Route::get('sms_admin/showTimeTable/{class_name}/{semester_id}', [AdminDashboardController::class, 'showTimeTableBySemester'])->name('showTimeTableBySemester');
     Route::get('sms_admin/editTimeTable', [AdminDashboardController::class, 'showEditTimeTable']);
-    Route::get('sms_admin/editTimeTable/{class_id}', [AdminDashboardController::class, 'editTimeTableForClass'])->name('editTimeTable');
-    Route::post('sms_admin/editTimeTable/{class_id}', [AdminDashboardController::class, 'postTimeTableEdit'])->name('postTimeTableEdit');
-    Route::get('sms_admin/deleteTimeTable/{class_id}', [AdminDashboardController::class, 'deleteTimeTableForClass'])->name('deleteTimeTableForClass');
+    Route::get('sms_admin/editTimeTable/{class_name}', [AdminDashboardController::class, 'editTimeTableForClass'])->name('editTimeTable');
+    Route::post('sms_admin/editTimeTable/{class_name}', [AdminDashboardController::class, 'postTimeTableEdit'])->name('postTimeTableEdit');
+    Route::get('sms_admin/deleteTimeTable/{class_name}', [AdminDashboardController::class, 'deleteTimeTableForClass'])->name('deleteTimeTableForClass');
 
     Route::get('sms_admin/createSemester', [AdminDashboardController::class, 'createSemester'])->name('createSemester');;
     Route::post('sms_admin/createSemester', [AdminDashboardController::class, 'postNewSemester'])->name('postNewSemester');
