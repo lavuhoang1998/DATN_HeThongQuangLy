@@ -45,7 +45,7 @@
             <div class="col-lg-8 col-xlg-9 col-md-7">
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="font-medium m-t-30">ĐIỂM MÔN {{$subject->name}} CÁC HỌC KÌ</h3>
+                        <h3 class="font-medium m-t-30">ĐIỂM MÔN {{strtoupper($subject->name)}} CÁC HỌC KÌ</h3>
                         <hr>
                         <div class="table-responsive">
                             <br>

@@ -74,7 +74,7 @@
                                             <td style="visibility: hidden;">{{$teach->id}}</td>
                                             <td>{{$teach->shift}}</td>
                                             <td>{{$teach->class_name}}</td>
-                                            <td>{{$teach->subject_name}}</td>
+                                            <td>{{ucfirst($teach->subject_name)}}</td>
                                         </tr>
                                     @endforeach
                                     </tbody>
@@ -98,7 +98,7 @@
                                             <td style="visibility: hidden;">{{$teach->id}}</td>
                                             <td>{{$teach->shift}}</td>
                                             <td>{{$teach->class_name}}</td>
-                                            <td>{{$teach->subject_name}}</td>
+                                            <td>{{ucfirst($teach->subject_name)}}</td>
                                             <td>
                                                 <button type="button" class="btn btn-outline-dark" data-toggle="modal"
                                                         data-target="#modalAddReview"

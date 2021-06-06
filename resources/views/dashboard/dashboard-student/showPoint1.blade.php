@@ -58,7 +58,7 @@
                         @foreach($points as $point)
                             <tr>
                                 <td></td>
-                                <td> {{$point->name}}</td>
+                                <td> {{ucfirst($point->name)}}</td>
                                 <td class="text-center">{{$point->heso1}}</td>
                                 <td class="text-center">{{$point->heso2}}</td>
                                 <td class="text-center">{{$point->heso3}}</td>

@@ -79,27 +79,27 @@
                                     onmousedown="if(this.options.length>7){this.size=7;}" onchange='this.size=0;'
                                     onblur="this.size=0;" required="" name="class_name">
                                 <option value="" selected disabled hidden>Chọn lớp</option>
-                                <option>10 Toán</option>
-                                <option>10 Lý</option>
-                                <option>10 Hoá</option>
-                                <option>10 Văn</option>
-                                <option>10 Anh</option>
-                                <option>10 Tin</option>
-                                <option>10 K</option>
-                                <option>11 Toán</option>
-                                <option>11 Lý</option>
-                                <option>11 Hoá</option>
-                                <option>11 Văn</option>
-                                <option>11 Anh</option>
-                                <option>11 Tin</option>
-                                <option>11 K</option>
-                                <option>12 Toán</option>
-                                <option>12 Lý</option>
-                                <option>12 Hoá</option>
-                                <option>12 Văn</option>
-                                <option>12 Anh</option>
-                                <option>12 Tin</option>
-                                <option>12 K</option>
+                                <option>10 toán</option>
+                                <option>10 lý</option>
+                                <option>10 hoá</option>
+                                <option>10 văn</option>
+                                <option>10 anh</option>
+                                <option>10 tin</option>
+                                <option>10 k</option>
+                                <option>11 toán</option>
+                                <option>11 lý</option>
+                                <option>11 hoá</option>
+                                <option>11 văn</option>
+                                <option>11 anh</option>
+                                <option>11 tin</option>
+                                <option>11 k</option>
+                                <option>12 toán</option>
+                                <option>12 lý</option>
+                                <option>12 hoá</option>
+                                <option>12 văn</option>
+                                <option>12 anh</option>
+                                <option>12 tin</option>
+                                <option>12 k</option>
                             </select>
                         </div>
                     </div>

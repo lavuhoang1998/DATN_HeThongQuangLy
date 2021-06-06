@@ -74,7 +74,7 @@
                                         <td>{{$teach->day}}</td>
                                         <td>{{$teach->shift}}</td>
                                         <td>{{$teach->class_name}}</td>
-                                        <td>{{$teach->subject_name}}</td>
+                                        <td>{{ucfirst($teach->subject_name)}}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>

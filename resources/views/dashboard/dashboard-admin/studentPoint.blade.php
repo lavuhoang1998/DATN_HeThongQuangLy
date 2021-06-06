@@ -53,7 +53,7 @@
                                 <tr class="text-center">
                                     <th>#</th>
                                     <th>Học kì</th>
-                                    <th>Môn</th>
+                                    <th class="text-left">Môn</th>
                                     <th>Điểm hệ số I</th>
                                     <th>Điểm hệ số II</th>
                                     <th>Điểm hệ số III</th>
@@ -65,7 +65,7 @@
                                     <tr class="text-center">
                                         <td></td>
                                         <td>{{$point->semester_name}}</td>
-                                        <td>{{$point->name}}</td>
+                                        <td class="text-left">{{ucfirst($point->name)}}</td>
                                         <td>{{$point->heso1}}</td>
                                         <td>{{$point->heso2}}</td>
                                         <td>{{$point->heso3}}</td>

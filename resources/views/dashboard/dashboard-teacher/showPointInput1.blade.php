@@ -29,7 +29,7 @@
                         <h2 class="font-medium m-t-30">BẢNG ĐIỂM LỚP {{$class->class_name}}</h2>
                     </div>
                     <div class="col-md-3">
-                        <h2 class="font-medium m-t-30">Môn: {{$subject->name}}</h2>
+                        <h2 class="font-medium m-t-30">Môn: {{ucfirst($subject->name)}}</h2>
                     </div>
                 </div>
                 <br>
@@ -66,10 +66,10 @@
                     <br>
                     <table class="table color-table inverse-table">
                         <thead>
-                        <tr>
+                        <tr style="text-align: center">
                             <th>#</th>
                             <th>MSHS</th>
-                            <th>Họ và tên</th>
+                            <th style="text-align: left">Họ và tên</th>
                             <th>Điểm hệ số I</th>
                             <th>Điểm hệ số II</th>
                             <th>Điểm hệ số III</th>
@@ -81,12 +81,12 @@
                         @foreach($students as $student)
                             <tr>
                                 <td></td>
-                                <td><a href="{{route('showPointByStudent',['student_id'=>$student->stu_id])}}">{{$student->MSHS}}</a></td>
+                                <td style="text-align: center"><a href="{{route('showPointByStudent',['student_id'=>$student->stu_id])}}">{{$student->MSHS}}</a></td>
                                 <td>{{$student->name}}</td>
-                                <td>{{$student->heso1}}</td>
-                                <td>{{$student->heso2}}</td>
-                                <td>{{$student->heso3}}</td>
-                                <td>{{$student->trungbinh}}</td>
+                                <td style="text-align: center">{{$student->heso1}}</td>
+                                <td style="text-align: center">{{$student->heso2}}</td>
+                                <td style="text-align: center">{{$student->heso3}}</td>
+                                <td style="text-align: center">{{$student->trungbinh}}</td>
                                 <td>
                                     <button type="button" class="btn btn-outline-dark" data-toggle="modal"
                                             data-target="#modalInputPoint"

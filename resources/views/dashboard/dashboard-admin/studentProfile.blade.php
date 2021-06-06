@@ -96,14 +96,6 @@
                                 <br>
                                 <h4>{{$teacher_info1 ->name}}</h4>
                             </div>
-                            <div class="col-md-3 col-xs-6 b-r"><strong>Trạng thái</strong>
-                                <br>
-                                @if ($user->trang_thai === 1)
-                                    <h4>Học</h4>
-                                @else
-                                    <h4>Nghỉ học</h4>
-                                @endif
-                            </div>
                         </div>
                         <hr>
                         <div class="row">

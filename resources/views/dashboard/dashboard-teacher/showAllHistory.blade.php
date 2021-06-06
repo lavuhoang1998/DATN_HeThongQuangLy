@@ -56,7 +56,7 @@
                                 <td>{{$history->day}}</td>
                                 <td>{{$history->shift}}</td>
                                 <td>{{$history->class_name}}</td>
-                                <td>{{$history->subject_name}}</td>
+                                <td>{{ucfirst($history->subject_name)}}</td>
                                 <td>{{$history->content}}</td>
                                 <td>
                                     <a href="{{ url('sms_teacher/history',['date'=>$history->date,'shift'=>$history->shift]) }}" type="button" class="btn btn-info">Sửa</a>

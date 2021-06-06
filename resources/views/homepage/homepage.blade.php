@@ -3,7 +3,7 @@
 @endsection
 @extends('homepage.layout.default')
 @section('content')
-    
+
 
 
 

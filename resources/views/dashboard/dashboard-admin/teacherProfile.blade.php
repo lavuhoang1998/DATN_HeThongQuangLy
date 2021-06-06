@@ -86,7 +86,7 @@
                         <div class="row">
                             <div class="col-md-3 col-xs-6 b-r"><strong>Bộ môn</strong>
                                 <br>
-                                <h4>{{$subject->name}}</h4>
+                                <h4>{{ucfirst($subject->name)}}</h4>
                             </div>
                         </div>
                         <br>

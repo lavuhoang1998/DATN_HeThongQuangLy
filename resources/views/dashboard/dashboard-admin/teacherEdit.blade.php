@@ -76,25 +76,22 @@
                         <label class="col-md-12">Bộ môn</label>
                         <div class="col-sm-12">
                             <select class="form-control form-control-line"
-                                    onmousedown="if(this.options.length>7){this.size=7;}" onchange='this.size=0;'
+                                    onmousedown="if(this.options.length>5){this.size=5;}" onchange='this.size=0;'
                                     onblur="this.size=0;" name="subject_name">
                                 <option value="" selected disabled hidden>Chọn bộ môn</option>
-                                <option>Toán</option>
-                                <option>Ngữ văn</option>
-                                <option>Ngoại ngữ</option>
-                                <option>Giáo dục thể chất</option>
-                                <option>Giáo dục quốc phòng và an ninh</option>
-                                <option>Giáo dục kinh tế và pháp luật</option>
-                                <option>Lịch sử</option>
-                                <option>Địa lý</option>
-                                <option>Vật lý</option>
-                                <option>Hóa học</option>
-                                <option>Sinh học</option>
-                                <option>Công nghệ</option>
-                                <option>Tin học</option>
-                                <option>Nghệ thuật</option>
-                                <option>Sinh hoạt lớp</option>
-                                <option>Chào cờ</option>
+                                <option>toán</option>
+                                <option>ngữ văn</option>
+                                <option>ngoại ngữ</option>
+                                <option>giáo dục thể chất</option>
+                                <option>lịch sử</option>
+                                <option>địa lý</option>
+                                <option>vật lý</option>
+                                <option>hóa học</option>
+                                <option>sinh học</option>
+                                <option>công nghệ</option>
+                                <option>tin học</option>
+                                <option>sinh hoạt lớp</option>
+                                <option>chào cờ</option>
                             </select>
                         </div>
                     </div>

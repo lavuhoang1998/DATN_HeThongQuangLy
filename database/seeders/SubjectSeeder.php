@@ -15,46 +15,46 @@ class SubjectSeeder extends Seeder
     public function run()
     {
         DB::table('subjects')->insert([
-            'name' => 'Toán',
+            'name' => 'toán',
         ]);
         DB::table('subjects')->insert([
-            'name' => 'Ngữ văn',
+            'name' => 'ngữ văn',
         ]);
         DB::table('subjects')->insert([
-            'name' => 'Ngoại ngữ',
+            'name' => 'ngoại ngữ',
         ]);
         DB::table('subjects')->insert([
-            'name' => 'Giáo dục thể chất',
+            'name' => 'giáo dục thể chất',
         ]);
         DB::table('subjects')->insert([
-            'name' => 'Lịch sử',
+            'name' => 'lịch sử',
         ]);
         DB::table('subjects')->insert([
-            'name' => 'Địa lý',
+            'name' => 'địa lý',
         ]);
         DB::table('subjects')->insert([
-            'name' => 'Vật lý',
+            'name' => 'vật lý',
         ]);
         DB::table('subjects')->insert([
-            'name' => 'Hóa học',
+            'name' => 'hóa học',
         ]);
         DB::table('subjects')->insert([
-            'name' => 'Sinh học',
+            'name' => 'sinh học',
         ]);
         DB::table('subjects')->insert([
-            'name' => 'Công nghệ',
+            'name' => 'công nghệ',
         ]);
         DB::table('subjects')->insert([
-            'name' => 'Tin học',
+            'name' => 'tin học',
         ]);
         DB::table('subjects')->insert([
-            'name' => 'Sinh hoạt lớp',
+            'name' => 'sinh hoạt lớp',
         ]);
         DB::table('subjects')->insert([
-            'name' => 'Chào cờ',
+            'name' => 'chào cờ',
         ]);
         DB::table('subjects')->insert([
-            'name' => 'Trống',
+            'name' => 'trống',
         ]);
     }
 }

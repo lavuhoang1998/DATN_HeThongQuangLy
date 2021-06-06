@@ -895,51 +895,51 @@ class AdminDashboardController extends Controller
 
                 $last = $classes->max('khoa');
                 CLasss::create([
-                    'name' => 'Toán',
+                    'name' => 'toán',
                     'khoa' => $last+1,
-                    'class_name' => '10 Toán',
+                    'class_name' => '10 toán',
                     'teacher_id' => '1',
                     'semester_id' => $new_semester->id
                 ]);
                 CLasss::create([
-                    'name' => 'Lý',
+                    'name' => 'lý',
                     'khoa' => $last+1,
-                    'class_name' => '10 Lý',
+                    'class_name' => '10 lý',
                     'teacher_id' => '1',
                     'semester_id' => $new_semester->id
                 ]);
                 CLasss::create([
-                    'name' => 'Hoá',
+                    'name' => 'hoá',
                     'khoa' => $last+1,
-                    'class_name' => '10 Hoá',
+                    'class_name' => '10 hoá',
                     'teacher_id' => '1',
                     'semester_id' => $new_semester->id
                 ]);
                 CLasss::create([
-                    'name' => 'Văn',
+                    'name' => 'văn',
                     'khoa' => $last+1,
-                    'class_name' => '10 Văn',
+                    'class_name' => '10 văn',
                     'teacher_id' => '1',
                     'semester_id' => $new_semester->id
                 ]);
                 CLasss::create([
-                    'name' => 'Anh',
+                    'name' => 'anh',
                     'khoa' => $last+1,
-                    'class_name' => '10 Anh',
+                    'class_name' => '10 anh',
                     'teacher_id' => '1',
                     'semester_id' => $new_semester->id
                 ]);
                 CLasss::create([
-                    'name' => 'Tin',
+                    'name' => 'tin',
                     'khoa' => $last+1,
-                    'class_name' => '10 Tin',
+                    'class_name' => '10 tin',
                     'teacher_id' => '1',
                     'semester_id' => $new_semester->id
                 ]);
                 CLasss::create([
-                    'name' => 'K',
+                    'name' => 'k',
                     'khoa' => $last+1,
-                    'class_name' => '10 K',
+                    'class_name' => '10 k',
                     'teacher_id' => '1',
                     'semester_id' => $new_semester->id
                 ]);
@@ -999,50 +999,49 @@ class AdminDashboardController extends Controller
         $toan10 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
             ->where('users.name', $request->input('10toan'))
             ->first('teachers.id');
-        $t10 = CLasss::where('class_name', '=','10 Toán')->first();
+        $t10 = CLasss::where('class_name', '=','10 toán')->first();
         $t10->teacher_id = $toan10->id;
         $t10->save();
 
         $ly10 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
             ->where('users.name', $request->input('10ly'))
             ->first('teachers.id');
-        $l10 = CLasss::where('class_name', '=','10 Lý')->first();
+        $l10 = CLasss::where('class_name', '=','10 lý')->first();
         $l10->teacher_id = $ly10->id;
         $l10->save();
 
         $hoa10 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
             ->where('users.name', $request->input('10hoa'))
             ->first('teachers.id');
-        $h10 = CLasss::where('class_name', '=','10 Hoá')->first();
+        $h10 = CLasss::where('class_name', '=','10 hoá')->first();
         $h10->teacher_id = $hoa10->id;
         $h10->save();
 
         $van10 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
             ->where('users.name', $request->input('10van'))
             ->first('teachers.id');
-        $v10 = CLasss::where('class_name', '=','10 Văn')->first();
+        $v10 = CLasss::where('class_name', '=','10 văn')->first();
         $v10->teacher_id = $van10->id;
         $v10->save();
 
         $anh10 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
             ->where('users.name', $request->input('10anh'))
             ->first('teachers.id');
-        $a10 = CLasss::where('class_name', '=','10 Anh')->first();
+        $a10 = CLasss::where('class_name', '=','10 anh')->first();
         $a10->teacher_id = $anh10->id;
         $a10->save();
-
 
         $tin10 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
             ->where('users.name', $request->input('10tin'))
             ->first('teachers.id');
-        $ti10 = CLasss::where('class_name', '=','10 Tin')->first();
+        $ti10 = CLasss::where('class_name', '=','10 tin')->first();
         $ti10->teacher_id = $tin10->id;
         $ti10->save();
 
         $k10 = Teacher::join('users', 'users.id', '=', 'teachers.user_id')
             ->where('users.name', $request->input('10k'))
             ->first('teachers.id');
-        $ck10 = CLasss::where('class_name', '=','10 K')->first();
+        $ck10 = CLasss::where('class_name', '=','10 k')->first();
         $ck10->teacher_id = $k10->id;
         $ck10->save();
 

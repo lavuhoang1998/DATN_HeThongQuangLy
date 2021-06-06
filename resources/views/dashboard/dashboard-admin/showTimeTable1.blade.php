@@ -32,41 +32,41 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <a class="btn btn-secondary"
-                                   href="{{url('sms_admin/showTimeTable',$class_name = '10 Toán')}}" role="button">10
-                                    Toán</a>
+                                   href="{{url('sms_admin/showTimeTable',$class_name = '10 toán')}}" role="button">10
+                                    toán</a>
                             </div>
                             <div class="col-md-3">
                                 <a class="btn btn-secondary"
-                                   href="{{url('sms_admin/showTimeTable',$class_name = '10 Lý')}}" role="button">10
-                                    Lý</a>
+                                   href="{{url('sms_admin/showTimeTable',$class_name = '10 lý')}}" role="button">10
+                                    lý</a>
                             </div>
                             <div class="col-md-3">
                                 <a class="btn btn-secondary"
-                                   href="{{url('sms_admin/showTimeTable',$class_name = '10 Hoá')}}" role="button">10
-                                    Hoá</a>
+                                   href="{{url('sms_admin/showTimeTable',$class_name = '10 hoá')}}" role="button">10
+                                    hoá</a>
                             </div>
                             <div class="col-md-3">
                                 <a class="btn btn-secondary"
-                                   href="{{url('sms_admin/showTimeTable',$class_name = '10 Văn')}}" role="button">10
-                                    Văn</a>
+                                   href="{{url('sms_admin/showTimeTable',$class_name = '10 văn')}}" role="button">10
+                                    văn</a>
                             </div>
                         </div>
                         <br>
                         <div class="row">
                             <div class="col-md-3">
                                 <a class="btn btn-secondary"
-                                   href="{{url('sms_admin/showTimeTable',$class_name = '10 Anh')}}" role="button">10
-                                    Anh</a>
+                                   href="{{url('sms_admin/showTimeTable',$class_name = '10 anh')}}" role="button">10
+                                    anh</a>
                             </div>
                             <div class="col-md-3">
                                 <a class="btn btn-secondary"
-                                   href="{{url('sms_admin/showTimeTable',$class_name = '10 Tin')}}" role="button">10
-                                    Tin</a>
+                                   href="{{url('sms_admin/showTimeTable',$class_name = '10 tin')}}" role="button">10
+                                    tin</a>
                             </div>
                             <div class="col-md-3">
                                 <a class="btn btn-secondary"
-                                   href="{{url('sms_admin/showTimeTable',$class_name = '10 K')}}" role="button">10
-                                    K</a>
+                                   href="{{url('sms_admin/showTimeTable',$class_name = '10 k')}}" role="button">10
+                                    k</a>
                             </div>
                         </div>
                         <hr>
@@ -74,41 +74,41 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <a class="btn btn-secondary"
-                                   href="{{url('sms_admin/showTimeTable',$class_name = '11 Toán')}}" role="button">11
-                                    Toán</a>
+                                   href="{{url('sms_admin/showTimeTable',$class_name = '11 toán')}}" role="button">11
+                                    toán</a>
                             </div>
                             <div class="col-md-3">
                                 <a class="btn btn-secondary"
-                                   href="{{url('sms_admin/showTimeTable',$class_name = '11 Lý')}}" role="button">11
-                                    Lý</a>
+                                   href="{{url('sms_admin/showTimeTable',$class_name = '11 lý')}}" role="button">11
+                                    lý</a>
                             </div>
                             <div class="col-md-3">
                                 <a class="btn btn-secondary"
-                                   href="{{url('sms_admin/showTimeTable',$class_name = '11 Hoá')}}" role="button">11
-                                    Hoá</a>
+                                   href="{{url('sms_admin/showTimeTable',$class_name = '11 hoá')}}" role="button">11
+                                    hoá</a>
                             </div>
                             <div class="col-md-3">
                                 <a class="btn btn-secondary"
-                                   href="{{url('sms_admin/showTimeTable',$class_name = '11 Văn')}}" role="button">11
-                                    Văn</a>
+                                   href="{{url('sms_admin/showTimeTable',$class_name = '11 văn')}}" role="button">11
+                                    văn</a>
                             </div>
                         </div>
                         <br>
                         <div class="row">
                             <div class="col-md-3">
                                 <a class="btn btn-secondary"
-                                   href="{{url('sms_admin/showTimeTable',$class_name = '11 Anh')}}" role="button">11
-                                    Anh</a>
+                                   href="{{url('sms_admin/showTimeTable',$class_name = '11 anh')}}" role="button">11
+                                    anh</a>
                             </div>
                             <div class="col-md-3">
                                 <a class="btn btn-secondary"
-                                   href="{{url('sms_admin/showTimeTable',$class_name = '11 Tin')}}" role="button">11
-                                    Tin</a>
+                                   href="{{url('sms_admin/showTimeTable',$class_name = '11 tin')}}" role="button">11
+                                    tin</a>
                             </div>
                             <div class="col-md-3">
                                 <a class="btn btn-secondary"
-                                   href="{{url('sms_admin/showTimeTable',$class_name = '11 K')}}" role="button">11
-                                    K</a>
+                                   href="{{url('sms_admin/showTimeTable',$class_name = '11 k')}}" role="button">11
+                                    k</a>
                             </div>
                         </div>
                         <hr>
@@ -116,46 +116,46 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <a class="btn btn-secondary"
-                                   href="{{url('sms_admin/showTimeTable',$class_name = '12 Toán')}}" role="button">12
-                                    Toán</a>
+                                   href="{{url('sms_admin/showTimeTable',$class_name = '12 toán')}}" role="button">12
+                                    toán</a>
                             </div>
                             <div class="col-md-3">
                                 <a class="btn btn-secondary"
-                                   href="{{url('sms_admin/showTimeTable',$class_name = '12 Lý')}}"
+                                   href="{{url('sms_admin/showTimeTable',$class_name = '12 lý')}}"
                                    role="button">12
-                                    Lý</a>
+                                    lý</a>
                             </div>
                             <div class="col-md-3">
                                 <a class="btn btn-secondary"
-                                   href="{{url('sms_admin/showTimeTable',$class_name = '12 Hoá')}}"
+                                   href="{{url('sms_admin/showTimeTable',$class_name = '12 hoá')}}"
                                    role="button">12
-                                    Hoá</a>
+                                    hoá</a>
                             </div>
                             <div class="col-md-3">
                                 <a class="btn btn-secondary"
-                                   href="{{url('sms_admin/showTimeTable',$class_name = '12 Văn')}}"
+                                   href="{{url('sms_admin/showTimeTable',$class_name = '12 văn')}}"
                                    role="button">12
-                                    Văn</a>
+                                    văn</a>
                             </div>
                         </div>
                         <br>
                         <div class="row">
                             <div class="col-md-3">
                                 <a class="btn btn-secondary"
-                                   href="{{url('sms_admin/showTimeTable',$class_name = '12 Anh')}}"
+                                   href="{{url('sms_admin/showTimeTable',$class_name = '12 anh')}}"
                                    role="button">12
-                                    Anh</a>
+                                    anh</a>
                             </div>
                             <div class="col-md-3">
                                 <a class="btn btn-secondary"
-                                   href="{{url('sms_admin/showTimeTable',$class_name = '12 Tin')}}"
+                                   href="{{url('sms_admin/showTimeTable',$class_name = '12 tin')}}"
                                    role="button">12
-                                    Tin</a>
+                                    tin</a>
                             </div>
                             <div class="col-md-3">
                                 <a class="btn btn-secondary"
-                                   href="{{url('sms_admin/showTimeTable',$class_name = '12 K')}}"
-                                   role="button">12 K</a>
+                                   href="{{url('sms_admin/showTimeTable',$class_name = '12 k')}}"
+                                   role="button">12 k</a>
                             </div>
                         </div>
                         <hr>
@@ -184,10 +184,10 @@
                         </div>
                         @if ($a ==1)
                             <a class="btn btn-dark btn-rounded m-t-10 float-right"
-                               href="{{url('sms_admin/editTimeTable',$class_id = $class->id)}}" role="button">Chỉnh sửa</a>
+                               href="{{url('sms_admin/editTimeTable',$class_name = $class->class_name)}}" role="button">Chỉnh sửa</a>
                         @else
                             <a class="btn btn-dark btn-rounded m-t-10 float-right" style="visibility: hidden"
-                               href="{{url('sms_admin/editTimeTable',$class_id = $class->id)}}" role="button">Chỉnh sửa</a>
+                               href="{{url('sms_admin/editTimeTable',$class_name = $class->class_name)}}" role="button">Chỉnh sửa</a>
                         @endif
                         <div class="table-responsive">
                             <table id="demo-foo-addrow" class="table table-bordered m-t-30 table-hover contact-list"
