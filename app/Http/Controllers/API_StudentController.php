@@ -18,7 +18,7 @@ class API_StudentController extends Controller
     }
     public function showByMSHS($MSHS)
     {
-        $student_info = Student::where('MSHS',$MSHS)->get(['id','MSHS','sex','date_of_birth','sdt','user_id']);
+        $student_info = Student::where('MSHS',$MSHS)->get();
             return $student_info;
     }
 
